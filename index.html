@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MissionCTRL | Brand Strategy & Trust Measurement for Enterprise Leaders</title>
+<meta name="description" content="MissionCTRL helps enterprise and mid-market leaders build brands that move people, markets and decisions — powered by TrustOS, our trust measurement intelligence platform." />
+<meta property="og:title" content="MissionCTRL | Brand Strategy & Trust Measurement" />
+<meta property="og:description" content="Build a brand that moves markets. MissionCTRL combines brand strategy with TrustOS — real-time trust measurement across Clarity, Connection and Confidence." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.missionctrl.co.uk" />
+<meta property="og:image" content="https://www.missionctrl.co.uk/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MissionCTRL | Brand Strategy & Trust Measurement" />
+<meta name="twitter:description" content="Build a brand that moves markets. Powered by TrustOS." />
+<link rel="icon" type="image/png" sizes="64x64" href="MC-Favicon-64x64.png">
+<link rel="apple-touch-icon" href="MC-Avatar-400x400.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blaze: #ff6b2b;
+    --amber: #ffad3b;
+    --coral: #ff4d6a;
+    --midnight: #162252;
+    --electric: #3d7cc9;
+    --ice: #f0f0f4;
+    --deep: #0a0f1a;
+    --charcoal: #111827;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Sora', sans-serif; color: var(--white); background: var(--deep); -webkit-font-smoothing: antialiased; }
+
+  /* Utilities */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+  .gradient-text {
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .accent-line { width: 48px; height: 3px; background: var(--blaze); border-radius: 2px; }
+  .overline {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blaze); margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800;
+    line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 20px;
+    text-align: left;
+  }
+  .body-copy { font-size: 1rem; font-weight: 400; line-height: 1.85; color: rgba(255,255,255,0.45); text-align: left; }
+  .body-copy-light { font-size: 1rem; font-weight: 400; line-height: 1.85; color: rgba(22,34,82,0.5); text-align: left; }
+
+  /* ═══════════ NAVIGATION ═══════════ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 5%;
+    background: rgba(10,15,26,0.92);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { display: inline-flex; align-items: flex-start; text-decoration: none; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    font-size: 0.82rem; font-weight: 600; color: var(--white);
+    background: var(--blaze); padding: 10px 22px; border-radius: 6px;
+    text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-cta:hover { background: #e85a1f; box-shadow: 0 4px 16px rgba(255,107,43,0.3); transform: translateY(-1px); }
+
+  /* Mobile menu */
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-toggle span { display: block; width: 20px; height: 2px; background: rgba(255,255,255,0.6); margin: 4px 0; transition: all 0.3s; }
+
+  /* ═══════════ HERO ═══════════ */
+  .hero {
+    min-height: auto; display: flex; align-items: center;
+    padding: 140px 5% 40px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, #0a0f1a 0%, #0d1633 40%, #162252 100%);
+  }
+  .hero-content { max-width: 640px; margin: 0 auto; text-align: center; }
+  .hero-label {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blaze); margin-bottom: 24px;
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 800;
+    line-height: 1.06; letter-spacing: -0.04em; margin-bottom: 24px;
+  }
+  .rotating-word {
+    color: #FF5C1A;
+    display: inline-block;
+    animation: rotateWordOut 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    background: linear-gradient(90deg, #ff6b2b, #ffad3b);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .rotating-word.slide-in {
+    animation: rotateWordIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes rotateWordIn {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(4px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  }
+  @keyframes rotateWordOut {
+    0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    100% { opacity: 0; transform: translateY(-20px) scale(0.95); filter: blur(4px); }
+  }
+
+  .hero-sub {
+    font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.45);
+    line-height: 1.85; max-width: 540px; margin: 0 auto 40px;
+  }
+  .hero-bullets { list-style: none; margin-bottom: 40px; }
+  .hero-bullets li {
+    font-size: 0.92rem; font-weight: 400; color: rgba(255,255,255,0.45);
+    line-height: 1.85; padding-left: 20px; position: relative; margin-bottom: 8px;
+  }
+  .hero-bullets li::before {
+    content: ''; position: absolute; left: 0; top: 11px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--blaze);
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 600;
+    color: var(--white); background: var(--blaze);
+    padding: 14px 28px; border-radius: 8px; border: none; cursor: pointer;
+    text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block;
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%); transition: none;
+  }
+  .btn-primary:hover { background: #e85a1f; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,43,0.3); }
+  .btn-primary:hover::after { transform: translateX(100%); transition: transform 0.6s ease; }
+  .btn-secondary {
+    font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    padding: 14px 28px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12); cursor: pointer;
+    text-decoration: none; transition: all 0.2s; background: transparent; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+
+  /* Hero backgrounds */
+  .hero-bg-m {
+    position: absolute; right: -8%; top: 50%; transform: translateY(-50%);
+    width: 55%; max-width: 700px; opacity: 0.03;
+  }
+  .hero-ripple {
+    position: absolute; right: 15%; top: 45%;
+    transform: translate(50%, -50%);
+  }
+  .ripple-ring {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(255,107,43,0.06);
+    animation: ripple-breathe 6s ease-in-out infinite;
+  }
+  .ripple-ring:nth-child(2) { animation-delay: -1.5s; }
+  .ripple-ring:nth-child(3) { animation-delay: -3s; }
+  .ripple-ring:nth-child(4) { animation-delay: -4.5s; }
+
+  @keyframes ripple-breathe {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.7; }
+  }
+
+  /* Particle constellation canvas */
+  .hero-canvas {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  }
+
+  /* Floating gradient orbs */
+  .ambient-orb {
+    position: absolute; border-radius: 50%; pointer-events: none;
+    filter: blur(80px); opacity: 0; z-index: 0;
+    animation: orbFloat 18s ease-in-out infinite;
+  }
+  .ambient-orb--1 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,107,43,0.12), transparent 70%);
+    top: -10%; right: -5%;
+    animation-delay: 0s;
+  }
+  .ambient-orb--2 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(61,124,201,0.1), transparent 70%);
+    bottom: -15%; left: -8%;
+    animation-delay: -6s;
+  }
+  .ambient-orb--3 {
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(255,173,59,0.08), transparent 70%);
+    top: 30%; left: 20%;
+    animation-delay: -12s;
+  }
+  @keyframes orbFloat {
+    0%, 100% { opacity: 0.4; transform: translate(0, 0) scale(1); }
+    25% { opacity: 0.7; transform: translate(30px, -20px) scale(1.1); }
+    50% { opacity: 0.5; transform: translate(-20px, 30px) scale(0.95); }
+    75% { opacity: 0.8; transform: translate(15px, 15px) scale(1.05); }
+  }
+
+  /* Cursor-responsive glow */
+  .cursor-glow {
+    position: fixed; width: 500px; height: 500px;
+    border-radius: 50%; pointer-events: none; z-index: 0;
+    background: radial-gradient(circle, rgba(255,107,43,0.06), transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    mix-blend-mode: screen;
+  }
+  .cursor-glow.active { opacity: 1; }
+
+  /* ═══════════ FOUR STAGES (ACCORDION) ═══════════ */
+
+  /* ═══════════ FOUR STAGES COMBINED WITH ACCORDIONS ═══════════ */
+  .stages-combined {
+    background: var(--deep); padding: 100px 5%;
+  }
+  .stages-combined .intro { max-width: 640px; margin-bottom: 48px; }
+  .accordion-grid { max-width: 800px; }
+  .accordion-item {
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.02);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .accordion-item::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: linear-gradient(180deg, var(--blaze), var(--amber));
+    opacity: 0; transition: opacity 0.4s;
+    border-radius: 12px 0 0 12px;
+  }
+  .accordion-item:hover { background: rgba(255,255,255,0.04); }
+  .accordion-item.active {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,107,43,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 0 20px rgba(255,107,43,0.04);
+  }
+  .accordion-item.active::before { opacity: 1; }
+  .accordion-trigger {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 28px; background: none; border: none; cursor: pointer;
+    font-family: 'Sora', sans-serif; text-align: left; color: var(--white);
+  }
+  .accordion-header { display: flex; align-items: center; gap: 20px; }
+  .accordion-num {
+    font-size: 1.1rem; font-weight: 800; color: var(--blaze);
+    min-width: 32px;
+  }
+  .accordion-titles { display: flex; flex-direction: column; }
+  .accordion-name { font-size: 1rem; font-weight: 700; color: var(--white); }
+  .accordion-verb { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.15em; margin-top: 2px; }
+  .accordion-chevron {
+    color: rgba(255,255,255,0.3); transition: transform 0.3s ease, color 0.3s;
+    flex-shrink: 0;
+  }
+  .accordion-item.active .accordion-chevron { transform: rotate(180deg); color: var(--blaze); }
+  .accordion-panel {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 28px 0 80px;
+  }
+  .accordion-panel p {
+    font-size: 0.92rem; color: rgba(255,255,255,0.45); line-height: 1.85;
+  }
+  .accordion-item.active .accordion-panel {
+    max-height: 1000px;
+    padding: 0 28px 24px 80px;
+  }
+  .accordion-trust-enabler {
+    margin-top: 16px; margin-bottom: 16px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .accordion-trust-badge {
+    display: inline-block;
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; padding: 4px 10px; border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .accordion-trust-enabler-desc {
+    font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.7;
+    margin-bottom: 0;
+  }
+  .accordion-trust-enabler-label {
+    font-size: 0.68rem; font-weight: 600; color: rgba(255,255,255,0.25);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+  .accordion-trust-badge--clarity {
+    color: var(--blaze); background: rgba(255,107,43,0.08);
+  }
+  .accordion-trust-badge--connection {
+    color: var(--amber); background: rgba(255,173,59,0.08);
+  }
+  .accordion-trust-badge--confidence {
+    color: var(--electric); background: rgba(61,124,201,0.08);
+  }
+  .accordion-trust-badge--all {
+    color: var(--blaze);
+    background: linear-gradient(90deg, rgba(255,107,43,0.08), rgba(255,173,59,0.08));
+  }
+  .accordion-solutions {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin-top: 14px;
+  }
+  .accordion-solution {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px; padding: 14px 16px;
+  }
+  .accordion-solution-title {
+    font-size: 0.82rem; font-weight: 700; color: var(--white); margin-bottom: 4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .accordion-solution-title .sol-icon {
+    flex-shrink: 0; font-size: 0.9rem; opacity: 0.6;
+  }
+  .accordion-solution-body {
+    font-size: 0.78rem; color: rgba(255,255,255,0.35); line-height: 1.65;
+  }
+  .brand-effect {
+    background: linear-gradient(160deg, #0a0f1a 0%, #0d1633 40%, #162252 100%);
+    padding: 80px 5% 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-effect-inner { max-width: 1000px; }
+  .brand-effect p { margin-bottom: 24px; }
+
+  /* Alignment visualization */
+  .alignment-viz {
+    position: relative;
+    margin: 56px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+  .alignment-viz-canvas {
+    width: 100%;
+    max-width: 720px;
+    height: 180px;
+    position: relative;
+  }
+  .alignment-node {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+  }
+  .alignment-node::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1.5px solid;
+    opacity: 0.3;
+    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .alignment-node--believe {
+    background: radial-gradient(circle at 35% 35%, rgba(255,107,43,0.35), rgba(255,107,43,0.12));
+    left: 10%; top: 10%;
+  }
+  .alignment-node--believe::before { border-color: var(--blaze); }
+  .alignment-node--say {
+    background: radial-gradient(circle at 35% 35%, rgba(255,173,59,0.35), rgba(255,173,59,0.12));
+    left: 50%; top: 55%;
+    transform: translateX(-50%);
+  }
+  .alignment-node--say::before { border-color: var(--amber); }
+  .alignment-node--do {
+    background: radial-gradient(circle at 35% 35%, rgba(61,124,201,0.35), rgba(61,124,201,0.12));
+    right: 10%; top: 15%;
+  }
+  .alignment-node--do::before { border-color: var(--electric); }
+  /* Connector lines between nodes (SVG) */
+  .alignment-lines-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .alignment-lines-svg line {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+  }
+  .alignment-viz-canvas.aligned .alignment-lines-svg line {
+    opacity: 1;
+  }
+  /* Aligned state: nodes slide into a horizontal line */
+  .alignment-viz-canvas.aligned .alignment-node--believe {
+    left: 15%; top: 50px;
+  }
+  .alignment-viz-canvas.aligned .alignment-node--say {
+    left: 50%; top: 50px;
+    transform: translateX(-50%);
+  }
+  .alignment-viz-canvas.aligned .alignment-node--do {
+    right: 15%; top: 50px;
+  }
+  .alignment-viz-canvas.aligned .alignment-node::before {
+    opacity: 0.6;
+    box-shadow: 0 0 20px rgba(255,107,43,0.15);
+  }
+  /* Pulse ring effect when aligned */
+  .alignment-node::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid var(--blaze);
+    opacity: 0;
+    transition: opacity 1s 1.2s;
+    animation: none;
+  }
+  .alignment-viz-canvas.aligned .alignment-node::after {
+    opacity: 0.15;
+    animation: alignment-pulse 3s ease-in-out infinite;
+  }
+  .alignment-viz-canvas.aligned .alignment-node--say::after {
+    animation-delay: 0.4s;
+  }
+  .alignment-viz-canvas.aligned .alignment-node--do::after {
+    animation-delay: 0.8s;
+  }
+  @keyframes alignment-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.35); opacity: 0; }
+  }
+  /* Alignment label */
+  .alignment-viz-label {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    transition: color 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+  }
+  .alignment-viz.viz-aligned .alignment-viz-label {
+    color: var(--blaze);
+  }
+
+  /* Two-column cards for THE GAP and THE SHIFT */
+  .brand-effect-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    margin-top: 56px;
+  }
+  .brand-effect-card {
+    position: relative;
+    padding: 36px 32px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.06);
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+    overflow: hidden;
+  }
+  .brand-effect-card.visible {
+    opacity: 1; transform: translateY(0);
+  }
+  .brand-effect-card:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+  .brand-effect-card:hover {
+    border-color: rgba(255,107,43,0.2);
+    box-shadow: 0 8px 40px rgba(255,107,43,0.06), 0 0 0 1px rgba(255,107,43,0.08);
+  }
+  /* Decorative top-edge gradient accent */
+  .brand-effect-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    border-radius: 16px 16px 0 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .brand-effect-card:hover::before {
+    opacity: 1;
+  }
+  .brand-effect-card--gap::before {
+    background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+  }
+  .brand-effect-card--shift::before {
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+  }
+  /* Card icon area */
+  .brand-effect-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .brand-effect-card--gap .brand-effect-card-icon {
+    background: rgba(255,255,255,0.04);
+  }
+  .brand-effect-card--shift .brand-effect-card-icon {
+    background: rgba(255,107,43,0.1);
+  }
+  .brand-effect-card-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .brand-effect-card-label {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .brand-effect-card--gap .brand-effect-card-label { color: rgba(255,255,255,0.35); }
+  .brand-effect-card--shift .brand-effect-card-label { color: var(--blaze); }
+  .brand-effect-card .body-copy { margin-bottom: 0; }
+
+  /* Callout / quote block */
+  .brand-effect .callout {
+    margin-top: 56px; padding: 40px 44px;
+    background: linear-gradient(135deg, rgba(255,107,43,0.04), rgba(255,173,59,0.02));
+    border: 1px solid rgba(255,107,43,0.1);
+    border-left: 3px solid; border-image: linear-gradient(180deg, var(--blaze), var(--amber)) 1;
+    border-radius: 0 16px 16px 0;
+    font-size: 1.1rem; font-weight: 500; color: rgba(255,255,255,0.7);
+    line-height: 1.8; font-style: italic;
+    text-align: left; max-width: 100%;
+    position: relative; overflow: hidden;
+  }
+  .brand-effect .callout::before {
+    content: '\201C'; position: absolute; top: -5px; left: 20px;
+    font-size: 6rem; font-style: normal; font-weight: 800;
+    background: linear-gradient(180deg, var(--blaze), var(--amber));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.12; line-height: 1;
+  }
+  .brand-effect .callout::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(255,107,43,0.06), transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ═══════════ CREDENTIALS SECTION ═══════════ */
+  .credentials {
+    background: var(--ice);
+    padding: 72px 0;
+    border-top: 0.5px solid rgba(61,124,201,0.08);
+    border-bottom: 0.5px solid rgba(61,124,201,0.08);
+    overflow: hidden;
+  }
+
+  .credentials .section-inner {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .credentials-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--electric);
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 0 5%;
+  }
+
+  .credentials-sub {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--midnight);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 52px;
+    line-height: 1.65;
+    opacity: 0.8;
+    padding: 0 5%;
+  }
+
+  .credentials-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .credentials-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    width: max-content;
+    animation: marquee-scroll 45s linear infinite;
+  }
+
+  .credentials-marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .cred-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+    min-width: 120px;
+  }
+
+  .cred-logo-item:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+
+  .cred-logo-item img {
+    height: 56px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .cred-logo-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--midnight);
+    text-align: center;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    opacity: 0.65;
+  }
+
+  .credentials-footnote {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 0.82rem;
+    color: rgba(61,124,201,0.4);
+    font-style: italic;
+    letter-spacing: 0.01em;
+    padding: 0 5%;
+  }
+
+  @media (max-width: 640px) {
+    .credentials {
+      padding: 48px 0;
+    }
+    .credentials-marquee-track {
+      gap: 40px;
+    }
+    .cred-logo-item img {
+      height: 44px;
+      max-width: 120px;
+    }
+    .cred-logo-name {
+      font-size: 0.65rem;
+    }
+    .credentials-sub {
+      font-size: 0.92rem;
+      margin-bottom: 36px;
+    }
+  }
+
+  /* ═══════════ HOW WE WORK (CIRCULAR) ═══════════ */
+  .how-we-work {
+    background: var(--charcoal); padding: 100px 5%;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .how-we-work .intro { max-width: 640px; margin-bottom: 56px; }
+  .cycle-wrapper {
+    display: flex; justify-content: center; align-items: center;
+    padding: 20px 0;
+  }
+  .cycle-container {
+    position: relative; width: 480px; height: 480px;
+  }
+  /* Mobile vertical flow — hidden on desktop */
+  .cycle-flow { display: none; }
+  .cycle-flow-step {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 20px 0; position: relative;
+  }
+  .cycle-flow-step + .cycle-flow-step {
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .cycle-flow-num {
+    flex-shrink: 0; width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,107,43,0.08); border-radius: 12px;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--blaze);
+  }
+  .cycle-flow-content { flex: 1; }
+  .cycle-flow-title {
+    font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 2px;
+  }
+  .cycle-flow-engine {
+    font-size: 0.65rem; font-weight: 600; color: rgba(255,255,255,0.25);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;
+  }
+  .cycle-flow-body {
+    font-size: 0.88rem; color: rgba(255,255,255,0.4); line-height: 1.75;
+  }
+  .cycle-flow-repeat {
+    text-align: center; padding: 20px 0 0;
+    font-size: 0.78rem; font-weight: 600;
+    color: var(--blaze); opacity: 0.6;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  /* The rotating ring track */
+  .cycle-ring {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+  }
+  .cycle-ring circle {
+    fill: none; stroke: rgba(255,107,43,0.08); stroke-width: 2;
+  }
+  .cycle-ring .cycle-arc {
+    fill: none; stroke: url(#cycle-gradient); stroke-width: 3;
+    stroke-dasharray: 1200; stroke-dashoffset: 300;
+    stroke-linecap: round;
+  }
+  /* Arrows on the ring */
+  .cycle-arrow {
+    position: absolute;
+    width: 24px; height: 24px;
+    color: var(--blaze); opacity: 0.5;
+  }
+  .cycle-arrow-1 { top: -2px; left: 50%; transform: translateX(-50%) rotate(45deg); }
+  .cycle-arrow-2 { bottom: 30%; right: -2px; transform: rotate(135deg); }
+  .cycle-arrow-3 { top: 30%; left: -2px; transform: rotate(-45deg); }
+  /* Phase nodes on the circle */
+  .cycle-node {
+    position: absolute; text-align: center;
+    background: rgba(17,24,39,0.95); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 20px 16px;
+    width: 180px; transition: all 0.3s ease;
+    cursor: default;
+    z-index: 2;
+  }
+  .cycle-node:hover {
+    background: rgba(17,24,39,0.98);
+    border-color: rgba(255,107,43,0.2);
+    transform: scale(1.04);
+  }
+  .cycle-node-num {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blaze); margin-bottom: 4px;
+  }
+  .cycle-node-title {
+    font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 2px;
+  }
+  .cycle-node-engine {
+    font-size: 0.65rem; font-weight: 600; color: rgba(255,255,255,0.25); margin-bottom: 10px;
+  }
+  .cycle-node-body {
+    font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.7;
+  }
+  /* Node positions — top, right-bottom, left-bottom (clockwise) */
+  .cycle-node-1 { top: -30px; left: 50%; transform: translateX(-50%); }
+  .cycle-node-1:hover { transform: translateX(-50%) scale(1.04); }
+  .cycle-node-2 { bottom: 10px; right: -40px; }
+  .cycle-node-3 { bottom: 10px; left: -40px; }
+
+  /* ═══════════ SOLUTIONS (TABBED INTERACTIVE) ═══════════ */
+  .solutions {
+    background: linear-gradient(160deg, #0a0f1a 0%, #0d1633 40%, #162252 100%);
+    padding: 100px 5%;
+  }
+  .solutions .intro { max-width: 720px; margin-bottom: 48px; }
+  /* Tab bar */
+  .solutions-tabs {
+    display: flex; gap: 0; margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .solutions-tab {
+    flex: 1; padding: 20px 16px; background: none; border: none;
+    cursor: pointer; font-family: 'Sora', sans-serif;
+    text-align: center; position: relative;
+    transition: all 0.3s ease;
+  }
+  .solutions-tab::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+    height: 3px; background: transparent; transition: background 0.3s;
+    border-radius: 3px 3px 0 0;
+  }
+  .solutions-tab.active::after {
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+  }
+  .solutions-tab-icon {
+    font-size: 1.4rem; margin-bottom: 6px; display: block;
+    opacity: 0.3; transition: opacity 0.3s;
+  }
+  .solutions-tab.active .solutions-tab-icon { opacity: 1; }
+  .solutions-tab-name {
+    font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.35);
+    display: block; transition: color 0.3s; letter-spacing: 0.06em;
+  }
+  .solutions-tab.active .solutions-tab-name { color: var(--white); }
+  .solutions-tab-desc {
+    font-size: 0.68rem; color: rgba(255,255,255,0.2); display: block; margin-top: 4px;
+    transition: color 0.3s;
+  }
+  .solutions-tab.active .solutions-tab-desc { color: rgba(255,255,255,0.4); }
+  .solutions-tab:hover .solutions-tab-name { color: rgba(255,255,255,0.7); }
+  /* Tab panels */
+  .solutions-panel { display: none; animation: panel-fade 0.4s ease; }
+  .solutions-panel.active { display: block; }
+  @keyframes panel-fade {
+    from { opacity: 0; transform: translateY(16px); filter: blur(2px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+  .solutions-panel-header {
+    display: flex; gap: 32px; margin-bottom: 32px; align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .solutions-panel-problem {
+    flex: 1; min-width: 260px;
+    font-size: 0.92rem; color: rgba(255,255,255,0.45); line-height: 1.85;
+  }
+  .solutions-panel-signal {
+    flex: 0 0 auto; max-width: 280px;
+    font-size: 0.78rem; font-weight: 500; color: var(--blaze); opacity: 0.7;
+    padding: 14px 18px;
+    background: rgba(255,107,43,0.06); border-radius: 10px;
+    line-height: 1.6;
+  }
+  .solutions-panel-signal span { font-weight: 700; }
+  /* Solution cards in a panel */
+  .solutions-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;
+  }
+  .solution-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 28px 24px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .solution-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .solution-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at var(--mx, 50%) var(--my, 50%), rgba(255,107,43,0.08), transparent 60%);
+    opacity: 0; transition: opacity 0.4s; pointer-events: none;
+  }
+  .solution-card:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,107,43,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(255,107,43,0.06);
+  }
+  .solution-card:hover::before { opacity: 1; }
+  .solution-card:hover::after { opacity: 1; }
+  .solution-card-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: rgba(255,107,43,0.08);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px; font-size: 1.1rem;
+  }
+  .solution-card-title {
+    font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 10px;
+  }
+  .solution-card-body {
+    font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.75;
+  }
+
+  /* ═══════════ TRUSTOS SECTION (WHITE PANEL, CENTRE-ALIGNED) ═══════════ */
+  .trustos-section {
+    background: var(--white);
+    padding: 100px 5%; text-align: center;
+  }
+  .trustos-inner { max-width: 640px; margin: 0 auto; }
+  .trustos-inner .overline { color: var(--electric); }
+  .trustos-inner .section-title { color: var(--midnight); text-align: center; }
+  .trustos-inner .body-copy-light { margin-bottom: 32px; color: rgba(22,34,82,0.5); text-align: center; }
+  .trustos-small {
+    font-size: 0.78rem; color: rgba(22,34,82,0.35); margin-top: 20px;
+  }
+  .btn-primary-outline {
+    font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 600;
+    color: var(--blaze); background: transparent;
+    padding: 14px 28px; border-radius: 8px;
+    border: 2px solid var(--blaze); cursor: pointer;
+    text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block;
+    position: relative;
+  }
+  .btn-primary-outline:hover { background: var(--blaze); color: var(--white); box-shadow: 0 8px 24px rgba(255,107,43,0.2); transform: translateY(-2px); }
+
+  /* ═══════════ WHO IT'S FOR ═══════════ */
+  .who-section {
+    background: var(--deep); padding: 100px 5%;
+  }
+  .who-section .intro { max-width: 640px; margin-bottom: 48px; }
+  .audience-symptoms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 2.5rem 0 2rem 0;
+    max-width: 680px;
+  }
+  .symptom-item {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
+    cursor: default;
+  }
+  .symptom-item:hover {
+    padding-left: 8px;
+    color: var(--blaze);
+  }
+  .symptom-item::before {
+    content: "— ";
+    color: #FF5C1A;
+    font-weight: 700;
+  }
+  .symptom-item:first-child {
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .audience-close {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    max-width: 600px;
+    margin-top: 0;
+  }
+
+  /* ═══════════ CLOSING CTA ═══════════ */
+  .closing-cta {
+    background: linear-gradient(160deg, #0a0f1a 0%, #0d1633 40%, #162252 100%);
+    padding: 120px 5%; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .closing-cta-content { position: relative; z-index: 2; }
+  .closing-cta .section-title { color: var(--white); text-align: center; }
+  .closing-cta .body-copy { max-width: 540px; margin: 0 auto 40px; text-align: center; }
+  .closing-cta .hero-actions { justify-content: center; }
+  .closing-ripple {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ═══════════ FOOTER ═══════════ */
+  .footer {
+    background: var(--deep); padding: 60px 5% 32px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 40px;
+  }
+  .footer-brand { }
+  .footer-tagline {
+    font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.35);
+    margin-top: 14px; line-height: 1.4;
+  }
+  .footer-copyright {
+    font-size: 0.72rem; color: rgba(255,255,255,0.2);
+    margin-top: 8px; line-height: 1.4;
+  }
+  .footer-nav-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+    margin-bottom: 16px;
+  }
+  .footer-nav-links { list-style: none; }
+  .footer-nav-links li { margin-bottom: 10px; }
+  .footer-nav-links a {
+    font-size: 0.88rem; color: rgba(255,255,255,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-nav-links a:hover { color: #FF5C1A; }
+  .footer-contact-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+    margin-bottom: 16px;
+  }
+  .footer-contact-list { list-style: none; }
+  .footer-contact-list li { margin-bottom: 10px; }
+  .footer-contact-list a {
+    font-size: 0.88rem; color: rgba(255,255,255,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-contact-list a:hover { color: #FF5C1A; }
+  .footer-bottom {
+    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.04);
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0;
+  }
+  .footer-legal {
+    font-size: 0.62rem; color: rgba(255,255,255,0.15);
+    text-align: center; line-height: 1.6;
+  }
+  .footer-legal a {
+    color: rgba(255,255,255,0.2);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: #FF5C1A; }
+
+  /* ═══════════ LOGO / STACKED ═══════════ */
+  .logo-stacked { display: inline-flex; align-items: flex-start; gap: 8px; text-decoration: none; }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-line1 { line-height: 1; display: flex; align-items: baseline; }
+  .logo-line2 { line-height: 1; margin-top: 2px; }
+
+  /* ═══════════ SENSE/ACT/ADAPT ANIMATED CYCLE ═══════════ */
+  .sense-act-adapt-cycle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 52px;
+    padding: 40px 0;
+  }
+  .sense-act-adapt-cycle .cycle-node {
+    flex: 1;
+    max-width: 240px;
+    background: var(--white);
+    border-radius: 4px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .sense-act-adapt-cycle .cycle-node.active {
+    border-color: var(--blaze);
+    box-shadow: 0 0 40px rgba(255,107,43,0.2), 0 12px 32px rgba(255,107,43,0.1);
+    background: rgba(255,107,43,0.04);
+    transform: translateY(-4px) scale(1.03);
+  }
+  .node-icon {
+    font-size: 2.4rem;
+    color: var(--electric);
+    margin-bottom: 14px;
+    transition: color 0.4s ease;
+  }
+  .sense-act-adapt-cycle .cycle-node.active .node-icon {
+    color: var(--blaze);
+  }
+  .sense-act-adapt-cycle .cycle-node.active .node-label {
+    color: var(--white);
+  }
+  .sense-act-adapt-cycle .cycle-node.active .node-sub {
+    color: rgba(255,255,255,0.7);
+  }
+  .node-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--midnight);
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+  }
+  .node-sub {
+    font-size: 0.82rem;
+    color: rgba(22,34,82,0.5);
+    line-height: 1.6;
+    transition: color 0.4s ease;
+  }
+  .sense-act-adapt-cycle .cycle-arrow {
+    font-size: 1.8rem;
+    color: var(--electric);
+    flex-shrink: 0;
+    transition: color 0.4s ease, transform 0.4s ease;
+    position: static;
+    width: auto;
+    height: auto;
+    opacity: 1;
+  }
+  .sense-act-adapt-cycle .cycle-arrow.active {
+    color: var(--blaze);
+    transform: scale(1.2);
+  }
+
+  /* ═══════════ HAMBURGER NAVIGATION ═══════════ */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .nav-hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .nav-mobile-drawer {
+    display: none;
+    flex-direction: column;
+    background: var(--midnight);
+    padding: 16px 5%;
+    gap: 16px;
+  }
+  .nav-mobile-drawer a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.1);
+  }
+  .nav-mobile-drawer a:last-child {
+    border-bottom: none;
+  }
+  .nav-mobile-drawer.open {
+    display: flex;
+  }
+
+  /* ═══════════ CTA FORM ═══════════ */
+  .cta-form {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .cta-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .cta-form input,
+  .cta-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    box-sizing: border-box;
+  }
+  .cta-form input::placeholder,
+  .cta-form textarea::placeholder {
+    color: rgba(255,255,255,0.35);
+  }
+  .cta-form input:focus,
+  .cta-form textarea:focus {
+    outline: none;
+    border-color: var(--blaze);
+  }
+  .cta-form textarea {
+    resize: vertical;
+  }
+
+  /* ═══════════ FOOTER (THREE-COL) ═══════════ */
+  .footer {
+    background: var(--charcoal);
+    padding: 0;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    padding: 56px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover {
+    color: var(--blaze);
+  }
+  .footer-tagline {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+    margin: 4px 0;
+  }
+  .footer-col-head {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--blaze);
+    margin-bottom: 4px;
+  }
+  .footer-legal-detail {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.7;
+    margin-top: 8px;
+  }
+  .footer-social {
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .footer-strip {
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+    padding: 16px 5%;
+    text-align: center;
+  }
+  .footer-strip p {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ═══════════ SCROLL ANIMATIONS ═══════════ */
+  .fade-up {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-up.visible {
+    opacity: 1; transform: translateY(0);
+  }
+  /* Stagger children inside visible parents */
+  .fade-up-stagger > * {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-up-stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+  .fade-up-stagger.visible > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+  .fade-up-stagger.visible > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+  .fade-up-stagger.visible > *:nth-child(4) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+  .fade-up-stagger.visible > *:nth-child(5) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
+  .fade-up-stagger.visible > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+
+  /* Hero entrance — cinematic reveal */
+  .hero-content > * {
+    animation: hero-fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  .hero-content > *:nth-child(1) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.5s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.7s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.9s; }
+  .hero-content > *:nth-child(5) { animation-delay: 1.1s; }
+
+  @keyframes hero-fade-up {
+    from { transform: translateY(40px) scale(0.97); opacity: 0; filter: blur(4px); }
+    to { transform: translateY(0) scale(1); opacity: 1; filter: blur(0); }
+  }
+
+  /* Shimmer accent line animation */
+  .accent-line {
+    position: relative; overflow: hidden;
+  }
+  .accent-line::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: translateX(-100%);
+    animation: shimmer-slide 3s ease-in-out infinite;
+  }
+  @keyframes shimmer-slide {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+  }
+
+  /* ═══════════ RESPONSIVE ═══════════ */
+  @media (max-width: 1024px) {
+    .solutions-cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(10,15,26,0.97); backdrop-filter: blur(20px);
+      padding: 24px 5%; gap: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-toggle { display: block; }
+    .nav-hamburger { display: flex; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .cycle-wrapper { display: none; }
+    .cycle-flow { display: block; max-width: 520px; }
+    .brand-effect-grid { grid-template-columns: 1fr; gap: 24px; }
+    .alignment-viz-canvas { height: 140px; }
+    .alignment-node { width: 64px; height: 64px; font-size: 0.5rem; }
+    .alignment-viz-canvas.aligned .alignment-node--believe { left: 8%; }
+    .alignment-viz-canvas.aligned .alignment-node--do { right: 8%; }
+  }
+  @media (max-width: 640px) {
+    .sense-act-adapt-cycle {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .sense-act-adapt-cycle .cycle-arrow {
+      transform: rotate(90deg);
+      text-align: center;
+    }
+    .cta-form .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .hero-title { font-size: 2.2rem; }
+    .hero { padding: 120px 5% 60px; }
+    .accordion-panel { padding: 0 20px 0 60px; }
+    .accordion-item.active .accordion-panel { padding: 0 20px 20px 60px; }
+    .accordion-trigger { padding: 18px 16px; }
+    .accordion-header { gap: 12px; }
+    .accordion-solutions { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Cursor-responsive glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav class="nav">
+  <a href="#" class="nav-logo" aria-label="MissionCTRL home">
+    <svg width="28" height="34" viewBox="0 0 120 148" fill="none" style="flex-shrink: 0;">
+      <defs><linearGradient id="nav-m" x1="0" y1="148" x2="120" y2="0"><stop offset="0%" stop-color="#ff6b2b"/><stop offset="100%" stop-color="#ffad3b"/></linearGradient><clipPath id="nav-mc"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+      <rect width="120" height="148" fill="url(#nav-m)" clip-path="url(#nav-mc)"/>
+    </svg>
+    <div style="display: flex; flex-direction: column; align-items: flex-end; margin-left: -2px;">
+      <span style="font-size: 0.95rem; font-weight: 700; color: var(--white); letter-spacing: -0.04em; line-height: 0.85;">ission</span>
+      <div style="line-height: 0.85;"><span style="font-size: 0.95rem; font-weight: 800; color: var(--blaze); letter-spacing: -0.04em;">C</span><span style="font-size: 0.95rem; font-weight: 800; color: var(--white); letter-spacing: -0.04em;">TRL</span></div>
+    </div>
+  </a>
+  <button class="nav-hamburger" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="#brand-effect">The problem</a>
+    <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">TrustOS</a>
+    <a href="#process">How it works</a>
+    <a href="#solutions">Solutions</a>
+    <a href="/movement-archetype">Movement Archetype</a>
+    <a href="#contact" class="nav-cta">Start the conversation</a>
+  </div>
+</nav>
+<div class="nav-mobile-drawer" id="mobileNav">
+  <a href="#brand-effect">The problem</a>
+  <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">TrustOS</a>
+  <a href="#process">How it works</a>
+  <a href="#solutions">Solutions</a>
+  <a href="/movement-archetype">Movement Archetype</a>
+  <a href="#contact">Get started</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="hero">
+  <!-- Animated particle constellation -->
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+  <!-- Floating ambient orbs -->
+  <div class="ambient-orb ambient-orb--1"></div>
+  <div class="ambient-orb ambient-orb--2"></div>
+  <div class="ambient-orb ambient-orb--3"></div>
+
+  <!-- Background M mark -->
+  <svg class="hero-bg-m" viewBox="0 0 120 148" fill="none">
+    <defs><clipPath id="hero-bgm"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+    <rect width="120" height="148" fill="white" clip-path="url(#hero-bgm)"/>
+  </svg>
+
+  <!-- Ripple rings -->
+  <div class="hero-ripple">
+    <div class="ripple-ring" style="width: 700px; height: 700px; border-color: rgba(255,107,43,0.03);"></div>
+    <div class="ripple-ring" style="width: 520px; height: 520px; border-color: rgba(255,107,43,0.05);"></div>
+    <div class="ripple-ring" style="width: 340px; height: 340px; border-color: rgba(255,107,43,0.07);"></div>
+    <div class="ripple-ring" style="width: 160px; height: 160px; border-color: rgba(255,107,43,0.12);"></div>
+  </div>
+
+  <div class="container" style="position: relative; z-index: 2;">
+    <div class="hero-content">
+      <div class="hero-label">THE BRAND EFFECT</div>
+      <h1 class="hero-title">Build a brand that<br/>moves <span class="rotating-word" id="rotating-word">People</span></h1>
+      <p class="hero-sub">We partner with forward-thinking leaders to turn trust into impact, aligning what you believe, what you say, and what you do across every stakeholder, every touchpoint, every decision.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start the conversation</a>
+        <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" class="btn-secondary">See how we measure it &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ THE BRAND EFFECT (PROBLEM) ═══════════ -->
+<section class="brand-effect" id="brand-effect">
+  <div class="container">
+    <div class="brand-effect-inner">
+    <div class="overline fade-up">Why this matters</div>
+    <div class="accent-line fade-up" style="margin-bottom: 24px;"></div>
+    <h2 class="section-title fade-up">Most organisations don't have an awareness problem.<br/><em style="font-style: italic; color: var(--blaze);">They have an alignment problem.</em></h2>
+
+    <!-- Animated alignment visualization -->
+    <div class="alignment-viz fade-up" id="alignmentViz">
+      <div class="alignment-viz-canvas" id="alignmentCanvas">
+        <svg class="alignment-lines-svg" id="alignLine1">
+          <line x1="0" y1="0" x2="0" y2="0" stroke="url(#lineGrad1)" stroke-width="1.5" stroke-dasharray="6,4" id="connLine1"/>
+          <line x1="0" y1="0" x2="0" y2="0" stroke="url(#lineGrad2)" stroke-width="1.5" stroke-dasharray="6,4" id="connLine2"/>
+          <defs>
+            <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff6b2b" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#ffad3b" stop-opacity="0.5"/>
+            </linearGradient>
+            <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffad3b" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#3d7cc9" stop-opacity="0.5"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="alignment-node alignment-node--believe">Believe</div>
+        <div class="alignment-node alignment-node--say">Say</div>
+        <div class="alignment-node alignment-node--do">Do</div>
+      </div>
+      <div class="alignment-viz-label" id="alignmentLabel">Scattered &rarr; Aligned</div>
+    </div>
+
+    <!-- Part A: Two-column card grid -->
+    <div class="brand-effect-grid">
+      <div class="brand-effect-card brand-effect-card--gap">
+        <div class="brand-effect-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="6" cy="6" r="3"/><circle cx="18" cy="10" r="3"/><circle cx="10" cy="18" r="3"/>
+            <line x1="8.5" y1="7.5" x2="15.5" y2="8.5" stroke-dasharray="3,3" opacity="0.4"/>
+            <line x1="16.5" y1="12.5" x2="12" y2="15.5" stroke-dasharray="3,3" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="brand-effect-card-label">THE GAP</div>
+        <p class="body-copy">The strategy is clear at the top and blurry everywhere else. Clients, employees, partners, and regulators all interpret the brand through a different lens — and the gap between what leadership believes and what stakeholders actually experience is exactly where momentum is lost.</p>
+      </div>
+      <div class="brand-effect-card brand-effect-card--shift">
+        <div class="brand-effect-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blaze)" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="5" cy="12" r="3"/><circle cx="12" cy="12" r="3"/><circle cx="19" cy="12" r="3"/>
+            <line x1="8" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="16" y2="12"/>
+          </svg>
+        </div>
+        <div class="brand-effect-card-label">THE SHIFT</div>
+        <p class="body-copy">The organisations that win aren't the ones that transformed once. They're the ones that keep moving, keep adapting, and stay trusted while they do it. That's The Brand Effect.</p>
+      </div>
+    </div>
+
+    <!-- Part B: Full-width quote block -->
+    <div class="callout fade-up">"The difference between a company and a movement is integrity at scale — when what you believe, what you say, and what you do are the same thing, and stakeholders can feel it."</div>
+  </div>
+  </div>
+</section>
+
+<!-- ═══════════ CREDENTIALS ═══════════ -->
+<section class="credentials" id="credentials">
+  <div class="section-inner">
+    <p class="credentials-label">20 years. Brands that move the world.</p>
+    <p class="credentials-sub">The thinking behind MissionCTRL has been shaped across some of the world's most recognised organisations — spanning enterprise, healthcare, social care, and digital transformation.</p>
+    <div class="credentials-marquee-wrapper">
+      <div class="credentials-marquee-track">
+        <!-- First set of logos -->
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/ey.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="EY" loading="lazy" />
+          <span class="cred-logo-name">EY</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/capgemini.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Capgemini" loading="lazy" />
+          <span class="cred-logo-name">Capgemini</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/astrazeneca.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="AstraZeneca" loading="lazy" />
+          <span class="cred-logo-name">AstraZeneca</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/bp.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="BP" loading="lazy" />
+          <span class="cred-logo-name">BP</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/fidelityinternational.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Fidelity International" loading="lazy" />
+          <span class="cred-logo-name">Fidelity International</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/philips.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Philips" loading="lazy" />
+          <span class="cred-logo-name">Philips</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/bayer.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Bayer" loading="lazy" />
+          <span class="cred-logo-name">Bayer</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/experian.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Experian" loading="lazy" />
+          <span class="cred-logo-name">Experian</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/nasdaq.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Nasdaq" loading="lazy" />
+          <span class="cred-logo-name">Nasdaq</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/lloydsbankinggroup.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Lloyds Banking Group" loading="lazy" />
+          <span class="cred-logo-name">Lloyds Banking Group</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/kaspersky.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Kaspersky" loading="lazy" />
+          <span class="cred-logo-name">Kaspersky</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/icis.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="ICIS" loading="lazy" />
+          <span class="cred-logo-name">ICIS</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/frontlineaids.org?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Frontline AIDS" loading="lazy" />
+          <span class="cred-logo-name">Frontline AIDS</span>
+        </div>
+        <div class="cred-logo-item">
+          <img src="https://img.logo.dev/geeks.ltd?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="Geeks" loading="lazy" />
+          <span class="cred-logo-name">Geeks</span>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/ey.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">EY</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/capgemini.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Capgemini</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/astrazeneca.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">AstraZeneca</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/bp.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">BP</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/fidelityinternational.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Fidelity International</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/philips.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Philips</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/bayer.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Bayer</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/experian.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Experian</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/nasdaq.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Nasdaq</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/lloydsbankinggroup.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Lloyds Banking Group</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/kaspersky.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Kaspersky</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/icis.com?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">ICIS</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/frontlineaids.org?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Frontline AIDS</span>
+        </div>
+        <div class="cred-logo-item" aria-hidden="true">
+          <img src="https://img.logo.dev/geeks.ltd?token=pk_bKJVsBw8R7mTzkd_svUWzg&greyscale=true&size=120&retina=true" alt="" loading="lazy" />
+          <span class="cred-logo-name">Geeks</span>
+        </div>
+      </div>
+    </div>
+    <p class="credentials-footnote">Strategy director. Senior consultant. Fractional lead. Always the bridge between ambition and belief.</p>
+  </div>
+</section>
+<!-- END CREDENTIALS SECTION -->
+
+<!-- ═══════════ HOW WE WORK / PROCESS (SENSE → ACT → ADAPT) ═══════════ -->
+<section class="how-we-work" id="process">
+  <div class="container">
+    <div class="intro">
+      <div class="overline fade-up">A simple operating rhythm</div>
+      <div class="accent-line fade-up" style="margin-bottom: 24px;"></div>
+      <h2 class="section-title fade-up">Sense. Act. Adapt. Repeat.</h2>
+    </div>
+
+    <div class="sense-act-adapt-cycle fade-up">
+      <div class="cycle-node" id="node-sense">
+        <div class="node-icon">&#9678;</div>
+        <div class="node-label">Sense</div>
+        <div class="node-sub">TrustOS captures real-time signals across Clarity, Connection and Confidence</div>
+      </div>
+      <div class="cycle-arrow arrow-1">&rarr;</div>
+      <div class="cycle-node" id="node-act">
+        <div class="node-icon">&#9672;</div>
+        <div class="node-label">Act</div>
+        <div class="node-sub">MissionCTRL deploys targeted interventions aligned to the trust gap</div>
+      </div>
+      <div class="cycle-arrow arrow-2">&rarr;</div>
+      <div class="cycle-node" id="node-adapt">
+        <div class="node-icon">&#9673;</div>
+        <div class="node-label">Adapt</div>
+        <div class="node-sub">The loop closes — every cycle builds trust that compounds over time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ THE PATH: FOUR STAGES + SOLUTIONS (COMBINED) ═══════════ -->
+<section class="stages-combined" id="solutions">
+  <div class="container">
+    <div class="intro">
+      <div class="overline fade-up">The path from conviction to movement</div>
+      <div class="accent-line fade-up" style="margin-bottom: 24px;"></div>
+      <h2 class="section-title fade-up">Four stages. One trajectory.</h2>
+      <p class="body-copy fade-up">The Brand Effect isn't a campaign. It's a compounding system — built on a sequence that starts with belief and ends with a brand that shapes how the category thinks. Each stage is powered by targeted solutions mapped to Clarity, Connection, and Confidence.</p>
+    </div>
+    <div class="accordion-grid">
+      <!-- Stage 1: Conviction -->
+      <div class="accordion-item fade-up">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-header">
+            <span class="accordion-num">01</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Conviction</span>
+              <span class="accordion-verb">Believe</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="true">
+          <p>Very few organisations have it. Conviction is the leadership team's willingness to commit — to a position, to a promise, to trade-offs that cost something. Without conviction, everything downstream is performance.</p>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--clarity">&#9670; Clarity</span>
+            <p class="accordion-trust-enabler-desc">Can stakeholders clearly articulate who you are, what you stand for, and why it matters to them? Clarity is the trust enabler that TrustOS measures across purpose, positioning, and proposition — the foundation of brand coherence.</p>
+            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
+          </div>
+          <div class="accordion-solutions">
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9733;</span> Purpose, Positioning &amp; Proposition</div>
+              <p class="accordion-solution-body">Make trade-offs explicit. One integrated roadmap so stakeholders can predict decisions.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#10024;</span> Design for Good</div>
+              <p class="accordion-solution-body">Build social value into the offer. Doing the right thing is the product, not the poster.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 2: Coherence -->
+      <div class="accordion-item fade-up">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-header">
+            <span class="accordion-num">02</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Coherence</span>
+              <span class="accordion-verb">Align</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="true">
+          <p>One brand, every stakeholder. The gap between what you intend and what they experience is where trust is lost — quietly, before the performance data catches up. Coherence means leadership, culture, communications, and delivery all pointing in the same direction.</p>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--connection">&#9672; Connection</span>
+            <p class="accordion-trust-enabler-desc">Do stakeholders feel a genuine relationship with the brand — not just awareness, but belonging? Connection is the trust enabler that TrustOS tracks across employee engagement, customer loyalty, and partner alignment — measuring whether your brand lives in culture, not just communications.</p>
+            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
+          </div>
+          <div class="accordion-solutions">
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9889;</span> Energise</div>
+              <p class="accordion-solution-body">Turn mission into lived work. Culture becomes the brand's engine.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#8596;</span> Align</div>
+              <p class="accordion-solution-body">One operating language. Shared standards. Fix drift quickly.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#8635;</span> Retain</div>
+              <p class="accordion-solution-body">Win repeat business through reliability and visible progress.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#10148;</span> Mobilise</div>
+              <p class="accordion-solution-body">Bring partners into coordinated action around shared principles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 3: Credibility -->
+      <div class="accordion-item fade-up">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-header">
+            <span class="accordion-num">03</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Credibility</span>
+              <span class="accordion-verb">Prove</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="true">
+          <p>The Brand Effect is measurable. Trust is definable — and trackable. TrustOS, MissionCTRL's intelligence engine, makes the invisible visible: which stakeholder relationships are strong, where belief is leaking, and whether it's getting better or worse.</p>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--confidence">&#9651; Confidence</span>
+            <p class="accordion-trust-enabler-desc">Do stakeholders believe the brand will deliver on its promises — consistently, transparently, and over time? Confidence is the trust enabler that TrustOS evaluates through evidence of follow-through, measurable impact, and published proof — turning credibility from a claim into a trackable signal.</p>
+            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
+          </div>
+          <div class="accordion-solutions">
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9854;</span> Change Intelligence</div>
+              <p class="accordion-solution-body">Respond to change without breaking trust. Acknowledge, fix, verify.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9878;</span> Credibility Engine</div>
+              <p class="accordion-solution-body">Make impact measurable. Publish evidence. Turn proof into thought leadership.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 4: Catalyst -->
+      <div class="accordion-item fade-up">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-header">
+            <span class="accordion-num">04</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Catalyst</span>
+              <span class="accordion-verb">Scale</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="true">
+          <p>When Conviction, Coherence, and Credibility compound over time, something larger happens. The brand stops competing in the category and starts defining it. This is The Brand Effect at scale.</p>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--all">&#9670; Clarity + &#9672; Connection + &#9651; Confidence</span>
+            <p class="accordion-trust-enabler-desc">When all three trust enablers compound — when stakeholders can articulate who you are (Clarity), feel a genuine relationship with the brand (Connection), and believe you'll deliver (Confidence) — the brand becomes a self-reinforcing system. TrustOS tracks this compounding effect over time, showing exactly where momentum builds.</p>
+            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TRUSTOS ═══════════ -->
+<section class="trustos-section" id="trustos">
+  <div class="container">
+    <div class="trustos-inner">
+      <div class="overline fade-up" style="color: var(--electric);">Powered by TrustOS</div>
+      <div class="accent-line fade-up" style="margin: 0 auto 24px; background: var(--electric);"></div>
+      <h2 class="section-title fade-up">You can't manage what you can't measure.</h2>
+      <p class="body-copy-light fade-up">Every MissionCTRL engagement is powered by TrustOS — our trust measurement and intelligence engine. TrustOS tracks trust through three drivers: Clarity, Connection, and Confidence — on a foundation of Integrity.</p>
+      <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" class="btn-primary-outline fade-up">See TrustOS in detail &rarr;</a>
+      <p class="trustos-small fade-up">TrustOS is a MissionCTRL product.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHO IT'S FOR ═══════════ -->
+<section class="who-section" id="who">
+  <div class="container">
+    <div class="intro">
+      <div class="overline fade-up">Who it's for</div>
+      <div class="accent-line fade-up" style="margin-bottom: 24px;"></div>
+      <h2 class="section-title fade-up">If any of these sound familiar, MissionCTRL is for you.</h2>
+    </div>
+    <div class="audience-symptoms fade-up-stagger">
+      <div class="symptom-item">Your leadership is aligned in the room. Not outside it.</div>
+      <div class="symptom-item">Your brand says one thing. Your organisation delivers another.</div>
+      <div class="symptom-item">You're measuring awareness. But you're losing trust.</div>
+      <div class="symptom-item">Your strategy is clear. Your stakeholders don't feel it yet.</div>
+    </div>
+    <p class="audience-close fade-up">We work with CEOs, brand and communications leaders, and organisations where trust can't be left to chance — B2B, infrastructure, public services, industrial, and regulated.</p>
+  </div>
+</section>
+
+<!-- ═══════════ MOVEMENT ARCHETYPE ═══════════ -->
+<style>
+  .arch-section {
+    background: #0a0f1a;
+    padding: 100px 5%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .arch-inner {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 860px) {
+    .arch-inner { grid-template-columns: 1fr; gap: 48px; }
+    .arch-right { display: none; }
+  }
+  .arch-list {
+    display: flex; flex-direction: column;
+    gap: 0; margin: 36px 0 40px;
+  }
+  .arch-list-item {
+    display: flex; align-items: baseline; gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: default;
+    transition: padding-left 0.2s ease;
+  }
+  .arch-list-item:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+  .arch-list-item:hover, .arch-list-item.active { padding-left: 6px; }
+  .arch-list-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    width: 20px; flex-shrink: 0;
+    transition: color 0.25s;
+  }
+  .arch-list-item:hover .arch-list-num,
+  .arch-list-item.active .arch-list-num { color: var(--ac, #ff6b2b); }
+  .arch-list-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    letter-spacing: -0.02em;
+    color: rgba(255,255,255,0.3);
+    flex: 1;
+    transition: color 0.25s;
+  }
+  .arch-list-item:hover .arch-list-name,
+  .arch-list-item.active .arch-list-name { color: #ffffff; }
+  .arch-list-tagline {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.72rem; font-weight: 400;
+    color: rgba(255,255,255,0);
+    max-width: 240px; line-height: 1.5;
+    text-align: right;
+    transition: color 0.25s;
+  }
+  .arch-list-item:hover .arch-list-tagline,
+  .arch-list-item.active .arch-list-tagline { color: rgba(255,255,255,0.3); }
+  .arch-right {
+    position: relative; height: 460px;
+    border-radius: 6px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+    background: #0d1220;
+  }
+  .arch-map-wrap {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+  }
+  .arch-map-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .arch-map-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+  .arch-map-hint {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; color: rgba(255,255,255,0.15);
+    transition: opacity 0.3s;
+  }
+  .arch-right.has-hover .arch-map-hint { opacity: 0; }
+  .arch-map-inner { flex: 1; padding: 10px 8px 8px; }
+  .arch-map-inner svg { width: 100%; height: 100%; display: block; }
+  .arch-right-wash {
+    position: absolute; inset: 0;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.45s ease; border-radius: 6px;
+  }
+  .arch-right.has-hover .arch-right-wash { opacity: 1; }
+  .arch-m-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 18px; text-align: center;
+    opacity: 0; transition: opacity 0.35s ease; padding: 24px;
+  }
+  .arch-right.has-hover .arch-m-overlay { opacity: 1; }
+  .arch-m-overlay-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .arch-m-overlay-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem; font-weight: 800;
+    letter-spacing: -0.03em; color: #ffffff;
+  }
+  .arch-m-overlay-tagline {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.78rem; color: rgba(255,255,255,0.45);
+    line-height: 1.6; max-width: 240px;
+  }
+  @keyframes dotPulse {
+    0%   { r: 9; opacity: 0.9; }
+    50%  { r: 14; opacity: 0.3; }
+    100% { r: 9; opacity: 0.9; }
+  }
+  .map-dot-active { animation: dotPulse 2s ease-in-out infinite; }
+</style>
+
+<section class="arch-section">
+  <div class="arch-inner">
+    <div class="arch-left">
+      <p style="font-family:'Sora',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#ff6b2b;margin:0 0 20px;">Free Assessment</p>
+      <h2 style="font-family:'Sora',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:#ffffff;line-height:1.1;letter-spacing:-0.03em;margin:0 0 16px;">What's your<br/>Movement Archetype?</h2>
+      <p style="font-family:'Sora',sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.4);line-height:1.8;max-width:440px;margin:0;">Every business that creates real change has a movement at its core. In five minutes, discover yours.</p>
+      <div class="arch-list" id="archList">
+        <div class="arch-list-item" style="--ac:#e8650a;" data-key="pioneer" data-name="The Pioneer" data-tagline="You push the edge of what's possible." data-color="#e8650a" data-num="01"><span class="arch-list-num">01</span><span class="arch-list-name">The Pioneer</span><span class="arch-list-tagline">You push the edge of what's possible.</span></div>
+        <div class="arch-list-item" style="--ac:#0a9a55;" data-key="protector" data-name="The Protector" data-tagline="You stand between harm and the vulnerable." data-color="#0a9a55" data-num="02"><span class="arch-list-num">02</span><span class="arch-list-name">The Protector</span><span class="arch-list-tagline">You stand between harm and the vulnerable.</span></div>
+        <div class="arch-list-item" style="--ac:#3d52c8;" data-key="equaliser" data-name="The Equaliser" data-tagline="You redistribute what's been hoarded." data-color="#3d52c8" data-num="03"><span class="arch-list-num">03</span><span class="arch-list-name">The Equaliser</span><span class="arch-list-tagline">You redistribute what's been hoarded.</span></div>
+        <div class="arch-list-item" style="--ac:#c8205a;" data-key="catalyst" data-name="The Catalyst" data-tagline="You accelerate change in entire systems." data-color="#c8205a" data-num="04"><span class="arch-list-num">04</span><span class="arch-list-name">The Catalyst</span><span class="arch-list-tagline">You accelerate change in entire systems.</span></div>
+        <div class="arch-list-item" style="--ac:#9a6e1a;" data-key="builder" data-name="The Builder" data-tagline="You create structures that outlast you." data-color="#9a6e1a" data-num="05"><span class="arch-list-num">05</span><span class="arch-list-name">The Builder</span><span class="arch-list-tagline">You create structures that outlast you.</span></div>
+        <div class="arch-list-item" style="--ac:#1a6a9a;" data-key="challenger" data-name="The Challenger" data-tagline="You name what others won't and force the reckoning." data-color="#1a6a9a" data-num="06"><span class="arch-list-num">06</span><span class="arch-list-name">The Challenger</span><span class="arch-list-tagline">You name what others won't.</span></div>
+      </div>
+      <a href="/movement-archetype" style="display:inline-block;font-family:'Sora',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#ff6b2b;color:#ffffff;padding:13px 28px;border-radius:6px;text-decoration:none;transition:background 0.2s,transform 0.15s;" onmouseover="this.style.background='#e85a1f';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#ff6b2b';this.style.transform='translateY(0)'">Discover your archetype →</a>
+    </div>
+    <div class="arch-right" id="archRight">
+      <div class="arch-right-wash" id="archWash"></div>
+      <div class="arch-map-wrap">
+        <div class="arch-map-header">
+          <span class="arch-map-title">The Movement Map</span>
+          <span class="arch-map-hint">Hover an archetype to locate it</span>
+        </div>
+        <div class="arch-map-inner">
+          <svg id="archMapSvg" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <rect x="50" y="14" width="188" height="183" fill="rgba(255,255,255,0.012)" rx="2"/>
+            <rect x="238" y="14" width="226" height="183" fill="rgba(255,255,255,0.018)" rx="2"/>
+            <rect x="50" y="197" width="188" height="183" fill="rgba(255,255,255,0.012)" rx="2"/>
+            <rect x="238" y="197" width="226" height="183" fill="rgba(255,255,255,0.018)" rx="2"/>
+            <line x1="50" y1="380" x2="468" y2="380" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="50" y1="380" x2="50" y2="10" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <polygon points="468,376 476,380 468,384" fill="rgba(255,255,255,0.15)"/>
+            <polygon points="46,10 50,2 54,10" fill="rgba(255,255,255,0.15)"/>
+            <line x1="50" y1="197" x2="468" y2="197" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" stroke-dasharray="4,4"/>
+            <line x1="238" y1="14" x2="238" y2="380" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" stroke-dasharray="4,4"/>
+            <text x="144" y="400" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em">SUSTAIN</text>
+            <text x="370" y="400" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em">CHANGE</text>
+            <text x="16" y="108" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em" transform="rotate(-90,16,108)">GLOBAL</text>
+            <text x="16" y="295" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em" transform="rotate(-90,16,295)">CATEGORY</text>
+            <text x="80" y="36" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">PROTECTION</text>
+            <text x="268" y="36" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">PROGRESS</text>
+            <text x="80" y="219" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">EXCELLENCE</text>
+            <text x="268" y="219" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">DISCOVERY</text>
+            <g id="mdot-pioneer"><circle cx="388" cy="320" r="6" fill="#e8650a" opacity="0.35"/><text x="388" y="336" text-anchor="middle" font-size="7" fill="#e8650a" opacity="0.5" font-family="Sora,sans-serif">Pioneer</text></g>
+            <g id="mdot-protector"><circle cx="122" cy="88" r="6" fill="#0a9a55" opacity="0.35"/><text x="122" y="104" text-anchor="middle" font-size="7" fill="#0a9a55" opacity="0.5" font-family="Sora,sans-serif">Protector</text></g>
+            <g id="mdot-equaliser"><circle cx="290" cy="72" r="6" fill="#3d52c8" opacity="0.35"/><text x="290" y="88" text-anchor="middle" font-size="7" fill="#3d52c8" opacity="0.5" font-family="Sora,sans-serif">Equaliser</text></g>
+            <g id="mdot-catalyst"><circle cx="428" cy="46" r="6" fill="#c8205a" opacity="0.35"/><text x="428" y="62" text-anchor="middle" font-size="7" fill="#c8205a" opacity="0.5" font-family="Sora,sans-serif">Catalyst</text></g>
+            <g id="mdot-builder"><circle cx="140" cy="316" r="6" fill="#9a6e1a" opacity="0.35"/><text x="140" y="332" text-anchor="middle" font-size="7" fill="#9a6e1a" opacity="0.5" font-family="Sora,sans-serif">Builder</text></g>
+            <g id="mdot-challenger"><circle cx="412" cy="186" r="6" fill="#1a6a9a" opacity="0.35"/><text x="412" y="202" text-anchor="middle" font-size="7" fill="#1a6a9a" opacity="0.5" font-family="Sora,sans-serif">Challenger</text></g>
+          </svg>
+        </div>
+      </div>
+      <div class="arch-m-overlay" id="archMOverlay">
+        <div class="arch-m-overlay-num" id="archMNum"></div>
+        <svg width="72" height="88" viewBox="0 0 120 148" fill="none" id="archMSvg">
+          <defs><clipPath id="arch-ov-c"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+          <rect width="120" height="148" fill="#ff6b2b" clip-path="url(#arch-ov-c)" id="archMRect"/>
+        </svg>
+        <div class="arch-m-overlay-name" id="archMName"></div>
+        <div class="arch-m-overlay-tagline" id="archMTagline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var items=document.querySelectorAll('.arch-list-item');
+  var right=document.getElementById('archRight');
+  var wash=document.getElementById('archWash');
+  var mRect=document.getElementById('archMRect');
+  var mSvg=document.getElementById('archMSvg');
+  var mNum=document.getElementById('archMNum');
+  var mName=document.getElementById('archMName');
+  var mTagline=document.getElementById('archMTagline');
+  var activePulse=null;
+  var dotPos={pioneer:{cx:388,cy:320},protector:{cx:122,cy:88},equaliser:{cx:290,cy:72},catalyst:{cx:428,cy:46},builder:{cx:140,cy:316},challenger:{cx:412,cy:186}};
+
+  function clearPulse(){
+    if(activePulse){activePulse.remove();activePulse=null;}
+    Object.keys(dotPos).forEach(function(k){
+      var g=document.getElementById('mdot-'+k);
+      if(g){g.querySelector('circle').setAttribute('opacity','0.35');g.querySelector('text').setAttribute('opacity','0.5');}
+    });
+  }
+
+  function setPulse(key,color){
+    clearPulse();
+    var pos=dotPos[key]; if(!pos)return;
+    Object.keys(dotPos).forEach(function(k){
+      var g=document.getElementById('mdot-'+k);
+      if(g&&k!==key){g.querySelector('circle').setAttribute('opacity','0.06');g.querySelector('text').setAttribute('opacity','0.1');}
+    });
+    var g=document.getElementById('mdot-'+key);
+    if(g)g.querySelector('circle').setAttribute('opacity','0');
+    var svg=document.getElementById('archMapSvg');
+    var p=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    p.setAttribute('cx',pos.cx);p.setAttribute('cy',pos.cy);p.setAttribute('r','9');
+    p.setAttribute('fill',color);p.setAttribute('opacity','0.9');
+    p.classList.add('map-dot-active');
+    svg.appendChild(p);activePulse=p;
+  }
+
+  items.forEach(function(item){
+    item.addEventListener('mouseenter',function(){
+      var color=item.dataset.color,key=item.dataset.key;
+      items.forEach(function(i){i.classList.remove('active');});
+      item.classList.add('active');
+      right.classList.add('has-hover');
+      wash.style.background='radial-gradient(ellipse at 65% 50%, '+color+'1a 0%, transparent 65%)';
+      mRect.setAttribute('fill',color);
+      mSvg.style.filter='drop-shadow(0 0 28px '+color+'88)';
+      mNum.textContent=item.dataset.num;mNum.style.color=color;
+      mName.textContent=item.dataset.name;
+      mTagline.textContent=item.dataset.tagline;
+      setPulse(key,color);
+    });
+  });
+
+  document.getElementById('archList').addEventListener('mouseleave',function(){
+    items.forEach(function(i){i.classList.remove('active');});
+    right.classList.remove('has-hover');
+    clearPulse();
+  });
+})();
+</script>
+<!-- ═══════════ CLOSING CTA ═══════════ -->
+<section class="closing-cta" id="contact">
+  <!-- Floating ambient orbs -->
+  <div class="ambient-orb ambient-orb--1" style="animation-delay: -3s;"></div>
+  <div class="ambient-orb ambient-orb--2" style="animation-delay: -9s;"></div>
+
+  <!-- Ripple rings centred -->
+  <div class="closing-ripple">
+    <div class="ripple-ring" style="width: 600px; height: 600px; border-color: rgba(255,107,43,0.03);"></div>
+    <div class="ripple-ring" style="width: 440px; height: 440px; border-color: rgba(255,107,43,0.05);"></div>
+    <div class="ripple-ring" style="width: 280px; height: 280px; border-color: rgba(255,107,43,0.07);"></div>
+    <div class="ripple-ring" style="width: 120px; height: 120px; border-color: rgba(255,107,43,0.12);"></div>
+  </div>
+
+  <div class="closing-cta-content">
+    <h2 class="section-title fade-up">Lead as One. Move the Many.</h2>
+    <p class="body-copy fade-up" style="max-width: 540px; margin: 0 auto 40px;">The Brand Effect starts with a conversation. Not a pitch. Not an audit. A conversation about where trust is building, where it's leaking, and what to do about it.</p>
+    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="cta-form fade-up">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="text" name="company" placeholder="Company" required />
+      </div>
+      <input type="text" name="role" placeholder="Your role" />
+      <textarea name="challenge" placeholder="What's your biggest trust challenge?" rows="4" required></textarea>
+      <button type="submit" class="btn-primary">Start the conversation</button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="display: inline-flex; align-items: flex-start; margin-bottom: 4px;">
+        <svg width="28" height="34" viewBox="0 0 120 148" fill="none" style="flex-shrink: 0;">
+          <defs><linearGradient id="ft-m" x1="0" y1="148" x2="120" y2="0"><stop offset="0%" stop-color="#ff6b2b"/><stop offset="100%" stop-color="#ffad3b"/></linearGradient><clipPath id="ft-mc"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+          <rect width="120" height="148" fill="url(#ft-m)" clip-path="url(#ft-mc)"/>
+        </svg>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; margin-left: -2px;">
+          <span style="font-size: 0.95rem; font-weight: 700; color: var(--white); letter-spacing: -0.04em; line-height: 0.85;">ission</span>
+          <div style="line-height: 0.85;"><span style="font-size: 0.95rem; font-weight: 800; color: var(--blaze); letter-spacing: -0.04em;">C</span><span style="font-size: 0.95rem; font-weight: 800; color: var(--white); letter-spacing: -0.04em;">TRL</span></div>
+        </div>
+      </div>
+      <p class="footer-tagline">Brand. Made to move.</p>
+      <a href="https://linkedin.com/company/missionctrlagency" class="footer-social" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-head">Navigate</p>
+      <a href="#brand-effect">The problem</a>
+      <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">TrustOS</a>
+      <a href="#process">How it works</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#contact">Get started</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-head">Legal</p>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/cookie-policy">Cookie Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+      <p class="footer-legal-detail">MissionCTRL Ltd<br/>Company No. 17018199<br/>Registered in England &amp; Wales</p>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <p>&copy; 2025 MissionCTRL Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ═══════════ SCROLL ANIMATION + INTERACTIVITY ═══════════ -->
+<script>
+(function() {
+  // Scroll fade-up observer
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Also observe stagger containers
+  document.querySelectorAll('.fade-up-stagger').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Observe brand-effect card elements for scroll animation
+  document.querySelectorAll('.brand-effect-card').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Alignment visualization — animate from scattered to aligned on scroll
+  (function() {
+    var canvas = document.getElementById('alignmentCanvas');
+    var viz = document.getElementById('alignmentViz');
+    if (!canvas || !viz) return;
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function updateConnectorLines() {
+      var believe = canvas.querySelector('.alignment-node--believe');
+      var say = canvas.querySelector('.alignment-node--say');
+      var doNode = canvas.querySelector('.alignment-node--do');
+      var line1 = document.getElementById('connLine1');
+      var line2 = document.getElementById('connLine2');
+      if (!believe || !say || !doNode || !line1 || !line2) return;
+      var bRect = believe.getBoundingClientRect();
+      var sRect = say.getBoundingClientRect();
+      var dRect = doNode.getBoundingClientRect();
+      var cRect = canvas.getBoundingClientRect();
+      line1.setAttribute('x1', bRect.left - cRect.left + bRect.width / 2);
+      line1.setAttribute('y1', bRect.top - cRect.top + bRect.height / 2);
+      line1.setAttribute('x2', sRect.left - cRect.left + sRect.width / 2);
+      line1.setAttribute('y2', sRect.top - cRect.top + sRect.height / 2);
+      line2.setAttribute('x1', sRect.left - cRect.left + sRect.width / 2);
+      line2.setAttribute('y1', sRect.top - cRect.top + sRect.height / 2);
+      line2.setAttribute('x2', dRect.left - cRect.left + dRect.width / 2);
+      line2.setAttribute('y2', dRect.top - cRect.top + dRect.height / 2);
+    }
+
+    var alignObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var delay = reducedMotion ? 0 : 600;
+          setTimeout(function() {
+            canvas.classList.add('aligned');
+            viz.classList.add('viz-aligned');
+            // Update lines during transition
+            var lineFrames = 0;
+            var lineInterval = setInterval(function() {
+              updateConnectorLines();
+              lineFrames++;
+              if (lineFrames > 80) clearInterval(lineInterval);
+            }, 20);
+          }, delay);
+          alignObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    alignObserver.observe(canvas);
+    // Also update lines on resize
+    window.addEventListener('resize', updateConnectorLines);
+  })();
+
+  // Accordion functionality
+  document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      var item = this.closest('.accordion-item');
+      var isActive = item.classList.contains('active');
+      // Close all
+      document.querySelectorAll('.accordion-item').forEach(function(i) {
+        i.classList.remove('active');
+        i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+        i.querySelector('.accordion-panel').setAttribute('aria-hidden', 'true');
+      });
+      // Open clicked if it wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+        this.setAttribute('aria-expanded', 'true');
+        item.querySelector('.accordion-panel').setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // Rotating hero word animation
+  (function() {
+    var words = ['People', 'Markets', 'Opinion', 'Decisions', 'Culture', 'The World'];
+    var currentIndex = 0;
+    var el = document.getElementById('rotating-word');
+    if (!el) return;
+
+    // Start with slide-in on first word
+    el.classList.add('slide-in');
+
+    setInterval(function() {
+      // Slide out current word
+      el.classList.remove('slide-in');
+
+      setTimeout(function() {
+        // Change word and slide in
+        currentIndex = (currentIndex + 1) % words.length;
+        el.textContent = words[currentIndex];
+        el.classList.add('slide-in');
+      }, 400);
+    }, 2500);
+  })();
+
+  // Sense / Act / Adapt cycle animation
+  (function() {
+    var nodes = ['node-sense', 'node-act', 'node-adapt'];
+    var arrows = document.querySelectorAll('.sense-act-adapt-cycle .cycle-arrow');
+    var currentIndex = 0;
+    var interval = 3000;
+
+    function activateStep(index) {
+      nodes.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+      arrows.forEach(function(a) { a.classList.remove('active'); });
+      var node = document.getElementById(nodes[index]);
+      if (node) node.classList.add('active');
+      if (index > 0 && arrows[index - 1]) {
+        arrows[index - 1].classList.add('active');
+      }
+    }
+
+    function startCycle() {
+      if (!document.getElementById(nodes[0])) return;
+      activateStep(currentIndex);
+      setInterval(function() {
+        currentIndex = (currentIndex + 1) % nodes.length;
+        activateStep(currentIndex);
+      }, interval);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startCycle);
+    } else {
+      startCycle();
+    }
+  })();
+
+  // Mobile nav toggle
+  (function() {
+    var btn = document.querySelector('.nav-hamburger');
+    var drawer = document.getElementById('mobileNav');
+    if (btn && drawer) {
+      btn.addEventListener('click', function() {
+        var isOpen = drawer.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      // Close drawer when a link is clicked
+      drawer.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          drawer.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
+  // Silently hide any credentials logos that fail to load
+  (function() {
+    document.querySelectorAll('.cred-logo-item img').forEach(function(img) {
+      img.addEventListener('error', function() {
+        this.closest('.cred-logo-item').style.display = 'none';
+      });
+    });
+    // Pause marquee on reduced-motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var track = document.querySelector('.credentials-marquee-track');
+      if (track) track.style.animationPlayState = 'paused';
+    }
+  })();
+
+  // ═══════════ PARTICLE CONSTELLATION ═══════════
+  (function() {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) return;
+
+    var particles = [];
+    var mouse = { x: -1000, y: -1000 };
+    var PARTICLE_COUNT = 60;
+    var CONNECTION_DIST = 150;
+    var MOUSE_DIST = 200;
+    var raf;
+
+    function resize() {
+      var hero = document.getElementById('hero');
+      canvas.width = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+      for (var i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          r: Math.random() * 2 + 1,
+          o: Math.random() * 0.4 + 0.1,
+          pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw connections
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < CONNECTION_DIST) {
+            var alpha = (1 - dist / CONNECTION_DIST) * 0.12;
+            ctx.strokeStyle = 'rgba(255,107,43,' + alpha + ')';
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles and mouse connections
+      for (var k = 0; k < particles.length; k++) {
+        var p = particles[k];
+        p.pulse += 0.015;
+        var pulseAlpha = p.o + Math.sin(p.pulse) * 0.1;
+
+        // Mouse proximity connection
+        var mdx = p.x - mouse.x;
+        var mdy = p.y - mouse.y;
+        var mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mDist < MOUSE_DIST) {
+          var mAlpha = (1 - mDist / MOUSE_DIST) * 0.25;
+          ctx.strokeStyle = 'rgba(255,173,59,' + mAlpha + ')';
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+
+          // Subtle repulsion
+          p.vx += mdx * 0.00005;
+          p.vy += mdy * 0.00005;
+        }
+
+        // Draw particle with glow
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,107,43,' + pulseAlpha + ')';
+        ctx.fill();
+
+        // Small glow halo
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,107,43,' + (pulseAlpha * 0.1) + ')';
+        ctx.fill();
+
+        // Move
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Dampen velocity
+        p.vx *= 0.999;
+        p.vy *= 0.999;
+
+        // Wrap around edges
+        if (p.x < -20) p.x = canvas.width + 20;
+        if (p.x > canvas.width + 20) p.x = -20;
+        if (p.y < -20) p.y = canvas.height + 20;
+        if (p.y > canvas.height + 20) p.y = -20;
+      }
+
+      raf = requestAnimationFrame(draw);
+    }
+
+    resize();
+    createParticles();
+    draw();
+
+    window.addEventListener('resize', function() {
+      resize();
+      createParticles();
+    });
+
+    document.getElementById('hero').addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    document.getElementById('hero').addEventListener('mouseleave', function() {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    });
+  })();
+
+  // ═══════════ CURSOR GLOW ═══════════
+  (function() {
+    var glow = document.getElementById('cursorGlow');
+    if (!glow || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var darkSections = document.querySelectorAll('.hero, .brand-effect, .how-we-work, .stages-combined, .who-section, .closing-cta, .arch-section');
+    var isActive = false;
+
+    document.addEventListener('mousemove', function(e) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+
+      // Check if we're over a dark section
+      var overDark = false;
+      for (var i = 0; i < darkSections.length; i++) {
+        var rect = darkSections[i].getBoundingClientRect();
+        if (e.clientY >= rect.top && e.clientY <= rect.bottom && e.clientX >= rect.left && e.clientX <= rect.right) {
+          overDark = true; break;
+        }
+      }
+
+      if (overDark && !isActive) { glow.classList.add('active'); isActive = true; }
+      else if (!overDark && isActive) { glow.classList.remove('active'); isActive = false; }
+    });
+  })();
+
+  // ═══════════ CARD MOUSE TRACKING ═══════════
+  (function() {
+    document.querySelectorAll('.solution-card').forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+        var y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+      });
+    });
+  })();
+})();
+</script>
+
+</body>
+</html>
