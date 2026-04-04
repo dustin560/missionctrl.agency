@@ -227,7 +227,7 @@
 
   /* ═══════════ FOUR STAGES COMBINED WITH ACCORDIONS ═══════════ */
   .stages-combined {
-    background: var(--deep); padding: 100px 5%;
+    background: var(--deep); padding: 0 5% 100px;
   }
   .stages-combined .intro { max-width: 640px; margin-bottom: 48px; }
   .accordion-grid { max-width: 800px; }
@@ -283,28 +283,50 @@
     max-height: 1000px;
     padding: 0 28px 24px 80px;
   }
-  .accordion-trust-enabler {
+  /* Proof stat inside accordion */
+  .accordion-proof {
+    display: flex; align-items: baseline; gap: 12px;
     margin-top: 16px; margin-bottom: 16px;
-    padding: 16px 18px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: rgba(255,107,43,0.04);
+    border-left: 3px solid rgba(255,107,43,0.3);
+  }
+  .accordion-proof-number {
+    font-size: 1.6rem; font-weight: 800; color: var(--blaze);
+    line-height: 1; flex-shrink: 0;
+  }
+  .accordion-proof-text {
+    font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6;
+  }
+  .accordion-proof-source {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(255,255,255,0.2); margin-top: 4px;
+  }
+  /* TrustOS enabler — separated, distinct styling */
+  .accordion-trust-enabler {
+    margin-top: 20px; margin-bottom: 0;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: rgba(45,58,74,0.15);
+    border: 1px solid rgba(90,138,154,0.18);
   }
   .accordion-trust-badge {
     display: inline-block;
-    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em;
-    text-transform: uppercase; padding: 4px 10px; border-radius: 4px;
-    margin-bottom: 8px;
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em;
+    text-transform: none; padding: 3px 8px; border-radius: 4px;
+    margin-bottom: 4px; color: rgba(109,160,184,0.9);
   }
   .accordion-trust-enabler-desc {
-    font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.7;
+    font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.65;
     margin-bottom: 0;
   }
-  .accordion-trust-enabler-label {
-    font-size: 0.68rem; font-weight: 600; color: rgba(255,255,255,0.25);
-    text-transform: uppercase; letter-spacing: 0.1em;
-    margin-top: 6px;
+  .accordion-trust-enabler-link {
+    display: inline-block; margin-top: 8px;
+    font-size: 0.72rem; font-weight: 600; color: rgba(109,160,184,0.6);
+    text-decoration: none; transition: color 0.2s;
   }
+  .accordion-trust-enabler-link:hover { color: rgba(109,160,184,0.9); }
   .accordion-trust-badge--clarity {
     color: var(--blaze); background: rgba(255,107,43,0.08);
   }
@@ -337,240 +359,146 @@
   .accordion-solution-body {
     font-size: 0.78rem; color: rgba(255,255,255,0.35); line-height: 1.65;
   }
-  .brand-effect {
-    background: linear-gradient(160deg, #0a0f1a 0%, #0d1633 40%, #162252 100%);
-    padding: 80px 5% 100px;
+  /* ═══════════ WHY THIS MATTERS (v4 compact bridge) ═══════════ */
+  .why-section {
+    background: var(--deep);
+    padding: 80px 5% 0;
     position: relative;
+  }
+  .why-inner { max-width: 1200px; margin: 0 auto; }
+  .why-headline {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    max-width: 780px;
+    margin-bottom: 16px;
+  }
+  .why-headline em {
+    font-style: italic;
+    color: var(--blaze);
+  }
+  .why-subline {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.38);
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+
+  /* Stat strip */
+  .wtm-stat-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
     overflow: hidden;
   }
-  .brand-effect-inner { max-width: 1000px; }
-  .brand-effect p { margin-bottom: 24px; }
-
-  /* Alignment visualization */
-  .alignment-viz {
-    position: relative;
-    margin: 56px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 0;
+  .wtm-stat-cell {
+    background: rgba(10,15,26,0.95);
+    padding: 40px 32px;
   }
-  .alignment-viz-canvas {
-    width: 100%;
-    max-width: 720px;
-    height: 180px;
-    position: relative;
-  }
-  .alignment-node {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--white);
-    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 2;
-  }
-  .alignment-node::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    border: 1.5px solid;
-    opacity: 0.3;
-    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .alignment-node--believe {
-    background: radial-gradient(circle at 35% 35%, rgba(255,107,43,0.35), rgba(255,107,43,0.12));
-    left: 10%; top: 10%;
-  }
-  .alignment-node--believe::before { border-color: var(--blaze); }
-  .alignment-node--say {
-    background: radial-gradient(circle at 35% 35%, rgba(255,173,59,0.35), rgba(255,173,59,0.12));
-    left: 50%; top: 55%;
-    transform: translateX(-50%);
-  }
-  .alignment-node--say::before { border-color: var(--amber); }
-  .alignment-node--do {
-    background: radial-gradient(circle at 35% 35%, rgba(61,124,201,0.35), rgba(61,124,201,0.12));
-    right: 10%; top: 15%;
-  }
-  .alignment-node--do::before { border-color: var(--electric); }
-  /* Connector lines between nodes (SVG) */
-  .alignment-lines-svg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .alignment-lines-svg line {
+  .wtm-stat-number {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--blaze);
+    margin-bottom: 10px;
     opacity: 0;
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+    transform: translateY(8px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .alignment-viz-canvas.aligned .alignment-lines-svg line {
+  .wtm-stat-number.visible {
     opacity: 1;
+    transform: translateY(0);
   }
-  /* Aligned state: nodes slide into a horizontal line */
-  .alignment-viz-canvas.aligned .alignment-node--believe {
-    left: 15%; top: 50px;
+  .wtm-stat-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 12px;
   }
-  .alignment-viz-canvas.aligned .alignment-node--say {
-    left: 50%; top: 50px;
-    transform: translateX(-50%);
+  .wtm-stat-source {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
   }
-  .alignment-viz-canvas.aligned .alignment-node--do {
-    right: 15%; top: 50px;
+
+  /* Reframe / Brand Effect bridge */
+  .wtm-reframe {
+    padding: 56px 0 48px;
+    max-width: 720px;
   }
-  .alignment-viz-canvas.aligned .alignment-node::before {
-    opacity: 0.6;
-    box-shadow: 0 0 20px rgba(255,107,43,0.15);
-  }
-  /* Pulse ring effect when aligned */
-  .alignment-node::after {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    border-radius: 50%;
-    border: 1px solid var(--blaze);
-    opacity: 0;
-    transition: opacity 1s 1.2s;
-    animation: none;
-  }
-  .alignment-viz-canvas.aligned .alignment-node::after {
-    opacity: 0.15;
-    animation: alignment-pulse 3s ease-in-out infinite;
-  }
-  .alignment-viz-canvas.aligned .alignment-node--say::after {
-    animation-delay: 0.4s;
-  }
-  .alignment-viz-canvas.aligned .alignment-node--do::after {
-    animation-delay: 0.8s;
-  }
-  @keyframes alignment-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.15; }
-    50% { transform: scale(1.35); opacity: 0; }
-  }
-  /* Alignment label */
-  .alignment-viz-label {
-    text-align: center;
-    margin-top: 16px;
+  .wtm-reframe-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
-    transition: color 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
-  }
-  .alignment-viz.viz-aligned .alignment-viz-label {
     color: var(--blaze);
-  }
-
-  /* Two-column cards for THE GAP and THE SHIFT */
-  .brand-effect-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
-    margin-top: 56px;
-  }
-  .brand-effect-card {
-    position: relative;
-    padding: 36px 32px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.06);
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
-    overflow: hidden;
-  }
-  .brand-effect-card.visible {
-    opacity: 1; transform: translateY(0);
-  }
-  .brand-effect-card:nth-child(2) {
-    transition-delay: 0.15s;
-  }
-  .brand-effect-card:hover {
-    border-color: rgba(255,107,43,0.2);
-    box-shadow: 0 8px 40px rgba(255,107,43,0.06), 0 0 0 1px rgba(255,107,43,0.08);
-  }
-  /* Decorative top-edge gradient accent */
-  .brand-effect-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    border-radius: 16px 16px 0 0;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  .brand-effect-card:hover::before {
-    opacity: 1;
-  }
-  .brand-effect-card--gap::before {
-    background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
-  }
-  .brand-effect-card--shift::before {
-    background: linear-gradient(90deg, var(--blaze), var(--amber));
-  }
-  /* Card icon area */
-  .brand-effect-card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 20px;
-    position: relative;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
   }
-  .brand-effect-card--gap .brand-effect-card-icon {
-    background: rgba(255,255,255,0.04);
+  .wtm-reframe-label.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .brand-effect-card--shift .brand-effect-card-icon {
-    background: rgba(255,107,43,0.1);
+  .wtm-reframe-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blaze);
+    animation: wtm-pulse 2.4s ease-in-out infinite;
   }
-  .brand-effect-card-icon svg {
-    width: 22px;
-    height: 22px;
+  @keyframes wtm-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
   }
-  .brand-effect-card-label {
-    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
-    text-transform: uppercase; margin-bottom: 16px;
+  .wtm-reframe-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.55;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
   }
-  .brand-effect-card--gap .brand-effect-card-label { color: rgba(255,255,255,0.35); }
-  .brand-effect-card--shift .brand-effect-card-label { color: var(--blaze); }
-  .brand-effect-card .body-copy { margin-bottom: 0; }
+  .wtm-reframe-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .wtm-reframe-text .muted {
+    color: rgba(255,255,255,0.35);
+  }
 
-  /* Callout / quote block */
-  .brand-effect .callout {
-    margin-top: 56px; padding: 40px 44px;
-    background: linear-gradient(135deg, rgba(255,107,43,0.04), rgba(255,173,59,0.02));
-    border: 1px solid rgba(255,107,43,0.1);
-    border-left: 3px solid; border-image: linear-gradient(180deg, var(--blaze), var(--amber)) 1;
-    border-radius: 0 16px 16px 0;
-    font-size: 1.1rem; font-weight: 500; color: rgba(255,255,255,0.7);
-    line-height: 1.8; font-style: italic;
-    text-align: left; max-width: 100%;
-    position: relative; overflow: hidden;
+  /* Hand-off line */
+  .wtm-handoff {
+    display: flex;
+    justify-content: flex-start;
+    padding: 16px 0 0;
   }
-  .brand-effect .callout::before {
-    content: '\201C'; position: absolute; top: -5px; left: 20px;
-    font-size: 6rem; font-style: normal; font-weight: 800;
-    background: linear-gradient(180deg, var(--blaze), var(--amber));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0.12; line-height: 1;
+  .wtm-handoff-line {
+    width: 1px;
+    height: 0;
+    background: linear-gradient(180deg, var(--blaze), rgba(255,107,43,0));
+    transition: height 1.2s ease 0.8s;
   }
-  .brand-effect .callout::after {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(255,107,43,0.06), transparent 70%);
-    pointer-events: none;
+  .wtm-handoff-line.visible {
+    height: 80px;
+  }
+
+  @media (max-width: 768px) {
+    .why-section { padding: 60px 5% 0; }
+    .wtm-stat-strip { grid-template-columns: 1fr; }
+    .wtm-stat-number { font-size: 2.4rem; }
+    .wtm-reframe-text { font-size: 1.05rem; }
   }
 
   /* ═══════════ CREDENTIALS SECTION ═══════════ */
@@ -1334,11 +1262,7 @@
     .footer-inner { grid-template-columns: 1fr; gap: 32px; }
     .cycle-wrapper { display: none; }
     .cycle-flow { display: block; max-width: 520px; }
-    .brand-effect-grid { grid-template-columns: 1fr; gap: 24px; }
-    .alignment-viz-canvas { height: 140px; }
-    .alignment-node { width: 64px; height: 64px; font-size: 0.5rem; }
-    .alignment-viz-canvas.aligned .alignment-node--believe { left: 8%; }
-    .alignment-viz-canvas.aligned .alignment-node--do { right: 8%; }
+    .wtm-stat-strip { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .sense-act-adapt-cycle {
@@ -1445,7 +1369,7 @@
   <div class="container" style="position: relative; z-index: 2;">
     <div class="hero-content">
       <div class="hero-label">THE BRAND EFFECT</div>
-      <h1 class="hero-title">Build the brand that<br/>builds the movement</h1>
+      <h1 class="hero-title">Build a brand that moves<br/><span class="rotating-word" id="rotating-word">People</span></h1>
       <p class="hero-sub">We partner with purpose-led leaders to close the gap between what their organisation believes, says, and does — turning brand into a force for collective impact.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Start the conversation</a>
@@ -1455,66 +1379,224 @@
   </div>
 </section>
 
-<!-- ═══════════ THE BRAND EFFECT (PROBLEM) ═══════════ -->
-<section class="brand-effect" id="brand-effect">
-  <div class="container">
-    <div class="brand-effect-inner">
+<!-- ═══════════ WHY THIS MATTERS (v4 compact bridge) ═══════════ -->
+<section class="why-section" id="brand-effect">
+  <div class="why-inner">
+
     <div class="overline fade-up">Why this matters</div>
     <div class="accent-line fade-up" style="margin-bottom: 24px;"></div>
-    <h2 class="section-title fade-up">Most organisations don't have an awareness problem.<br/><em style="font-style: italic; color: var(--blaze);">They have an alignment problem.</em></h2>
 
-    <!-- Animated alignment visualization -->
-    <div class="alignment-viz fade-up" id="alignmentViz">
-      <div class="alignment-viz-canvas" id="alignmentCanvas">
-        <svg class="alignment-lines-svg" id="alignLine1">
-          <line x1="0" y1="0" x2="0" y2="0" stroke="url(#lineGrad1)" stroke-width="1.5" stroke-dasharray="6,4" id="connLine1"/>
-          <line x1="0" y1="0" x2="0" y2="0" stroke="url(#lineGrad2)" stroke-width="1.5" stroke-dasharray="6,4" id="connLine2"/>
-          <defs>
-            <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ff6b2b" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#ffad3b" stop-opacity="0.5"/>
-            </linearGradient>
-            <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ffad3b" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#3d7cc9" stop-opacity="0.5"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="alignment-node alignment-node--believe">Believe</div>
-        <div class="alignment-node alignment-node--say">Say</div>
-        <div class="alignment-node alignment-node--do">Do</div>
-      </div>
-      <div class="alignment-viz-label" id="alignmentLabel">Scattered &rarr; Aligned</div>
-    </div>
+    <h2 class="why-headline fade-up">
+      Most organisations don't have a purpose&nbsp;problem.<br>
+      <em>They have an alignment problem.</em>
+    </h2>
+    <p class="why-subline fade-up">
+      The gap between what leadership believes and what stakeholders experience is where trust breaks, talent leaves, and growth&nbsp;stalls.
+    </p>
 
-    <!-- Part A: Two-column card grid -->
-    <div class="brand-effect-grid">
-      <div class="brand-effect-card brand-effect-card--gap">
-        <div class="brand-effect-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round">
-            <circle cx="6" cy="6" r="3"/><circle cx="18" cy="10" r="3"/><circle cx="10" cy="18" r="3"/>
-            <line x1="8.5" y1="7.5" x2="15.5" y2="8.5" stroke-dasharray="3,3" opacity="0.4"/>
-            <line x1="16.5" y1="12.5" x2="12" y2="15.5" stroke-dasharray="3,3" opacity="0.4"/>
-          </svg>
-        </div>
-        <div class="brand-effect-card-label">THE GAP</div>
-        <p class="body-copy">The strategy is clear at the top and blurry everywhere else. Clients, employees, partners, and regulators all interpret the brand through a different lens — and the gap between what leadership believes and what stakeholders actually experience is exactly where momentum is lost.</p>
+    <!-- Stat strip -->
+    <div class="wtm-stat-strip" id="wtmStatStrip">
+      <div class="wtm-stat-cell">
+        <div class="wtm-stat-number" data-target="82" data-suffix="%">0%</div>
+        <div class="wtm-stat-text">of leaders say purpose is important.<br>Only 42% say it's actually working.</div>
+        <div class="wtm-stat-source">McKinsey</div>
       </div>
-      <div class="brand-effect-card brand-effect-card--shift">
-        <div class="brand-effect-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blaze)" stroke-width="1.5" stroke-linecap="round">
-            <circle cx="5" cy="12" r="3"/><circle cx="12" cy="12" r="3"/><circle cx="19" cy="12" r="3"/>
-            <line x1="8" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="16" y2="12"/>
-          </svg>
-        </div>
-        <div class="brand-effect-card-label">THE SHIFT</div>
-        <p class="body-copy">The organisations that win aren't the ones that transformed once. They're the ones that keep moving, keep adapting, and stay trusted while they do it. That's The Brand Effect.</p>
+      <div class="wtm-stat-cell">
+        <div class="wtm-stat-number" data-target="18" data-suffix="%">0%</div>
+        <div class="wtm-stat-text">of employees say their work has meaningful purpose. The rest experience a different&nbsp;brand.</div>
+        <div class="wtm-stat-source">Gallup, 2025</div>
+      </div>
+      <div class="wtm-stat-cell">
+        <div class="wtm-stat-number" data-prefix="$" data-target="438" data-suffix="B">$0B</div>
+        <div class="wtm-stat-text">lost every year to disengagement &mdash; the price of the gap between belief and&nbsp;behaviour.</div>
+        <div class="wtm-stat-source">Gallup, 2025</div>
       </div>
     </div>
 
-    <!-- Part B: Full-width quote block -->
-    <div class="callout fade-up">"The difference between a company and a movement is integrity at scale — when what you believe, what you say, and what you do are the same thing, and stakeholders can feel it."</div>
+    <!-- Brand Effect reframe -->
+    <div class="wtm-reframe" id="wtmReframe">
+      <div class="wtm-reframe-label" id="wtmReframeLabel">
+        <span class="wtm-reframe-dot"></span>
+        The Brand Effect
+      </div>
+      <p class="wtm-reframe-text" id="wtmReframeText">
+        Close this gap and purpose stops being a statement. It becomes an operating system &mdash; one that creates real value for your people, your customers, your investors, and the communities you&nbsp;serve.
+      </p>
+    </div>
+
+    <!-- Hand-off line into four stages -->
+    <div class="wtm-handoff">
+      <div class="wtm-handoff-line" id="wtmHandoffLine"></div>
+    </div>
+
   </div>
+</section>
+
+<!-- ═══════════ THE PATH: FOUR STAGES + SOLUTIONS (COMBINED) ═══════════ -->
+<section class="stages-combined" id="solutions">
+  <div class="container">
+    <div class="intro">
+      <div class="overline fade-up">The path from conviction to movement</div>
+      <div class="accent-line fade-up" style="margin-bottom: 24px;"></div>
+      <h2 class="section-title fade-up">Four stages. One trajectory.</h2>
+      <p class="body-copy fade-up">The Brand Effect isn't a campaign. It's a compounding system — built on a sequence that starts with belief and ends with a brand that shapes how the category thinks. Each stage is powered by targeted solutions mapped to Clarity, Connection, and Confidence.</p>
+    </div>
+    <div class="accordion-grid">
+      <!-- Stage 1: Believe -->
+      <div class="accordion-item fade-up active">
+        <button class="accordion-trigger" aria-expanded="true">
+          <div class="accordion-header">
+            <span class="accordion-num">01</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Believe</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="false">
+          <p>Does your organisation believe in a purpose that addresses something that matters? Belief is the foundation — the shared aspiration that aligns leadership, teams, and stakeholders around a vision for change.</p>
+          <div class="accordion-proof">
+            <div>
+              <div class="accordion-proof-number">82%</div>
+            </div>
+            <div>
+              <div class="accordion-proof-text">of leaders say purpose matters. Conviction already exists — this isn't the problem to solve. The stage establishes shared belief.</div>
+              <div class="accordion-proof-source">McKinsey</div>
+            </div>
+          </div>
+          <div class="accordion-solutions">
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9733;</span> Purpose, Positioning &amp; Proposition</div>
+              <p class="accordion-solution-body">Make trade-offs explicit. One integrated roadmap so stakeholders can predict decisions.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#10024;</span> Design for Good</div>
+              <p class="accordion-solution-body">Build social value into the offer. Doing the right thing is the product, not the poster.</p>
+            </div>
+          </div>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--clarity">&#9670; Clarity</span>
+            <p class="accordion-trust-enabler-desc">Can stakeholders articulate who you are and why it matters? TrustOS measures Clarity across purpose, positioning, and proposition.</p>
+            <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" class="accordion-trust-enabler-link">Learn more about TrustOS &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 2: Align -->
+      <div class="accordion-item fade-up">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-header">
+            <span class="accordion-num">02</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Align</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="true">
+          <p>Is there coherence between what you believe, what you say, and what you do? Alignment means every stakeholder, touchpoint, and decision reflects the same truth.</p>
+          <div class="accordion-proof">
+            <div>
+              <div class="accordion-proof-number">5.6x</div>
+            </div>
+            <div>
+              <div class="accordion-proof-text">more engaged when employees connect their work to purpose. Alignment is the multiplier — closing the gap between leadership intent and stakeholder experience.</div>
+              <div class="accordion-proof-source">Gallup, 2025</div>
+            </div>
+          </div>
+          <div class="accordion-solutions">
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9889;</span> Energise</div>
+              <p class="accordion-solution-body">Turn mission into lived work. Culture becomes the brand's engine.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#8596;</span> Align</div>
+              <p class="accordion-solution-body">One operating language. Shared standards. Fix drift quickly.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#8635;</span> Retain</div>
+              <p class="accordion-solution-body">Win repeat business through reliability and visible progress.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#10148;</span> Mobilise</div>
+              <p class="accordion-solution-body">Bring partners into coordinated action around shared principles.</p>
+            </div>
+          </div>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--connection">&#9672; Connection</span>
+            <p class="accordion-trust-enabler-desc">Do stakeholders feel belonging, not just awareness? TrustOS tracks Connection across engagement, loyalty, and partner alignment.</p>
+            <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" class="accordion-trust-enabler-link">Learn more about TrustOS &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 3: Prove -->
+      <div class="accordion-item fade-up">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-header">
+            <span class="accordion-num">03</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Prove</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="true">
+          <p>Can you measure it? Prove it to the board? Trust measurement through Clarity, Connection, and Confidence turns conviction into evidence.</p>
+          <div class="accordion-proof">
+            <div>
+              <div class="accordion-proof-number">87%</div>
+            </div>
+            <div>
+              <div class="accordion-proof-text">of consumers pay more for brands they trust. Trust is earned through proof, not promises — this stage makes the brand measurable and credible.</div>
+              <div class="accordion-proof-source">Edelman, 2025</div>
+            </div>
+          </div>
+          <div class="accordion-solutions">
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9854;</span> Change Intelligence</div>
+              <p class="accordion-solution-body">Respond to change without breaking trust. Acknowledge, fix, verify.</p>
+            </div>
+            <div class="accordion-solution">
+              <div class="accordion-solution-title"><span class="sol-icon">&#9878;</span> Credibility Engine</div>
+              <p class="accordion-solution-body">Make impact measurable. Publish evidence. Turn proof into thought leadership.</p>
+            </div>
+          </div>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--confidence">&#9651; Confidence</span>
+            <p class="accordion-trust-enabler-desc">Do stakeholders believe you'll deliver — consistently and transparently? TrustOS evaluates Confidence through follow-through and measurable impact.</p>
+            <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" class="accordion-trust-enabler-link">Learn more about TrustOS &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 4: Move -->
+      <div class="accordion-item fade-up">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-header">
+            <span class="accordion-num">04</span>
+            <div class="accordion-titles">
+              <span class="accordion-name">Move</span>
+            </div>
+          </div>
+          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="accordion-panel" aria-hidden="true">
+          <p>When belief, alignment, and proof converge, your brand becomes a movement — a galvanising force that creates collective impact across your entire stakeholder ecosystem.</p>
+          <div class="accordion-proof">
+            <div>
+              <div class="accordion-proof-number">400%</div>
+            </div>
+            <div>
+              <div class="accordion-proof-text">market outperformance by companies that operationalise purpose. This is the compounding outcome — purpose becomes an operating system, brand becomes a movement.</div>
+              <div class="accordion-proof-source">Stengel 50 Study</div>
+            </div>
+          </div>
+          <div class="accordion-trust-enabler">
+            <span class="accordion-trust-badge accordion-trust-badge--all">&#9670; Clarity + &#9672; Connection + &#9651; Confidence</span>
+            <p class="accordion-trust-enabler-desc">When all three trust enablers compound, the brand becomes a self-reinforcing system. TrustOS tracks this compounding effect over time.</p>
+            <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" class="accordion-trust-enabler-link">Learn more about TrustOS &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1677,142 +1759,6 @@
   </div>
 </section>
 
-<!-- ═══════════ THE PATH: FOUR STAGES + SOLUTIONS (COMBINED) ═══════════ -->
-<section class="stages-combined" id="solutions">
-  <div class="container">
-    <div class="intro">
-      <div class="overline fade-up">The path from conviction to movement</div>
-      <div class="accent-line fade-up" style="margin-bottom: 24px;"></div>
-      <h2 class="section-title fade-up">Four stages. One trajectory.</h2>
-      <p class="body-copy fade-up">The Brand Effect isn't a campaign. It's a compounding system — built on a sequence that starts with belief and ends with a brand that shapes how the category thinks. Each stage is powered by targeted solutions mapped to Clarity, Connection, and Confidence.</p>
-    </div>
-    <div class="accordion-grid">
-      <!-- Stage 1: Believe -->
-      <div class="accordion-item fade-up active">
-        <button class="accordion-trigger" aria-expanded="true">
-          <div class="accordion-header">
-            <span class="accordion-num">01</span>
-            <div class="accordion-titles">
-              <span class="accordion-name">Believe</span>
-              <span class="accordion-verb">(Believe)</span>
-            </div>
-          </div>
-          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="accordion-panel" aria-hidden="false">
-          <p>Does your organisation believe in a purpose that addresses something that matters? Belief is the foundation — the shared aspiration that aligns leadership, teams, and stakeholders around a vision for change.</p>
-          <div class="accordion-trust-enabler">
-            <span class="accordion-trust-badge accordion-trust-badge--clarity">&#9670; Clarity</span>
-            <p class="accordion-trust-enabler-desc">Can stakeholders clearly articulate who you are, what you stand for, and why it matters to them? Clarity is the trust enabler that TrustOS measures across purpose, positioning, and proposition — the foundation of brand coherence.</p>
-            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
-          </div>
-          <div class="accordion-solutions">
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#9733;</span> Purpose, Positioning &amp; Proposition</div>
-              <p class="accordion-solution-body">Make trade-offs explicit. One integrated roadmap so stakeholders can predict decisions.</p>
-            </div>
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#10024;</span> Design for Good</div>
-              <p class="accordion-solution-body">Build social value into the offer. Doing the right thing is the product, not the poster.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Stage 2: Align -->
-      <div class="accordion-item fade-up">
-        <button class="accordion-trigger" aria-expanded="false">
-          <div class="accordion-header">
-            <span class="accordion-num">02</span>
-            <div class="accordion-titles">
-              <span class="accordion-name">Align</span>
-              <span class="accordion-verb">(Align)</span>
-            </div>
-          </div>
-          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="accordion-panel" aria-hidden="true">
-          <p>Is there coherence between what you believe, what you say, and what you do? Alignment means every stakeholder, touchpoint, and decision reflects the same truth.</p>
-          <div class="accordion-trust-enabler">
-            <span class="accordion-trust-badge accordion-trust-badge--connection">&#9672; Connection</span>
-            <p class="accordion-trust-enabler-desc">Do stakeholders feel a genuine relationship with the brand — not just awareness, but belonging? Connection is the trust enabler that TrustOS tracks across employee engagement, customer loyalty, and partner alignment — measuring whether your brand lives in culture, not just communications.</p>
-            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
-          </div>
-          <div class="accordion-solutions">
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#9889;</span> Energise</div>
-              <p class="accordion-solution-body">Turn mission into lived work. Culture becomes the brand's engine.</p>
-            </div>
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#8596;</span> Align</div>
-              <p class="accordion-solution-body">One operating language. Shared standards. Fix drift quickly.</p>
-            </div>
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#8635;</span> Retain</div>
-              <p class="accordion-solution-body">Win repeat business through reliability and visible progress.</p>
-            </div>
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#10148;</span> Mobilise</div>
-              <p class="accordion-solution-body">Bring partners into coordinated action around shared principles.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Stage 3: Prove -->
-      <div class="accordion-item fade-up">
-        <button class="accordion-trigger" aria-expanded="false">
-          <div class="accordion-header">
-            <span class="accordion-num">03</span>
-            <div class="accordion-titles">
-              <span class="accordion-name">Prove</span>
-              <span class="accordion-verb">(Prove)</span>
-            </div>
-          </div>
-          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="accordion-panel" aria-hidden="true">
-          <p>Can you measure it? Prove it to the board? Trust measurement through Clarity, Connection, and Confidence turns conviction into evidence.</p>
-          <div class="accordion-trust-enabler">
-            <span class="accordion-trust-badge accordion-trust-badge--confidence">&#9651; Confidence</span>
-            <p class="accordion-trust-enabler-desc">Do stakeholders believe the brand will deliver on its promises — consistently, transparently, and over time? Confidence is the trust enabler that TrustOS evaluates through evidence of follow-through, measurable impact, and published proof — turning credibility from a claim into a trackable signal.</p>
-            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
-          </div>
-          <div class="accordion-solutions">
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#9854;</span> Change Intelligence</div>
-              <p class="accordion-solution-body">Respond to change without breaking trust. Acknowledge, fix, verify.</p>
-            </div>
-            <div class="accordion-solution">
-              <div class="accordion-solution-title"><span class="sol-icon">&#9878;</span> Credibility Engine</div>
-              <p class="accordion-solution-body">Make impact measurable. Publish evidence. Turn proof into thought leadership.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Stage 4: Move -->
-      <div class="accordion-item fade-up">
-        <button class="accordion-trigger" aria-expanded="false">
-          <div class="accordion-header">
-            <span class="accordion-num">04</span>
-            <div class="accordion-titles">
-              <span class="accordion-name">Move</span>
-              <span class="accordion-verb">(Move)</span>
-            </div>
-          </div>
-          <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="accordion-panel" aria-hidden="true">
-          <p>When belief, alignment, and proof converge, your brand becomes a movement — a galvanising force that creates collective impact across your entire stakeholder ecosystem.</p>
-          <div class="accordion-trust-enabler">
-            <span class="accordion-trust-badge accordion-trust-badge--all">&#9670; Clarity + &#9672; Connection + &#9651; Confidence</span>
-            <p class="accordion-trust-enabler-desc">When all three trust enablers compound — when stakeholders can articulate who you are (Clarity), feel a genuine relationship with the brand (Connection), and believe you'll deliver (Confidence) — the brand becomes a self-reinforcing system. TrustOS tracks this compounding effect over time, showing exactly where momentum builds.</p>
-            <p class="accordion-trust-enabler-label">Assessed by TrustOS</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════ TRUSTOS ═══════════ -->
 <section class="trustos-section" id="trustos">
   <div class="container">
@@ -1825,17 +1771,6 @@
       <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" class="btn-primary-outline fade-up">See TrustOS in detail &rarr;</a>
       <p class="trustos-small fade-up">TrustOS is a MissionCTRL product.</p>
     </div>
-  </div>
-</section>
-
-<!-- ═══════════ SOCIAL PROOF ═══════════ -->
-<section class="social-proof" style="background: #0f1420; padding: 100px 5%; border-top: 1px solid rgba(255,255,255,0.06);">
-  <div class="container">
-    <div style="text-align: center;">
-      <h2 class="section-title fade-up" style="text-align: center;">Trusted by purpose-led organisations</h2>
-      <p class="body-copy fade-up" style="text-align: center; max-width: 600px; margin: 0 auto;">Enterprise and purpose-led clients across manufacturing, professional services, education, and technology.</p>
-    </div>
-    <!-- Testimonial and case study cards will be added here -->
   </div>
 </section>
 
@@ -2203,61 +2138,65 @@
     observer.observe(el);
   });
 
-  // Observe brand-effect card elements for scroll animation
-  document.querySelectorAll('.brand-effect-card').forEach(function(el) {
-    observer.observe(el);
-  });
-
-  // Alignment visualization — animate from scattered to aligned on scroll
-  (function() {
-    var canvas = document.getElementById('alignmentCanvas');
-    var viz = document.getElementById('alignmentViz');
-    if (!canvas || !viz) return;
-    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function updateConnectorLines() {
-      var believe = canvas.querySelector('.alignment-node--believe');
-      var say = canvas.querySelector('.alignment-node--say');
-      var doNode = canvas.querySelector('.alignment-node--do');
-      var line1 = document.getElementById('connLine1');
-      var line2 = document.getElementById('connLine2');
-      if (!believe || !say || !doNode || !line1 || !line2) return;
-      var bRect = believe.getBoundingClientRect();
-      var sRect = say.getBoundingClientRect();
-      var dRect = doNode.getBoundingClientRect();
-      var cRect = canvas.getBoundingClientRect();
-      line1.setAttribute('x1', bRect.left - cRect.left + bRect.width / 2);
-      line1.setAttribute('y1', bRect.top - cRect.top + bRect.height / 2);
-      line1.setAttribute('x2', sRect.left - cRect.left + sRect.width / 2);
-      line1.setAttribute('y2', sRect.top - cRect.top + sRect.height / 2);
-      line2.setAttribute('x1', sRect.left - cRect.left + sRect.width / 2);
-      line2.setAttribute('y1', sRect.top - cRect.top + sRect.height / 2);
-      line2.setAttribute('x2', dRect.left - cRect.left + dRect.width / 2);
-      line2.setAttribute('y2', dRect.top - cRect.top + dRect.height / 2);
+  // ── Why This Matters: count-up animation ──
+  function wtmCountUp(el, target, prefix, suffix, duration) {
+    prefix = prefix || '';
+    suffix = suffix || '';
+    duration = duration || 1600;
+    var start = performance.now();
+    function update(now) {
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(eased * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
     }
+    requestAnimationFrame(update);
+  }
 
-    var alignObserver = new IntersectionObserver(function(entries) {
+  // Observe stat strip for count-up
+  (function() {
+    var strip = document.getElementById('wtmStatStrip');
+    if (!strip) return;
+    var statObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          var delay = reducedMotion ? 0 : 600;
-          setTimeout(function() {
-            canvas.classList.add('aligned');
-            viz.classList.add('viz-aligned');
-            // Update lines during transition
-            var lineFrames = 0;
-            var lineInterval = setInterval(function() {
-              updateConnectorLines();
-              lineFrames++;
-              if (lineFrames > 80) clearInterval(lineInterval);
-            }, 20);
-          }, delay);
-          alignObserver.unobserve(entry.target);
+          var numbers = entry.target.querySelectorAll('.wtm-stat-number');
+          numbers.forEach(function(el, i) {
+            setTimeout(function() {
+              el.classList.add('visible');
+              var target = parseInt(el.dataset.target);
+              var prefix = el.dataset.prefix || '';
+              var suffix = el.dataset.suffix || '';
+              wtmCountUp(el, target, prefix, suffix);
+            }, i * 200);
+          });
+          statObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.4 });
-    alignObserver.observe(canvas);
-    // Also update lines on resize
-    window.addEventListener('resize', updateConnectorLines);
+    statObserver.observe(strip);
+  })();
+
+  // Observe reframe + handoff line
+  (function() {
+    var reframe = document.getElementById('wtmReframe');
+    if (!reframe) return;
+    var reframeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var label = document.getElementById('wtmReframeLabel');
+          var text = document.getElementById('wtmReframeText');
+          var line = document.getElementById('wtmHandoffLine');
+          if (label) label.classList.add('visible');
+          if (text) text.classList.add('visible');
+          if (line) line.classList.add('visible');
+          reframeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    reframeObserver.observe(reframe);
   })();
 
   // Accordion functionality
