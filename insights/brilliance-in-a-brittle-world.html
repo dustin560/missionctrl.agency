@@ -1,0 +1,1506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brilliance in a Brittle World — MissionCTRL</title>
+<meta name="description" content="A MissionCTRL field report on trust, movement, and the six roles impact-driven brands must play in the polycrisis decade." />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blaze:#FF6B2B; --amber:#FFAD3B; --coral:#FF4D6A;
+    /* site-matched deep stack */
+    --deep:#0a0f1a; --night:#0a0f1a; --night-2:#0d1633; --night-3:#162252;
+    --ink:#ffffff; --ink-2:rgba(255,255,255,0.78); --ink-3:rgba(255,255,255,0.55); --ink-4:rgba(255,255,255,0.32);
+    --rule:rgba(255,255,255,0.08); --rule-2:rgba(255,255,255,0.04);
+
+    --pioneer:#e8650a;
+    --protector:#0a9a55;
+    --equaliser:#3d52c8;
+    --catalyst:#c8205a;
+    --builder:#9a6e1a;
+    --challenger:#1a6a9a;
+
+    /* TrustOS palette — matches trustos.missionctrl.agency */
+    --trust-slate:#2d3a4a;
+    --trust-cool:#5a8a9a;
+    --trust-mid:#8fb5c0;
+    --trust-deep:#0a1d2e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Sora', system-ui, sans-serif;
+    background: var(--night);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--blaze); color: #fff; }
+  a { color: inherit; }
+
+  /* ============ MISSIONCTRL LOGO — matches missionctrl.agency ============
+     SVG M-mark (gradient clip-path) to the left of the stacked text block.
+     Line 1 "ission" (white, weight 700). Line 2 "CTRL" where the "C" is blaze-colored
+     and "TRL" is white. Text column is right-aligned so "CTRL" butts up against the M. */
+  .mc-logo {
+    display: inline-flex; align-items: flex-start;
+    text-decoration: none; color: inherit;
+  }
+  .mc-logo .mc-m {
+    flex-shrink: 0;
+    width: 28px; height: 34px;
+  }
+  .mc-logo .mc-text {
+    display: flex; flex-direction: column;
+    align-items: flex-end;
+    margin-left: -2px;
+  }
+  .mc-logo .logo-line1 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+  }
+  .mc-logo .logo-line2 {
+    line-height: 0.85;
+    font-size: 0.95rem;
+    letter-spacing: -0.04em;
+  }
+  .mc-logo .logo-line2 .c { font-weight: 800; color: var(--blaze); }
+  .mc-logo .logo-line2 .trl { font-weight: 800; color: var(--ink); }
+  .mc-logo.large .mc-m { width: 48px; height: 60px; }
+  .mc-logo.large .logo-line1,
+  .mc-logo.large .logo-line2 { font-size: 1.6rem; }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 36px;
+    background: rgba(13,16,32,0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .nav-links {
+    display: flex; gap: 28px; align-items: center;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em;
+  }
+  .nav-links a {
+    color: var(--ink-2); text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--blaze); }
+  .nav-cta {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+    padding: 10px 18px; border-radius: 999px;
+    background: linear-gradient(90deg, var(--blaze), var(--coral));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -10px var(--blaze); }
+  @media (max-width: 900px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+  }
+
+  /* ============ LAYOUT — matches missionctrl.agency 1200 container ============ */
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 5%; }
+  @media (max-width: 720px) { .wrap, .narrow { padding: 0 22px; } }
+
+  /* ============ HERO — matches missionctrl.agency hero gradient ============ */
+  .hero {
+    min-height: 100vh; padding: 140px 5% 80px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(circle at 78% 18%, rgba(255,107,43,0.16), transparent 55%),
+      linear-gradient(160deg, var(--night) 0%, var(--night-2) 40%, var(--night-3) 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; padding: 0; }
+  .overline { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--blaze); margin-bottom: 28px; }
+  h1.hero-title {
+    font-size: clamp(2.6rem, 7.4vw, 6.4rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.94;
+    margin-bottom: 28px;
+  }
+  .hero-title .gradient {
+    background: linear-gradient(95deg, var(--blaze) 0%, var(--amber) 25%, var(--coral) 50%, var(--amber) 75%, var(--blaze) 100%);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: grad-ripple 9s ease-in-out infinite;
+  }
+  @keyframes grad-ripple {
+    0%   { background-position:   0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position:   0% 50%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-title .gradient { animation: none; background-position: 50% 50%; }
+  }
+  .hero-sub {
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    font-weight: 300;
+    color: var(--ink-2);
+    max-width: 720px;
+    line-height: 1.5;
+    margin-bottom: 44px;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 28px 56px; padding-top: 36px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.7rem; color: var(--ink-3);
+    letter-spacing: 0.04em;
+  }
+  .hero-meta strong { display: block; color: var(--ink); font-weight: 600; font-size: 0.72rem; margin-bottom: 6px; letter-spacing: 0.18em; text-transform: uppercase; }
+  .scroll-cue {
+    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+    font-size: 0.55rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-4);
+  }
+
+  /* ============ SECTION SHELL ============ */
+  section { padding: 110px 0; position: relative; }
+  @media (max-width: 720px) { section { padding: 72px 0; } }
+  .sec-num {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--blaze); margin-bottom: 18px;
+  }
+  .sec-title {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-weight: 800; letter-spacing: -0.035em; line-height: 1.02;
+    margin-bottom: 24px;
+  }
+  .sec-kicker {
+    font-size: 1rem; font-weight: 400; color: var(--ink-2); max-width: 700px; line-height: 1.6;
+    margin-bottom: 52px;
+  }
+  .accent-line { width: 56px; height: 3px; background: var(--blaze); border-radius: 2px; margin: 18px 0 28px; }
+
+  /* ============ MANIFESTO ============ */
+  .manifesto { background: linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%); border-top: 1px solid var(--rule-2); border-bottom: 1px solid var(--rule-2); }
+  .manifesto p {
+    font-size: clamp(1.05rem, 1.45vw, 1.18rem);
+    line-height: 1.72; color: var(--ink-2);
+    margin-bottom: 22px;
+    font-weight: 300;
+  }
+  .manifesto p.lead {
+    font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+    line-height: 1.45; font-weight: 400;
+    color: var(--ink); margin-bottom: 32px;
+  }
+  .manifesto p strong { color: var(--ink); font-weight: 500; }
+  .manifesto p em { color: var(--blaze); font-style: italic; }
+  .manifesto .signoff {
+    margin-top: 38px; padding-top: 26px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.75rem; color: var(--ink-3);
+    letter-spacing: 0.04em;
+  }
+  .manifesto .signoff strong { display: block; color: var(--blaze); font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; margin-bottom: 4px; }
+
+  /* ============ FORCES ============ */
+  .forces { background: var(--deep); }
+  .force-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  @media (max-width: 920px) { .force-grid { grid-template-columns: 1fr; } }
+  .force-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0.005) 100%);
+    border: 1px solid var(--rule);
+    border-radius: 18px; padding: 32px 28px;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .force-card:hover { transform: translateY(-3px); border-color: rgba(255,107,43,0.35); }
+  .force-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+  }
+  .force-num { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--blaze); margin-bottom: 10px; }
+  .force-title { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 16px; }
+  .force-body { font-size: 0.9rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 20px; font-weight: 300; }
+  .force-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding-top: 16px; border-top: 1px solid var(--rule-2); }
+  .force-stat-num { font-size: 1.5rem; font-weight: 800; color: var(--blaze); letter-spacing: -0.03em; line-height: 1; }
+  .force-stat-lbl { font-size: 0.63rem; color: var(--ink-3); margin-top: 6px; line-height: 1.4; }
+  .compound-callout {
+    margin-top: 42px; padding: 30px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, rgba(255,107,43,0.07), rgba(255,77,106,0.05));
+    border: 1px solid rgba(255,107,43,0.18);
+  }
+  .compound-callout strong { color: var(--blaze); font-weight: 600; }
+  .compound-callout p { font-size: 0.98rem; line-height: 1.65; color: var(--ink-2); }
+
+  /* ============ MOVEMENT MAP — exact interaction from missionctrl.agency ============ */
+  .map-section {
+    background: #0a0f1a;
+    padding: 110px 0 120px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    position: relative; overflow: hidden;
+  }
+  .map-lede { max-width: 820px; margin: 28px 0 56px; }
+  .map-lede p { font-size: 1.05rem; line-height: 1.72; color: var(--ink-2); margin-bottom: 18px; font-weight: 300; }
+  .map-lede p strong { color: var(--ink); font-weight: 500; }
+  .map-lede p em { color: var(--blaze); font-style: italic; }
+
+  .arch-inner {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 920px) {
+    .arch-inner { grid-template-columns: 1fr; gap: 48px; }
+    .arch-right { display: none; }
+  }
+
+  .arch-list {
+    display: flex; flex-direction: column;
+    gap: 0; margin: 0 0 40px;
+  }
+  .arch-list-item {
+    display: flex; align-items: baseline; gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: default;
+    transition: padding-left 0.2s ease;
+  }
+  .arch-list-item:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+  .arch-list-item:hover, .arch-list-item.active { padding-left: 6px; }
+  .arch-list-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    width: 20px; flex-shrink: 0;
+    transition: color 0.25s;
+  }
+  .arch-list-item:hover .arch-list-num,
+  .arch-list-item.active .arch-list-num { color: var(--ac, #ff6b2b); }
+  .arch-list-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    letter-spacing: -0.02em;
+    color: rgba(255,255,255,0.3);
+    flex: 1;
+    transition: color 0.25s;
+  }
+  .arch-list-item:hover .arch-list-name,
+  .arch-list-item.active .arch-list-name { color: #ffffff; }
+  .arch-list-tagline {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.78rem; font-weight: 400;
+    color: rgba(255,255,255,0);
+    max-width: 240px; line-height: 1.5;
+    text-align: right;
+    transition: color 0.25s;
+  }
+  .arch-list-item:hover .arch-list-tagline,
+  .arch-list-item.active .arch-list-tagline { color: rgba(255,255,255,0.3); }
+
+  .arch-cta {
+    display: inline-block;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--blaze); color: var(--ink);
+    padding: 13px 26px; border-radius: 6px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .arch-cta:hover { background: #e85a1f; transform: translateY(-1px); }
+
+  .arch-right {
+    position: relative; height: 520px;
+    border-radius: 6px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+    background: #0d1220;
+  }
+  .arch-map-wrap {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+  }
+  .arch-map-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .arch-map-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+  .arch-map-hint {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; color: rgba(255,255,255,0.15);
+    transition: opacity 0.3s;
+  }
+  .arch-right.has-hover .arch-map-hint { opacity: 0; }
+  .arch-map-inner { flex: 1; padding: 10px 8px 8px; }
+  .arch-map-inner svg { width: 100%; height: 100%; display: block; }
+
+  .arch-right-wash {
+    position: absolute; inset: 0;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.45s ease; border-radius: 6px;
+  }
+  .arch-right.has-hover .arch-right-wash { opacity: 1; }
+
+  .arch-m-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 18px; text-align: center;
+    opacity: 0; transition: opacity 0.35s ease; padding: 24px;
+    pointer-events: none;
+  }
+  .arch-right.has-hover .arch-m-overlay { opacity: 1; }
+  .arch-m-overlay-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .arch-m-overlay-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.6rem; font-weight: 800;
+    letter-spacing: -0.03em; color: #ffffff;
+  }
+  .arch-m-overlay-tagline {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.82rem; color: rgba(255,255,255,0.55);
+    line-height: 1.6; max-width: 260px;
+  }
+  @keyframes dotPulse {
+    0%   { r: 9; opacity: 0.9; }
+    50%  { r: 14; opacity: 0.3; }
+    100% { r: 9; opacity: 0.9; }
+  }
+  .map-dot-active { animation: dotPulse 2s ease-in-out infinite; }
+
+  /* ============ ARCHETYPE CHAPTERS ============ */
+  .archetypes-intro { background: var(--night); padding-bottom: 30px; }
+  .archetype {
+    padding: 90px 0;
+    position: relative;
+    border-top: 1px solid var(--rule-2);
+  }
+  .archetype-bg {
+    position: absolute; inset: 0; opacity: 0.06; pointer-events: none;
+  }
+  .archetype-inner { position: relative; }
+  .arch-meta { display: flex; align-items: center; gap: 22px; margin-bottom: 22px; }
+  .arch-meta-m {
+    width: 64px; height: 78px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 6px 20px rgba(0,0,0,0.35));
+  }
+  .arch-meta-text { display: flex; flex-direction: column; gap: 4px; }
+  .arch-num {
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--ink-3); line-height: 1;
+  }
+  .arch-tag {
+    font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+    font-weight: 800; letter-spacing: -0.045em;
+    line-height: 0.95;
+  }
+  .arch-title { font-size: clamp(1.4rem, 2.3vw, 1.85rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
+  .arch-role { font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 300; font-style: italic; margin-bottom: 30px; }
+  .arch-body { max-width: 760px; }
+  .arch-body p { font-size: 1rem; line-height: 1.7; color: var(--ink-2); margin-bottom: 18px; font-weight: 300; }
+  .arch-body p strong { color: var(--ink); font-weight: 500; }
+
+  .arch-force-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 16px; border-radius: 999px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--rule);
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3);
+    margin-bottom: 26px;
+  }
+  .arch-force-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; }
+
+  .case-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px;
+  }
+  @media (max-width: 820px) { .case-grid { grid-template-columns: 1fr; } }
+  .case {
+    border-radius: 16px; padding: 28px 26px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+  .case-tag {
+    font-size: 0.55rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .case-tag.champion { color: #6fcf97; }
+  .case-tag.cautionary { color: var(--coral); }
+  .case-name { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .case-body { font-size: 0.84rem; color: var(--ink-2); line-height: 1.62; font-weight: 300; }
+  .case-body p { margin-bottom: 10px; }
+  .case-body strong { color: var(--ink); font-weight: 500; }
+
+  .lens {
+    margin-top: 30px; padding: 24px 26px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.018);
+    border-left: 3px solid;
+  }
+  .lens-label {
+    font-size: 0.55rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .lens-body { font-size: 0.9rem; line-height: 1.65; color: var(--ink-2); font-weight: 300; }
+  .lens-body strong { color: var(--ink); font-weight: 500; }
+  .lens-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--trust-cool); text-decoration: none;
+    padding: 6px 0 4px;
+    border-bottom: 1px solid rgba(143,181,192,0.35);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .lens-link:hover { color: var(--trust-mid); border-color: var(--trust-mid); }
+
+  /* color skinning */
+  .arch-pioneer .arch-num, .arch-pioneer .arch-tag { color: var(--pioneer); }
+  .arch-pioneer .arch-force-tag::before { background: var(--pioneer); }
+  .arch-pioneer .lens { border-color: var(--pioneer); }
+  .arch-pioneer .lens-label { color: var(--pioneer); }
+  .arch-pioneer .archetype-bg { background: radial-gradient(circle at 18% 22%, var(--pioneer), transparent 40%); }
+
+  .arch-protector .arch-num, .arch-protector .arch-tag { color: var(--protector); }
+  .arch-protector .arch-force-tag::before { background: var(--protector); }
+  .arch-protector .lens { border-color: var(--protector); }
+  .arch-protector .lens-label { color: var(--protector); }
+  .arch-protector .archetype-bg { background: radial-gradient(circle at 82% 22%, var(--protector), transparent 40%); }
+
+  .arch-equaliser .arch-num, .arch-equaliser .arch-tag { color: var(--equaliser); }
+  .arch-equaliser .arch-force-tag::before { background: var(--equaliser); }
+  .arch-equaliser .lens { border-color: var(--equaliser); }
+  .arch-equaliser .lens-label { color: var(--equaliser); }
+  .arch-equaliser .archetype-bg { background: radial-gradient(circle at 18% 78%, var(--equaliser), transparent 40%); }
+
+  .arch-catalyst .arch-num, .arch-catalyst .arch-tag { color: var(--catalyst); }
+  .arch-catalyst .arch-force-tag::before { background: var(--catalyst); }
+  .arch-catalyst .lens { border-color: var(--catalyst); }
+  .arch-catalyst .lens-label { color: var(--catalyst); }
+  .arch-catalyst .archetype-bg { background: radial-gradient(circle at 82% 78%, var(--catalyst), transparent 40%); }
+
+  .arch-builder .arch-num, .arch-builder .arch-tag { color: var(--amber); }
+  .arch-builder .arch-force-tag::before { background: var(--builder); }
+  .arch-builder .lens { border-color: var(--builder); }
+  .arch-builder .lens-label { color: var(--amber); }
+  .arch-builder .archetype-bg { background: radial-gradient(circle at 50% 18%, var(--builder), transparent 40%); }
+
+  .arch-challenger .arch-num, .arch-challenger .arch-tag { color: var(--trust-cool); }
+  .arch-challenger .arch-force-tag::before { background: var(--challenger); }
+  .arch-challenger .lens { border-color: var(--challenger); }
+  .arch-challenger .lens-label { color: var(--trust-cool); }
+  .arch-challenger .archetype-bg { background: radial-gradient(circle at 50% 82%, var(--challenger), transparent 40%); }
+
+  /* ============ TRUSTOS — TONAL SHIFT ============ */
+  .trustos {
+    background: linear-gradient(180deg, var(--night) 0%, var(--trust-deep) 100%);
+    position: relative; overflow: hidden;
+  }
+  .trustos::before {
+    content: ''; position: absolute; top: -2px; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--trust-mid), transparent);
+    opacity: 0.4;
+  }
+  .trustos .sec-num { color: var(--trust-mid); }
+  .trustos .accent-line { background: var(--trust-mid); }
+
+  /* TrustOS logo lockup — matches trustos.missionctrl.agency wordmark exactly */
+  .trustos-lockup {
+    display: inline-flex; align-items: center; gap: 16px;
+    margin-bottom: 42px;
+    text-decoration: none; color: inherit;
+  }
+  .trustos-lockup:hover { text-decoration: none; }
+  .trustos-mark { width: 48px; height: 60px; flex-shrink: 0; }
+  .trustos-wordmark-block { display: flex; flex-direction: column; gap: 6px; }
+  .trustos-wordmark {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800; letter-spacing: -0.03em;
+    font-size: 2.2rem; line-height: 1;
+    text-decoration: none;
+  }
+  .trustos-wordmark .trust,
+  .trustos-wordmark .os { text-decoration: none; }
+  .trustos-wordmark .trust { color: var(--trust-mid); }
+  .trustos-wordmark .os { color: var(--trust-cool); }
+  .trustos-subline {
+    font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-3);
+    text-decoration: none;
+  }
+
+  .trustos-lead {
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    font-weight: 300; line-height: 1.5;
+    color: var(--ink); max-width: 760px; margin-bottom: 44px;
+  }
+  .trustos-lead em { font-style: italic; color: var(--trust-cool); }
+  /* Static Trust Triangle — mirrors trustos.missionctrl.agency Trust Health Check */
+  .trust-tri-block {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center;
+    padding: 44px 40px; border-radius: 20px;
+    background: rgba(143,181,192,0.035);
+    border: 1px solid rgba(143,181,192,0.14);
+    margin-bottom: 52px;
+  }
+  @media (max-width: 920px) { .trust-tri-block { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px; } }
+  .trust-tri-svg { width: 100%; height: auto; max-width: 440px; display: block; margin: 0 auto; }
+  .trust-tri-svg .tri-fill { fill: url(#tri-gradient); }
+  .trust-tri-svg .tri-edge { stroke: var(--trust-cool); stroke-width: 2.2; stroke-linecap: round; }
+  .trust-tri-svg .tri-div { stroke: rgba(143,181,192,0.22); stroke-width: 1; stroke-dasharray: 3 4; }
+  .trust-tri-svg .tri-edge-label { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; fill: var(--trust-cool); text-transform: uppercase; }
+  .trust-tri-svg .tri-vertex { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; fill: rgba(255,255,255,0.42); letter-spacing: 0.05em; }
+  .trust-tri-svg .tri-center { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; fill: var(--trust-mid); letter-spacing: 0.02em; }
+  .trust-tri-block .tri-copy h3 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 18px; line-height: 1.2; color: var(--ink); }
+  .trust-tri-block .tri-copy p { font-size: 0.95rem; line-height: 1.68; color: var(--ink-2); font-weight: 300; margin-bottom: 16px; }
+  .trust-tri-block .tri-copy p strong { color: var(--ink); font-weight: 500; }
+  .trust-tri-block .tri-copy .tri-defs-list { display: flex; flex-direction: column; gap: 14px; margin: 22px 0 26px; padding: 0; list-style: none; }
+  .trust-tri-block .tri-copy .tri-defs-list li { font-size: 0.88rem; color: var(--ink-2); line-height: 1.6; font-weight: 300; padding-left: 16px; position: relative; }
+  .trust-tri-block .tri-copy .tri-defs-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: var(--trust-cool); border-radius: 1px; }
+  .trust-tri-block .tri-copy .tri-defs-list strong { display: block; color: var(--ink); font-weight: 600; letter-spacing: 0.04em; font-size: 0.92rem; margin-bottom: 2px; }
+  .trust-tri-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 24px;
+    background: var(--trust-cool); color: #ffffff;
+    border-radius: 6px; text-decoration: none;
+    font-size: 0.86rem; font-weight: 600; letter-spacing: 0.01em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .trust-tri-cta:hover { background: #4a7a8a; transform: translateY(-1px); }
+  .receipts { padding: 34px 32px; border-radius: 18px; background: rgba(255,255,255,0.02); border: 1px solid var(--rule); }
+  .receipts h4 { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--trust-mid); margin-bottom: 20px; }
+  .receipts p { font-size: 0.92rem; line-height: 1.68; color: var(--ink-2); font-weight: 300; margin-bottom: 14px; }
+  .receipts p strong { color: var(--ink); font-weight: 500; }
+
+  /* ============ HOLD THE LIGHT + CTAs ============ */
+  .close { background: var(--trust-deep); padding: 110px 0 100px; }
+  .close p { font-size: clamp(1.02rem, 1.4vw, 1.15rem); line-height: 1.72; color: var(--ink-2); font-weight: 300; margin-bottom: 20px; }
+  .close p.lead { font-size: clamp(1.35rem, 2.1vw, 1.7rem); line-height: 1.45; font-weight: 400; color: var(--ink); margin-bottom: 30px; }
+  .close p strong { color: var(--ink); font-weight: 500; }
+
+  .cta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; margin: 30px 0 10px;
+  }
+  .cta-primary, .cta-secondary {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 20px 32px;
+    color: var(--ink); text-decoration: none;
+    border-radius: 999px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .cta-primary {
+    background: linear-gradient(95deg, var(--blaze), var(--coral));
+  }
+  .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 50px -18px var(--blaze); }
+  .cta-secondary {
+    background: transparent;
+    border: 1px solid rgba(143,181,192,0.5);
+    color: var(--trust-mid);
+  }
+  .cta-secondary:hover { background: rgba(143,181,192,0.08); border-color: var(--trust-mid); }
+
+  .signoff-block { margin-top: 52px; padding-top: 28px; border-top: 1px solid var(--rule); }
+  .signoff-block .name { font-size: 1.02rem; font-weight: 600; color: var(--ink); }
+  .signoff-block .role { font-size: 0.75rem; color: var(--ink-3); margin-top: 4px; }
+
+  /* ============ POLL ============ */
+  .poll { background: var(--deep); padding: 90px 0 70px; border-top: 1px solid var(--rule-2); }
+  .poll .narrow { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+  .poll .sec-num { color: var(--trust-mid); }
+  .poll .poll-title { font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.15; margin: 8px 0 14px; color: var(--ink); }
+  .poll .poll-lede { font-size: 1rem; line-height: 1.68; color: var(--ink-2); font-weight: 300; margin-bottom: 38px; }
+  .poll-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 36px 34px;
+    margin-bottom: 22px;
+  }
+  .poll-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--trust-cool); margin-bottom: 14px;
+  }
+  .poll-label::before { content: ''; width: 18px; height: 2px; background: var(--trust-cool); display: block; }
+  .poll-q { font-size: 1.12rem; font-weight: 600; line-height: 1.38; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.015em; }
+  .poll-rank { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .poll-rank input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+  .poll-rank label {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 52px; padding: 14px 18px;
+    border: 1.5px solid var(--rule-2);
+    border-radius: 10px;
+    font-size: 1rem; font-weight: 700;
+    color: var(--ink-2); cursor: pointer;
+    transition: all 0.18s ease;
+    user-select: none;
+  }
+  .poll-rank label:hover { border-color: var(--trust-cool); color: var(--trust-mid); transform: translateY(-1px); }
+  .poll-rank input[type="radio"]:checked + label {
+    background: var(--trust-cool); border-color: var(--trust-cool); color: #ffffff;
+  }
+  .poll-rank-scale { display: flex; justify-content: space-between; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-top: 14px; }
+  .poll-textarea {
+    width: 100%; min-height: 140px;
+    padding: 16px 18px;
+    background: rgba(255,255,255,0.02);
+    border: 1.5px solid var(--rule);
+    border-radius: 10px;
+    color: var(--ink); font-family: 'Sora', sans-serif;
+    font-size: 0.92rem; line-height: 1.6; font-weight: 300;
+    resize: vertical;
+    transition: border-color 0.2s;
+  }
+  .poll-textarea::placeholder { color: var(--ink-3); }
+  .poll-textarea:focus { outline: none; border-color: var(--trust-cool); background: rgba(255,255,255,0.03); }
+  .poll-submit-row { display: flex; align-items: center; gap: 16px; margin-top: 26px; flex-wrap: wrap; }
+  .poll-submit {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    background: var(--trust-cool); color: #ffffff;
+    border: none; border-radius: 6px;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.88rem; font-weight: 600; letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .poll-submit:hover { background: #4a7a8a; transform: translateY(-1px); }
+  .poll-thanks {
+    display: none;
+    font-size: 0.88rem; color: var(--trust-mid); font-weight: 500;
+  }
+  .poll-thanks.show { display: inline-flex; align-items: center; gap: 8px; }
+  .poll-thanks::before { content: '✓'; color: var(--trust-cool); font-weight: 800; }
+
+  /* ============ ABOUT / FOOTER ============ */
+  .about { background: var(--deep); padding: 80px 0; border-top: 1px solid var(--rule-2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+  @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .about-card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .about-card .ck { display: inline-block; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; margin-bottom: 16px; }
+  .about-card.mc .ck { color: var(--blaze); background: rgba(255,107,43,0.1); }
+  .about-card.to .ck { color: var(--trust-cool); background: rgba(95,182,210,0.1); }
+  .about-card p { font-size: 0.9rem; line-height: 1.68; color: var(--ink-2); font-weight: 300; }
+  .about-card a { color: var(--blaze); text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.3); }
+  .about-card.to a { color: var(--trust-cool); border-bottom-color: rgba(95,182,210,0.3); }
+
+  footer {
+    padding: 30px 36px; text-align: center;
+    border-top: 1px solid var(--rule-2);
+    font-size: 0.65rem; color: var(--ink-4);
+    letter-spacing: 0.06em;
+    display: flex; flex-direction: column; gap: 14px; align-items: center;
+  }
+  footer .links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--blaze); }
+
+  /* ============ MOTION ============ */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared SVG defs: MissionCTRL M-mark + TrustOS triangle-mark (from missionctrl.agency / trustos.missionctrl.agency) -->
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <defs>
+    <linearGradient id="mc-m-grad" x1="0" y1="148" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff6b2b"/>
+      <stop offset="100%" stop-color="#ffad3b"/>
+    </linearGradient>
+    <clipPath id="mc-m-clip" clipPathUnits="userSpaceOnUse">
+      <path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/>
+    </clipPath>
+    <linearGradient id="to-tri-grad" x1="60" y1="12" x2="60" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6da0b8"/>
+      <stop offset="100%" stop-color="#5a8a9a"/>
+    </linearGradient>
+    <filter id="to-tri-glow"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="mc-logo" href="https://missionctrl.agency" aria-label="MissionCTRL">
+    <svg class="mc-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+      <rect width="120" height="148" fill="url(#mc-m-grad)" clip-path="url(#mc-m-clip)"/>
+    </svg>
+    <span class="mc-text">
+      <span class="logo-line1">ission</span>
+      <span class="logo-line2"><span class="c">C</span><span class="trl">TRL</span></span>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://missionctrl.agency/movement-archetype">Archetype Quiz</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="https://trustos.missionctrl.agency">Book a TrustOS Demo</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="overline">A MissionCTRL Field Report · April 2026</div>
+    <h1 class="hero-title">Brilliance in a<br/><span class="gradient">Brittle World.</span></h1>
+    <p class="hero-sub">Why the brands moving the world forward need to prove it now — and the six roles each impact-driven brand has to play in the polycrisis decade.</p>
+    <div class="hero-meta">
+      <div><strong>Author</strong><a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.55);">Dustin Lawrence</a></div>
+      <div><strong>Published</strong>April 2026</div>
+      <div><strong>Subject</strong>Trust · Movement · Measurement</div>
+    </div>
+  </div>
+  <div class="scroll-cue">↓ Scroll</div>
+</header>
+
+<!-- ============ I. MANIFESTO ============ -->
+<section class="manifesto">
+  <div class="narrow">
+    <div class="sec-num">I · Manifesto</div>
+    <h2 class="sec-title">Letter from a brittle world.</h2>
+    <div class="accent-line"></div>
+
+    <p class="lead">Six years ago I described the moment we were all living through as one of <em>"hope-infused melancholy."</em> I thought we were in a clearing. I was half right.</p>
+
+    <p>There is no clearing now. There is a permanent surge — climate systems breaking their tolerances, a hot war in the Gulf that has broken twenty percent of the world's oil supply in a month, an AI revolution that has collapsed the cost of producing plausible-looking truth to almost nothing, a political backlash that has put $84 billion in retreat from sustainable funds in a single year, and a generational drop in trust in almost every institution that used to hold the room together.</p>
+
+    <p>We are in a <strong>brittle world</strong> — one that looks solid until it isn't, one that fractures along hairline cracks nobody knew were there. <strong>The defining quality of 2026 is not catastrophe. It is fragility.</strong></p>
+
+    <p>And yet — I'm still writing this. I have spent the last decade watching impact-driven brands bring brilliance into rooms that have no business being bright. Founders refusing to soften a mission to make a quarter. B Corps growing seven times faster than the market. A Danish energy company selling off oil and gas during the highest oil prices in a generation because the long arc mattered more than the short profit. Doctors standing in active conflict zones, refusing the funding that would compromise their independence.</p>
+
+    <p><strong>Brilliance in a brittle world is not a metaphor.</strong> It is a description of the actual thing I see when I look at the brands I want to spend my career working with.</p>
+
+    <p>What I have learned watching them is this: the brands that hold their shape under polycrisis pressure are not the ones with the loudest purpose statements. They are the ones whose conviction, affinity, and confidence can be <em>measured</em> — and held — when the floor moves. <strong>Purpose is not a position any more. It is a load test.</strong></p>
+
+    <p>This is a field report on six roles impact-driven brands have to play when the world refuses to hold still. One Champion per role. One Cautionary. And a diagnostic question only an instrument can answer.</p>
+
+    <p><strong>The future is not a thing that happens to us. It is a thing we choose to remain credible inside.</strong></p>
+
+    <div class="signoff">
+      <strong>— <a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.55);">Dustin</a></strong>
+      Founder, MissionCTRL
+    </div>
+  </div>
+</section>
+
+<!-- ============ II. BEHIND THE SURGE ============ -->
+<section class="forces">
+  <div class="wrap">
+    <div class="sec-num">II · Behind the Surge</div>
+    <h2 class="sec-title">Four forces breaking the floor.</h2>
+    <p class="sec-kicker">Not catastrophist. Diagnostic. These four forces compound — a brand can be making the right call on three of them and still be broken by the fourth.</p>
+
+    <div class="force-grid">
+
+      <div class="force-card">
+        <div class="force-num">Force 01</div>
+        <div class="force-title">The Epistemic Rupture</div>
+        <p class="force-body">The cost of producing plausible-looking truth has fallen to almost zero. Forrester calls it the "great trust recession." For impact-driven brands — whose claims live primarily in narrative form — only verification carries meaning now.</p>
+        <div class="force-stats">
+          <div><div class="force-stat-num">+900%</div><div class="force-stat-lbl">Detected deepfake cases 2023 → 2025</div></div>
+          <div><div class="force-stat-num">20%</div><div class="force-stat-lbl">of consumers believe brand sustainability claims</div></div>
+        </div>
+      </div>
+
+      <div class="force-card">
+        <div class="force-num">Force 02</div>
+        <div class="force-title">The ESG Counter-Reformation</div>
+        <p class="force-body">The public language of impact has become a strategic liability in some markets. "Doing good quietly" is a live option for the first time in nearly a decade. There is no longer a middle lane — brands trying to hold one are being read, by both sides, as cowards.</p>
+        <div class="force-stats">
+          <div><div class="force-stat-num">$84B</div><div class="force-stat-lbl">Net outflows from sustainable funds, 2025</div></div>
+          <div><div class="force-stat-num">13</div><div class="force-stat-lbl">consecutive quarters of US redemptions</div></div>
+        </div>
+      </div>
+
+      <div class="force-card">
+        <div class="force-num">Force 03</div>
+        <div class="force-title">The Polycrisis Tax</div>
+        <p class="force-body">The Iran war has cost the global economy $200B+. Brent surged through $120/bbl. ~20% of global crude and gas supply suspended. Every input for a brand that refuses to externalise its impact is more expensive — at exactly the moment the political weather has turned against premium pricing.</p>
+        <div class="force-stats">
+          <div><div class="force-stat-num">1.55°C</div><div class="force-stat-lbl">2024 above pre-industrial — first 3-year breach</div></div>
+          <div><div class="force-stat-num">22 / 34</div><div class="force-stat-lbl">planetary vital signs at record levels</div></div>
+        </div>
+      </div>
+
+      <div class="force-card">
+        <div class="force-num">Force 04</div>
+        <div class="force-title">The Affinity Vacuum</div>
+        <p class="force-body">For the first time in the Edelman Barometer's history, "My Employer" outranks government, NGOs, and business in general. Trust is being transferred to small, legible, mission-led actors — but the transfer is conditional. It collapses the moment a brand stops being legible. And legibility, in 2026, means measurable.</p>
+        <div class="force-stats">
+          <div><div class="force-stat-num">78%</div><div class="force-stat-lbl">trust "My Employer" — most trusted institution</div></div>
+          <div><div class="force-stat-num">7×</div><div class="force-stat-lbl">UK B Corp SME growth vs. UK SME average</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="compound-callout">
+      <p><strong>The forces compound.</strong> The Epistemic Rupture makes every claim suspect, raising the bar on the proof the Affinity Vacuum will accept. The ESG Counter-Reformation removes the easy language for talking about that proof. The Polycrisis Tax compresses the margin to produce it. In 2026, impact branding is no longer a layer above the operating business. It is a load-bearing structure. If it cracks, the whole building moves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ III. MOVEMENT MAP — exact interaction from missionctrl.agency ============ -->
+<section class="map-section">
+  <div class="wrap">
+    <div class="sec-num">III · The Movement Map</div>
+    <h2 class="sec-title">Six archetypes. Six roles. One question.</h2>
+    <div class="accent-line"></div>
+
+    <div class="map-lede">
+      <p>The strategic question of 2026 is not <em>where is the consumer going</em>. It is <strong>who does each kind of impact-driven brand have to become when the world refuses to hold still?</strong></p>
+      <p>That is a question about <em>role</em>, not territory. Roles are the unit of analysis when you're trying to coordinate movement under pressure.</p>
+      <p>The <strong>Movement Archetype model</strong> plots six archetypes against two axes: <em>Sustain ↔ Change</em> and <em>Category ↔ Global</em>.</p>
+    </div>
+
+    <div class="arch-inner">
+      <div class="arch-left">
+        <div class="arch-list" id="archList">
+          <div class="arch-list-item" style="--ac:#e8650a;" data-key="pioneer" data-name="The Pioneer" data-tagline="You push the edge of what's possible." data-color="#e8650a" data-num="01"><span class="arch-list-num">01</span><span class="arch-list-name">The Pioneer</span><span class="arch-list-tagline">You push the edge of what's possible.</span></div>
+          <div class="arch-list-item" style="--ac:#0a9a55;" data-key="protector" data-name="The Protector" data-tagline="You stand between harm and the vulnerable." data-color="#0a9a55" data-num="02"><span class="arch-list-num">02</span><span class="arch-list-name">The Protector</span><span class="arch-list-tagline">You stand between harm and the vulnerable.</span></div>
+          <div class="arch-list-item" style="--ac:#3d52c8;" data-key="equaliser" data-name="The Equaliser" data-tagline="You redistribute what's been hoarded." data-color="#3d52c8" data-num="03"><span class="arch-list-num">03</span><span class="arch-list-name">The Equaliser</span><span class="arch-list-tagline">You redistribute what's been hoarded.</span></div>
+          <div class="arch-list-item" style="--ac:#c8205a;" data-key="catalyst" data-name="The Catalyst" data-tagline="You accelerate change in entire systems." data-color="#c8205a" data-num="04"><span class="arch-list-num">04</span><span class="arch-list-name">The Catalyst</span><span class="arch-list-tagline">You accelerate change in entire systems.</span></div>
+          <div class="arch-list-item" style="--ac:#9a6e1a;" data-key="builder" data-name="The Builder" data-tagline="You create structures that outlast you." data-color="#9a6e1a" data-num="05"><span class="arch-list-num">05</span><span class="arch-list-name">The Builder</span><span class="arch-list-tagline">You create structures that outlast you.</span></div>
+          <div class="arch-list-item" style="--ac:#1a6a9a;" data-key="challenger" data-name="The Challenger" data-tagline="You name what others won't and force the reckoning." data-color="#1a6a9a" data-num="06"><span class="arch-list-num">06</span><span class="arch-list-name">The Challenger</span><span class="arch-list-tagline">You name what others won't.</span></div>
+        </div>
+        <a href="https://missionctrl.agency/movement-archetype" class="arch-cta">Discover your archetype →</a>
+      </div>
+
+      <div class="arch-right" id="archRight">
+        <div class="arch-right-wash" id="archWash"></div>
+        <div class="arch-map-wrap">
+          <div class="arch-map-header">
+            <span class="arch-map-title">The Movement Map</span>
+            <span class="arch-map-hint">Hover an archetype to locate it</span>
+          </div>
+          <div class="arch-map-inner">
+            <svg id="archMapSvg" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <rect x="50" y="14" width="188" height="183" fill="rgba(255,255,255,0.012)" rx="2"/>
+              <rect x="238" y="14" width="226" height="183" fill="rgba(255,255,255,0.018)" rx="2"/>
+              <rect x="50" y="197" width="188" height="183" fill="rgba(255,255,255,0.012)" rx="2"/>
+              <rect x="238" y="197" width="226" height="183" fill="rgba(255,255,255,0.018)" rx="2"/>
+              <line x1="50" y1="380" x2="468" y2="380" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <line x1="50" y1="380" x2="50" y2="10" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <polygon points="468,376 476,380 468,384" fill="rgba(255,255,255,0.15)"/>
+              <polygon points="46,10 50,2 54,10" fill="rgba(255,255,255,0.15)"/>
+              <line x1="50" y1="197" x2="468" y2="197" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" stroke-dasharray="4,4"/>
+              <line x1="238" y1="14" x2="238" y2="380" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" stroke-dasharray="4,4"/>
+              <text x="144" y="400" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em">SUSTAIN</text>
+              <text x="370" y="400" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em">CHANGE</text>
+              <text x="16" y="108" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em" transform="rotate(-90,16,108)">GLOBAL</text>
+              <text x="16" y="295" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.2)" font-family="Sora,sans-serif" font-weight="600" letter-spacing="0.12em" transform="rotate(-90,16,295)">CATEGORY</text>
+              <text x="80" y="36" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">PROTECTION</text>
+              <text x="268" y="36" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">PROGRESS</text>
+              <text x="80" y="219" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">EXCELLENCE</text>
+              <text x="268" y="219" font-size="7.5" font-weight="700" fill="rgba(255,255,255,0.1)" font-family="Sora,sans-serif" letter-spacing="0.1em">DISCOVERY</text>
+              <g id="mdot-pioneer"><circle cx="388" cy="320" r="6" fill="#e8650a" opacity="0.35"/><text x="388" y="336" text-anchor="middle" font-size="7" fill="#e8650a" opacity="0.5" font-family="Sora,sans-serif">Pioneer</text></g>
+              <g id="mdot-protector"><circle cx="122" cy="88" r="6" fill="#0a9a55" opacity="0.35"/><text x="122" y="104" text-anchor="middle" font-size="7" fill="#0a9a55" opacity="0.5" font-family="Sora,sans-serif">Protector</text></g>
+              <g id="mdot-equaliser"><circle cx="290" cy="72" r="6" fill="#3d52c8" opacity="0.35"/><text x="290" y="88" text-anchor="middle" font-size="7" fill="#3d52c8" opacity="0.5" font-family="Sora,sans-serif">Equaliser</text></g>
+              <g id="mdot-catalyst"><circle cx="428" cy="46" r="6" fill="#c8205a" opacity="0.35"/><text x="428" y="62" text-anchor="middle" font-size="7" fill="#c8205a" opacity="0.5" font-family="Sora,sans-serif">Catalyst</text></g>
+              <g id="mdot-builder"><circle cx="140" cy="316" r="6" fill="#9a6e1a" opacity="0.35"/><text x="140" y="332" text-anchor="middle" font-size="7" fill="#9a6e1a" opacity="0.5" font-family="Sora,sans-serif">Builder</text></g>
+              <g id="mdot-challenger"><circle cx="412" cy="186" r="6" fill="#1a6a9a" opacity="0.35"/><text x="412" y="202" text-anchor="middle" font-size="7" fill="#1a6a9a" opacity="0.5" font-family="Sora,sans-serif">Challenger</text></g>
+            </svg>
+          </div>
+        </div>
+        <div class="arch-m-overlay" id="archMOverlay">
+          <div class="arch-m-overlay-num" id="archMNum"></div>
+          <svg width="72" height="88" viewBox="0 0 120 148" fill="none" id="archMSvg">
+            <rect width="120" height="148" fill="#ff6b2b" clip-path="url(#mc-m-clip)" id="archMRect"/>
+          </svg>
+          <div class="arch-m-overlay-name" id="archMName"></div>
+          <div class="arch-m-overlay-tagline" id="archMTagline"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var items=document.querySelectorAll('#archList .arch-list-item');
+  var right=document.getElementById('archRight');
+  var wash=document.getElementById('archWash');
+  var mRect=document.getElementById('archMRect');
+  var mSvg=document.getElementById('archMSvg');
+  var mNum=document.getElementById('archMNum');
+  var mName=document.getElementById('archMName');
+  var mTagline=document.getElementById('archMTagline');
+  var activePulse=null;
+  var dotPos={pioneer:{cx:388,cy:320},protector:{cx:122,cy:88},equaliser:{cx:290,cy:72},catalyst:{cx:428,cy:46},builder:{cx:140,cy:316},challenger:{cx:412,cy:186}};
+
+  function clearPulse(){
+    if(activePulse){activePulse.remove();activePulse=null;}
+    Object.keys(dotPos).forEach(function(k){
+      var g=document.getElementById('mdot-'+k);
+      if(g){g.querySelector('circle').setAttribute('opacity','0.35');g.querySelector('text').setAttribute('opacity','0.5');}
+    });
+  }
+
+  function setPulse(key,color){
+    clearPulse();
+    var pos=dotPos[key]; if(!pos)return;
+    Object.keys(dotPos).forEach(function(k){
+      var g=document.getElementById('mdot-'+k);
+      if(g&&k!==key){g.querySelector('circle').setAttribute('opacity','0.06');g.querySelector('text').setAttribute('opacity','0.1');}
+    });
+    var g=document.getElementById('mdot-'+key);
+    if(g)g.querySelector('circle').setAttribute('opacity','0');
+    var svg=document.getElementById('archMapSvg');
+    var p=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    p.setAttribute('cx',pos.cx);p.setAttribute('cy',pos.cy);p.setAttribute('r','9');
+    p.setAttribute('fill',color);p.setAttribute('opacity','0.9');
+    p.classList.add('map-dot-active');
+    svg.appendChild(p);activePulse=p;
+  }
+
+  items.forEach(function(item){
+    item.addEventListener('mouseenter',function(){
+      var color=item.dataset.color,key=item.dataset.key;
+      items.forEach(function(i){i.classList.remove('active');});
+      item.classList.add('active');
+      right.classList.add('has-hover');
+      wash.style.background='radial-gradient(ellipse at 65% 50%, '+color+'1a 0%, transparent 65%)';
+      mRect.setAttribute('fill',color);
+      mSvg.style.filter='drop-shadow(0 0 28px '+color+'88)';
+      mNum.textContent=item.dataset.num;mNum.style.color=color;
+      mName.textContent=item.dataset.name;
+      mTagline.textContent=item.dataset.tagline;
+      setPulse(key,color);
+    });
+  });
+
+  document.getElementById('archList').addEventListener('mouseleave',function(){
+    items.forEach(function(i){i.classList.remove('active');});
+    right.classList.remove('has-hover');
+    clearPulse();
+  });
+})();
+</script>
+
+<!-- ============ IV. SIX ROLES — OPENER ============ -->
+<section class="archetypes-intro">
+  <div class="narrow">
+    <div class="sec-num">IV · The Six Roles</div>
+    <h2 class="sec-title">Six archetypes for brands refusing to dim.</h2>
+    <p class="sec-kicker">The role in 2026. The force pressing hardest. A Champion currently playing it well. A Cautionary that lost the plot. And the diagnostic only an instrument can answer.</p>
+  </div>
+</section>
+
+<!-- ============ 01 PIONEER ============ -->
+<section class="archetype arch-pioneer">
+  <div class="archetype-bg"></div>
+  <div class="wrap archetype-inner">
+    <div class="arch-meta">
+      <svg class="arch-meta-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+        <rect width="120" height="148" fill="#e8650a" clip-path="url(#mc-m-clip)"/>
+      </svg>
+      <div class="arch-meta-text">
+        <div class="arch-num">Archetype 01</div>
+        <div class="arch-tag">The Pioneer</div>
+      </div>
+    </div>
+    <h3 class="arch-title">Keepers of the possible.</h3>
+    <p class="arch-role">Brands whose existence keeps proof-of-concept on the table when the conditions deteriorate.</p>
+
+    <div class="arch-body">
+      <div class="arch-force-tag">Force pressing hardest · ESG Counter-Reformation × Polycrisis Tax</div>
+      <p>In 2020 a Pioneer's job was to make the new thing legible. In 2026 it is harder: <strong>keep the new thing alive while the conditions for it deteriorate.</strong> When capital retreats from the long horizon and political weather makes the hard road harder, the Pioneers are the brands whose existence keeps proof-of-concept on the table at all.</p>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="case-tag champion">★ Champion</div>
+          <div class="case-name">Ørsted</div>
+          <div class="case-body">
+            <p>A decade ago, one of Europe's most coal-intensive utilities. Sold oil and gas, pivoted to offshore wind, became the global category leader. Then the brittle world arrived: cancelled US Ocean Wind 1 &amp; 2 (~€3.8B impairments), DKK 1.7B Q3 2025 loss, a USD $9.35B rights issue in November 2025.</p>
+            <p>A weaker Ørsted would have re-pivoted toward natural gas. The Pioneer version did not. Focused capital allocation, dividend reinstatement targeted for FY2026, offshore generation up 6% on the year, 10+ GW installed. <strong>They are not retreating from the frontier. They are defending it under conditions nobody had stress-tested for.</strong></p>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-tag cautionary">⚠ Cautionary</div>
+          <div class="case-name">23andMe</div>
+          <div class="case-body">
+            <p>The cleanest healthtech Pioneer of the last decade. Peak $6B valuation. 15 million customers had handed over their saliva — and with it, their most personally identifying biological data. In March 2025 it filed Chapter 11.</p>
+            <p>The technical reason was financial distress. The actual reason was that the trust architecture had quietly collapsed years earlier. <strong>Pioneers don't die from being wrong about the frontier. They die when the story they've built around it outpaces the trust infrastructure underneath.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lens">
+        <div class="lens-label">TrustOS Lens</div>
+        <div class="lens-body"><strong>Ørsted is currently passing all three tests under maximum strain. 23andMe was failing all three for years before anyone outside could see it.</strong> Without an instrument, you cannot tell the difference until it is too late.
+        <div style="margin-top: 16px;"><a class="lens-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Learn more about TrustOS →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 PROTECTOR ============ -->
+<section class="archetype arch-protector">
+  <div class="archetype-bg"></div>
+  <div class="wrap archetype-inner">
+    <div class="arch-meta">
+      <svg class="arch-meta-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+        <rect width="120" height="148" fill="#0a9a55" clip-path="url(#mc-m-clip)"/>
+      </svg>
+      <div class="arch-meta-text">
+        <div class="arch-num">Archetype 02</div>
+        <div class="arch-tag">The Protector</div>
+      </div>
+    </div>
+    <h3 class="arch-title">Holders of what the market won't defend.</h3>
+    <p class="arch-role">Brands acting as private infrastructure for things that used to be public goods.</p>
+
+    <div class="arch-body">
+      <div class="arch-force-tag">Force pressing hardest · Polycrisis Tax × Affinity Vacuum</div>
+      <p>In 2020 a Protector's job was to be a credible alternative to the harm. In 2026 it is harder: <strong>be the institution of last resort for stakeholders who have stopped trusting every other actor in the system.</strong> The Protector's role in a brittle world is to refuse to let breakage become the new baseline.</p>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="case-tag champion">★ Champion</div>
+          <div class="case-name">Médecins Sans Frontières</div>
+          <div class="case-body">
+            <p>Founded 1971 on a principle that has not been compromised in five decades. ~90% individually-funded by deliberate institutional choice. In 2025 MSF allocated ~$118M to its Gaza response — 184M+ gallons of water distributed, ~800K outpatient consultations, 100K+ trauma cases. When Israel suspended MSF from Gaza over new INGO rules, MSF refused to register under conditions that compromised the principle.</p>
+            <p><strong>What makes MSF the Champion is not just the work. It is the structural integrity of the refusal.</strong> Independence is encoded in the funding model, the governance, the communications. When the pressure to compromise arrives, the institution holds because it was built to hold.</p>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-tag cautionary">⚠ Cautionary</div>
+          <div class="case-name">Oxfam</div>
+          <div class="case-body">
+            <p>Until 2018 it would have appeared in a list of Champions. The Haiti scandal broke the legitimacy in a single news cycle: ~7,000 regular donors lost, a Charity Commission warning, tripled safeguarding investment, long-term reform. The reform has been credible. The trust has not fully returned.</p>
+            <p><strong>The Protector's most dangerous failure is the one that comes from inside the institution.</strong> Internal trust failure travels faster than external trust failure — and Protectors who don't measure their own internal coherence are flying blind.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lens">
+        <div class="lens-label">TrustOS Lens</div>
+        <div class="lens-body"><strong>MSF passes under conditions that would have broken almost any other NGO. Oxfam, in 2017, would have appeared to pass from the outside — and was failing on the inside.</strong> The instrument is the difference.
+        <div style="margin-top: 16px;"><a class="lens-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Learn more about TrustOS →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 EQUALISER ============ -->
+<section class="archetype arch-equaliser">
+  <div class="archetype-bg"></div>
+  <div class="wrap archetype-inner">
+    <div class="arch-meta">
+      <svg class="arch-meta-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+        <rect width="120" height="148" fill="#3d52c8" clip-path="url(#mc-m-clip)"/>
+      </svg>
+      <div class="arch-meta-text">
+        <div class="arch-num">Archetype 03</div>
+        <div class="arch-tag">The Equaliser</div>
+      </div>
+    </div>
+    <h3 class="arch-title">Architects of a wider floor.</h3>
+    <p class="arch-role">Brands proving that broader participation is the only remaining source of durable demand.</p>
+
+    <div class="arch-body">
+      <div class="arch-force-tag">Force pressing hardest · Epistemic Rupture × ESG Counter-Reformation</div>
+      <p>In 2020 the job was to widen access. In 2026 it is harder: <strong>prove that broader participation isn't a moral indulgence. It is the only remaining source of durable demand.</strong> As AI compounds existing advantage at unprecedented speed, the Equaliser makes the case in commercial language — because the moral language has been politicised into uselessness.</p>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="case-tag champion">★ Champion</div>
+          <div class="case-name">Khan Academy</div>
+          <div class="case-body">
+            <p>The cleanest Equaliser case in the global economy. 135M+ registered users in 50+ languages. No advertising. No premium tier. No paywall on the core curriculum. Khanmigo extended the access argument into the AI era — framing AI tutoring as an equaliser for students who cannot afford private tutors.</p>
+            <p><strong>The structural refusal to monetise the gap is the argument.</strong> In a 2026 where ESG language is in retreat, Khan Academy has not had to retreat at all — because its argument has never been about politics. It has always been about access.</p>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-tag cautionary">⚠ Cautionary</div>
+          <div class="case-name">Babylon Health</div>
+          <div class="case-body">
+            <p>The most ambitious healthtech Equaliser of the 2010s. Peak ~$2B. Operating in the UK, US, and Rwanda — where Babyl served ~2.8 million people. 2022: $221M net loss on $1B revenue. Founder: <em>"We lose money on every member that comes in."</em> US Chapter 7 in August 2023. UK administration in September. The Rwanda service began winding down.</p>
+            <p>The mission wasn't the problem. <strong>What failed was the measurement infrastructure.</strong> In 2026, an Equaliser cannot survive on the mission alone — it has to be paired with a measurement layer that can prove the access is real and the unit economics sustain it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lens">
+        <div class="lens-label">TrustOS Lens</div>
+        <div class="lens-body"><strong>Khan Academy passes because the structure is built to. Babylon failed because the structure was built to scale the story faster than the substance.</strong>
+        <div style="margin-top: 16px;"><a class="lens-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Learn more about TrustOS →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 CATALYST ============ -->
+<section class="archetype arch-catalyst">
+  <div class="archetype-bg"></div>
+  <div class="wrap archetype-inner">
+    <div class="arch-meta">
+      <svg class="arch-meta-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+        <rect width="120" height="148" fill="#c8205a" clip-path="url(#mc-m-clip)"/>
+      </svg>
+      <div class="arch-meta-text">
+        <div class="arch-num">Archetype 04</div>
+        <div class="arch-tag">The Catalyst</div>
+      </div>
+    </div>
+    <h3 class="arch-title">Conveners of collective will.</h3>
+    <p class="arch-role">Brands that concentrate diffuse cultural energy into outcomes that hold their shape.</p>
+
+    <div class="arch-body">
+      <div class="arch-force-tag">Force pressing hardest · Affinity Vacuum × Epistemic Rupture</div>
+      <p>The Catalyst's most significant impact is not measured in products shipped. It is measured in the assumptions it has made untenable. In 2020 the job was to set the new norm. In 2026 it is harder: <strong>convert cultural energy into organised force in a fractured attention economy where every issue dissipates within a news cycle.</strong></p>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="case-tag champion">★ Champion</div>
+          <div class="case-name">Siemens Healthineers</div>
+          <div class="case-body">
+            <p>The strongest industrial Catalyst we know of in 2026. FY2025: ~€23.4B revenue, ~74,000 employees, three billion patient touchpoints — including 1+ billion in low- and middle-income countries. Their <em>Value Partnerships</em> programme explicitly attempts to shift global healthcare from fee-for-service toward outcome-measured care.</p>
+            <p><strong>They are not selling more imaging machines. They are trying to change what a healthcare provider is allowed to count as success.</strong> Five million+ hours of clinician training delivered in 2025 — not CSR, but the infrastructure of the norm change.</p>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-tag cautionary">⚠ Cautionary</div>
+          <div class="case-name">McKinsey &amp; Company</div>
+          <div class="case-body">
+            <p>The shadow risk of the Catalyst archetype is <em>starting fires you can't control</em>. McKinsey has now lit two of the most damaging of the century. Advised Purdue Pharma on how to "turbocharge" OxyContin. $573M state AG settlement (2021). $650M federal DOJ settlement (2024). A former senior partner charged with destroying documents. In South Africa: ~$123M settlement linked to Eskom and Transnet.</p>
+            <p><strong>Catalysts who move industries without auditing the direction of the movement become the case study everyone else uses to discredit the whole category.</strong> A Catalyst without conviction is a vector for harm at scale.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lens">
+        <div class="lens-label">TrustOS Lens</div>
+        <div class="lens-body"><strong>Siemens Healthineers passes because the structural commitment is auditable across multiple geographies and a decade of public reporting. McKinsey is failing on the public record, and the price is now quantified in billions.</strong>
+        <div style="margin-top: 16px;"><a class="lens-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Learn more about TrustOS →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 BUILDER ============ -->
+<section class="archetype arch-builder">
+  <div class="archetype-bg"></div>
+  <div class="wrap archetype-inner">
+    <div class="arch-meta">
+      <svg class="arch-meta-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+        <rect width="120" height="148" fill="#9a6e1a" clip-path="url(#mc-m-clip)"/>
+      </svg>
+      <div class="arch-meta-text">
+        <div class="arch-num">Archetype 05</div>
+        <div class="arch-tag">The Builder</div>
+      </div>
+    </div>
+    <h3 class="arch-title">Stewards of the long horizon.</h3>
+    <p class="arch-role">Brands modelling generational patience as a competitive strategy, not a luxury.</p>
+
+    <div class="arch-body">
+      <div class="arch-force-tag">Force pressing hardest · Polycrisis Tax × ESG Counter-Reformation</div>
+      <p>The Builder is not just constructing a business — it is building something that will still be creating value when the founders are no longer in the room. In 2026 the job is harder: <strong>refuse to discount the future at the rate the brittleness wants you to.</strong></p>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="case-tag champion">★ Champion</div>
+          <div class="case-name">Saudi Aramco</div>
+          <div class="case-body">
+            <p>Set aside the commodity for a moment and look at what the company has actually built. Over nearly a century, Aramco has constructed the physical, educational, and industrial fabric of a nation: cities around Dhahran, networks of schools and hospitals, <strong>KAUST</strong> and <strong>KFUPM</strong> as research anchors, the SPARK energy park, downstream ecosystems across Jazan, Rabigh, and Motiva, and the generational infrastructure that sits underneath Vision 2030. The largest IPO in history was not a financial event — it was the moment the world started to read the ecosystem the company had spent ninety years constructing.</p>
+            <p><strong>Builders do not talk about the long horizon. They own the infrastructure the long horizon is built on.</strong> Very few companies in any sector can say their existence is constitutive of a society's built environment at that scale. Aramco is a test case for whether a company that has already built a society can now steward it into a different energy future — the Builder's real job description in 2026.</p>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-tag cautionary">⚠ Cautionary</div>
+          <div class="case-name">Boeing</div>
+          <div class="case-body">
+            <p>For most of the 20th century, Boeing was the model of a Builder. Then the engineering culture was eroded by financial culture. The 2018–2019 MAX crashes killed 346 people. The 2024 crisis confirmed the rot was structural: the Alaska Airlines door plug, the Starliner astronauts stranded in orbit, the FAA's damning report, 32 OSHA whistleblower complaints since 2020, a federal judge rejecting the DOJ plea deal.</p>
+            <p><strong>The collapse of generational stewardship is slow, until it is sudden.</strong> For two decades the culture was being chipped away. Then, in eighteen months, it collapsed in public. The brittleness had been there the whole time. It just wasn't measured.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lens">
+        <div class="lens-label">TrustOS Lens</div>
+        <div class="lens-body"><strong>Aramco's stewardship test is whether the structural patience that built the ecosystem can now be redirected without losing coherence. Boeing was failing for a decade and a half before the door plug.</strong> In both cases, the instrument is the difference between knowing in advance and finding out in public.
+        <div style="margin-top: 16px;"><a class="lens-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Learn more about TrustOS →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 CHALLENGER ============ -->
+<section class="archetype arch-challenger">
+  <div class="archetype-bg"></div>
+  <div class="wrap archetype-inner">
+    <div class="arch-meta">
+      <svg class="arch-meta-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+        <rect width="120" height="148" fill="#1a6a9a" clip-path="url(#mc-m-clip)"/>
+      </svg>
+      <div class="arch-meta-text">
+        <div class="arch-num">Archetype 06</div>
+        <div class="arch-tag">The Challenger</div>
+      </div>
+    </div>
+    <h3 class="arch-title">Namers of the rot.</h3>
+    <p class="arch-role">Brands willing to say out loud what others are hedging.</p>
+
+    <div class="arch-body">
+      <div class="arch-force-tag">Force pressing hardest · All four — especially Epistemic Rupture</div>
+      <p>Challengers make the argument that <em>the old way was wrong</em> — and they make it loud enough for the field to have to respond. In 2020 the job was to provoke. In 2026 it is harder: <strong>restore the possibility of honest disagreement, and make the old way indefensible before it becomes impossible.</strong></p>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="case-tag champion">★ Champion</div>
+          <div class="case-name">The Signal Foundation</div>
+          <div class="case-body">
+            <p>The cleanest Challenger in technology in 2026. ~70M MAU. ~$50M annual operating cost, funded entirely by donations. The Signal Protocol is the de facto standard for private communication, integrated into platforms used by billions. In 2025 Signal publicly threatened to exit France, Sweden, and Germany if those governments mandated compelled decryption.</p>
+            <p><strong>The threat was not rhetorical.</strong> The foundation governance and nonprofit funding model insulate the leadership from the kind of investor pressure that would force a compromise. Most challengers fold under regulatory pressure. Signal does not — because the principle is what the product is for.</p>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-tag cautionary">⚠ Cautionary</div>
+          <div class="case-name">IBM Watson Health</div>
+          <div class="case-body">
+            <p>The original argument was perfect — perhaps too perfect. IBM spent ~$4B building Watson Health. Rometty called it a "moon shot." The collapse was clinical, in both senses. Watson Health could not bring its diagnostic vision to the standards regulators required. M.D. Anderson abandoned the project. In 2022, IBM sold the assets to Francisco Partners for $1B+.</p>
+            <p><strong>Being right about what's broken does not create the conditions to fix it.</strong> Conviction without strategy is noise. A Challenger who cannot pair the argument with year-over-year proof becomes the case study every defender of the old way uses to discredit the next attempt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lens">
+        <div class="lens-label">TrustOS Lens</div>
+        <div class="lens-body"><strong>Signal is passing all three tests under conditions that would have crushed almost any commercial competitor. Watson Health failed all three across a decade of expensive promise.</strong> The instrument would have called the gap years before it became a $4 billion write-down.
+        <div style="margin-top: 16px;"><a class="lens-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Learn more about TrustOS →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ V. PROVING IT — TRUSTOS ============ -->
+<section class="trustos">
+  <div class="wrap">
+    <div class="sec-num">V · Proving It</div>
+    <h2 class="sec-title">From conviction to measurement.</h2>
+    <div class="accent-line"></div>
+
+    <a class="trustos-lockup" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" aria-label="TrustOS — Turn trust into impact">
+      <svg class="trustos-mark" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+        <path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z" fill="#ffffff" opacity="0.06"/>
+        <polygon points="30,12 90,12 60,88" fill="url(#to-tri-grad)" filter="url(#to-tri-glow)"/>
+      </svg>
+      <div class="trustos-wordmark-block">
+        <div class="trustos-wordmark"><span class="trust">Trust</span><span class="os">OS</span></div>
+        <div class="trustos-subline">Turn trust into impact</div>
+      </div>
+    </a>
+
+    <p class="trustos-lead">Forty pages of argument have brought us, deliberately, to a single question. <em>How do you know whether your brand's movement is holding?</em></p>
+
+    <p style="font-size: 0.98rem; color: var(--ink-2); line-height: 1.68; max-width: 760px; margin-bottom: 46px; font-weight: 300;">Every chapter ended with the same diagnostic frame: <strong style="color:var(--ink);">Clarity. Connection. Confidence.</strong> We chose those three words carefully, and we have spent the last several years building an instrument to measure them — because conviction is not the same as coherence, and coherence is not the same as proof.</p>
+
+    <div class="trust-tri-block">
+      <div class="trust-tri-viz">
+        <svg class="trust-tri-svg" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" overflow="visible" aria-label="Trust Triangle — Clarity, Connection, Confidence">
+          <defs>
+            <linearGradient id="tri-gradient" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="rgba(143,181,192,0.08)"/>
+              <stop offset="100%" stop-color="rgba(90,138,154,0.24)"/>
+            </linearGradient>
+            <filter id="tri-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+              <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.35  0 0 0 0 0.54  0 0 0 0 0.6  0 0 0 0.4 0" result="tealBlur"/>
+              <feMerge><feMergeNode in="tealBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Main equilateral triangle: Intent (top-left), Reality (top-right), Expectation (bottom) — matches TrustOS downward mark -->
+          <polygon class="tri-fill" points="97,115 323,115 210,310" filter="url(#tri-glow)"/>
+          <line class="tri-edge" x1="97" y1="115" x2="323" y2="115"/>
+          <line class="tri-edge" x1="323" y1="115" x2="210" y2="310"/>
+          <line class="tri-edge" x1="210" y1="310" x2="97" y2="115"/>
+
+          <!-- Dividers from centroid to each vertex -->
+          <line class="tri-div" x1="210" y1="180" x2="97" y2="115"/>
+          <line class="tri-div" x1="210" y1="180" x2="323" y2="115"/>
+          <line class="tri-div" x1="210" y1="180" x2="210" y2="310"/>
+
+          <!-- Vertex labels -->
+          <text class="tri-vertex" x="85" y="105" text-anchor="end">Intent</text>
+          <text class="tri-vertex" x="335" y="105" text-anchor="start">Reality</text>
+          <text class="tri-vertex" x="210" y="330" text-anchor="middle">Expectation</text>
+
+          <!-- Edge labels — Clarity top, Connection right, Confidence left -->
+          <text class="tri-edge-label" x="210" y="102" text-anchor="middle">CLARITY</text>
+          <text class="tri-edge-label" x="285" y="225" text-anchor="middle" transform="rotate(60,285,225)">CONNECTION</text>
+          <text class="tri-edge-label" x="134" y="225" text-anchor="middle" transform="rotate(-60,134,225)">CONFIDENCE</text>
+
+          <!-- Center: Integrity -->
+          <text class="tri-center" x="210" y="184" text-anchor="middle" dominant-baseline="middle">Integrity</text>
+        </svg>
+      </div>
+      <div class="tri-copy">
+        <h3>The three sides of movement holding.</h3>
+        <p>When all three are in balance, the triangle is equilateral — and the brand reads as coherent to every stakeholder group at once. When one side contracts, the geometry distorts, and the gap becomes the signal.</p>
+        <ul class="tri-defs-list">
+          <li><strong>Clarity</strong>Whether the people inside the brand can articulate what the brand is for in the same direction. The cracks form invisibly — first in operating decisions, then in communication, then in customer experience.</li>
+          <li><strong>Connection</strong>Whether stakeholders — employees, customers, partners, investors, communities — feel the brand belongs to them the way the brand claims it does. It is the load-bearing wall under the affinity transfer.</li>
+          <li><strong>Confidence</strong>Whether buyers, capital partners, and the broader category can read the proof in real time. Most brands measure confidence with a twelve-month delay. By then it is too late.</li>
+        </ul>
+        <a class="trust-tri-cta" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Explore your triangle on TrustOS →</a>
+      </div>
+    </div>
+
+    <div class="receipts">
+      <h4>Read the six chapters again with this lens</h4>
+      <p><strong>Ørsted</strong> is being stress-tested on Clarity right now and passing it visibly. <strong>MSF</strong> holds Connection in active conflict zones. <strong>Saudi Aramco</strong> is the generational stewardship test — a company whose existence is constitutive of a society's built environment, now being asked whether the same patience that built the ecosystem can steward it into a different energy future. <strong>Siemens Healthineers</strong> is using all three to drive a global norm change. <strong>Khan Academy</strong> holds all three because the nonprofit structure protects them. <strong>Signal</strong> holds all three by exiting markets that would compromise them.</p>
+      <p>And on the other side: <strong>23andMe, Oxfam, Babylon Health, McKinsey, Boeing, IBM Watson Health</strong> — in every one of those cautionaries, the failure was measurable in advance.</p>
+      <p style="margin-top: 22px; font-size: 1rem; color: var(--ink);"><strong style="color: var(--trust-cool);">The reason it was not measured is that the instrument did not exist.</strong> <strong style="color: var(--ink);">TrustOS exists so that the next time a brand is in the position any of these were in eighteen months before the public crisis, the leadership can read the signal in time to correct it.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOLD THE LIGHT ============ -->
+<section class="close">
+  <div class="narrow">
+    <div class="sec-num">VI · Closing</div>
+    <h2 class="sec-title" style="margin-bottom: 30px;">Hold the light.</h2>
+
+    <p class="lead">If you've read this far, you already know what the rest of the decade is going to ask of you.</p>
+
+    <p>It is going to ask you to lead an impact-driven brand through a year — and probably several years — in which the political weather wants you to retreat, the economic weather wants you to dim, the epistemic weather wants you to fall silent, and the social weather wants you to withdraw.</p>
+
+    <p><strong>I don't think the brittle world has won.</strong> I think the brittle world is <em style="color:var(--trust-cool);">exactly the moment</em> the brands in this document were built for. The people who bring brilliance into rooms that have no business being bright are the people who will inherit the next economy — and the only thing standing between most of them and that inheritance is the absence of an instrument that tells them, in time, whether their movement is holding.</p>
+
+    <p>If your brand is one of the six archetypes — and almost every brand we work with is — then the conversation we want to have is not about positioning. It is about whether your movement is holding. Whether the Clarity is real. Whether the Connection is real. Whether the Confidence is real.</p>
+
+    <p>Two ways in, depending on where you are:</p>
+
+    <div class="cta-row">
+      <a class="cta-primary" href="https://trustos.missionctrl.agency">Book a TrustOS Demo →</a>
+      <a class="cta-secondary" href="https://missionctrl.agency/movement-archetype">Take the Movement Archetype Quiz →</a>
+    </div>
+
+    <p style="margin-top: 50px; font-style: italic; font-size: 1.12rem; color: var(--ink);">The future is not a thing that happens to us. It is a thing we choose to remain credible inside.</p>
+    <p style="font-size: 1.12rem; color: var(--ink); font-weight: 500;">Hold the light.</p>
+
+    <div class="signoff-block">
+      <div class="name">— <a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.55);">Dustin Lawrence</a></div>
+      <div class="role">Founder, MissionCTRL</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLL ============ -->
+<section class="poll">
+  <div class="narrow">
+    <div class="sec-num">VII · Over to you</div>
+    <h2 class="poll-title">Before you close the tab.</h2>
+    <p class="poll-lede">Two small questions. The first takes a second. The second takes a minute. Both are read by the humans who wrote this.</p>
+
+    <form class="poll-form" onsubmit="event.preventDefault(); document.querySelector('.poll-thanks').classList.add('show'); this.querySelector('.poll-submit').disabled = true; this.querySelector('.poll-submit').textContent = 'Submitted';">
+      <div class="poll-card">
+        <div class="poll-label">Rate this piece</div>
+        <div class="poll-q">How valuable was this field report to the brand you're building right now?</div>
+        <div class="poll-rank" role="radiogroup" aria-label="Rating 1 to 5">
+          <input type="radio" id="rank1" name="rank" value="1"><label for="rank1">1</label>
+          <input type="radio" id="rank2" name="rank" value="2"><label for="rank2">2</label>
+          <input type="radio" id="rank3" name="rank" value="3"><label for="rank3">3</label>
+          <input type="radio" id="rank4" name="rank" value="4"><label for="rank4">4</label>
+          <input type="radio" id="rank5" name="rank" value="5"><label for="rank5">5</label>
+        </div>
+        <div class="poll-rank-scale">
+          <span>Not for me</span>
+          <span>Changed how I'm thinking</span>
+        </div>
+      </div>
+
+      <div class="poll-card">
+        <div class="poll-label">One open question</div>
+        <div class="poll-q">Which part of your brand's movement are you least sure is still holding — and why?</div>
+        <textarea class="poll-textarea" name="reflection" placeholder="Write as much or as little as you like. No form fields. No spam follow-up. We read these to sharpen what we publish next."></textarea>
+      </div>
+
+      <div class="poll-submit-row">
+        <button type="submit" class="poll-submit">Submit →</button>
+        <span class="poll-thanks">Thank you. We read every one of these.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-card mc">
+        <span class="ck">About MissionCTRL</span>
+        <h3>Build a brand that moves the world forward.</h3>
+        <p>MissionCTRL works with founders in professional services, healthcare, technology, industrial manufacturing, energy, the NGO sector, and public service to build the internal coherence that makes external impact credible. Our practice is built on the Brand Effect methodology and the Movement Archetype model. <a href="https://missionctrl.agency">missionctrl.agency →</a></p>
+      </div>
+      <div class="about-card to">
+        <span class="ck">About TrustOS</span>
+        <h3>Turn trust into impact.</h3>
+        <p>Built on three diagnostics — Clarity, Connection, and Confidence — TrustOS reads in real time whether a brand's movement is holding under the conditions of the brittle world. In 2026, conviction is no longer enough. The brands that will inherit the next economy are the ones whose movement can be measured, corrected, and held under load. <a href="https://trustos.missionctrl.agency">trustos.missionctrl.agency →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://missionctrl.agency/movement-archetype">Movement Archetype Quiz</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <div>© 2026 MissionCTRL · A field report on trust, movement, and measurement</div>
+</footer>
+
+<script>
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('section, .force-card, .case, .three-c, .lens, .receipts').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  }
+</script>
+
+</body>
+</html>
