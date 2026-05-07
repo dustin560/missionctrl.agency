@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /proposals/
+
+Sitemap: https://missionctrl.agency/sitemap.xml

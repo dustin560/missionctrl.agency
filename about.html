@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About MissionCTRL | Brand Strategy &amp; Stakeholder Trust Advisory</title>
+<meta name="description" content="MissionCTRL is a brand strategy and stakeholder trust advisory founded by Dustin Lawrence. We help purpose-led organisations build brands that move people, markets, and decisions." />
+<meta property="og:title" content="About MissionCTRL | Brand Strategy & Stakeholder Trust Advisory" />
+<meta property="og:description" content="MissionCTRL is a brand strategy and stakeholder trust advisory founded by Dustin Lawrence. We help purpose-led organisations build brands that move people, markets, and decisions." />
+<meta property="og:url" content="https://missionctrl.agency/about" />
+<meta property="og:image" content="https://missionctrl.agency/og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MissionCTRL" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About MissionCTRL | Brand Strategy & Stakeholder Trust Advisory" />
+<meta name="twitter:description" content="Founded by Dustin Lawrence. Brand strategy and stakeholder trust advisory for purpose-led organisations." />
+<meta name="twitter:image" content="https://missionctrl.agency/og-image.png" />
+<link rel="canonical" href="https://missionctrl.agency/about" />
+<link rel="icon" type="image/png" sizes="64x64" href="/MC-Favicon-64x64.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blaze: #ff6b2b; --amber: #ffad3b; --coral: #ff4d6a;
+    --midnight: #162252; --electric: #3d7cc9;
+    --ice: #f0f0f4; --deep: #0a0f1a; --charcoal: #111827; --white: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Sora', sans-serif; color: var(--white); background: var(--deep); -webkit-font-smoothing: antialiased; }
+  .gradient-text {
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 5%; background: rgba(10,15,26,0.92);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { display: inline-flex; align-items: flex-start; text-decoration: none; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    font-size: 0.82rem; font-weight: 600; color: var(--white);
+    background: var(--blaze); padding: 10px 22px; border-radius: 6px;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .nav-cta:hover { background: #e85a1f; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+  .overline {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blaze); margin-bottom: 20px;
+  }
+  .accent-line { width: 48px; height: 3px; background: var(--blaze); border-radius: 2px; }
+
+  .hero {
+    padding: 160px 5% 80px;
+    background: linear-gradient(160deg, #0a0f1a 0%, #0d1633 40%, #162252 100%);
+  }
+  .hero-inner { max-width: 800px; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800;
+    line-height: 1.08; letter-spacing: -0.04em; margin-bottom: 24px;
+  }
+  .hero p { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,0.5); max-width: 640px; }
+
+  .section { padding: 80px 5%; }
+  .section--alt { background: var(--charcoal); }
+  .section h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800;
+    line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 20px;
+  }
+  .section p { font-size: 0.95rem; line-height: 1.85; color: rgba(255,255,255,0.5); margin-bottom: 16px; max-width: 720px; }
+
+  .founder-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 48px;
+  }
+  .founder-bio h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+  .founder-bio .title { font-size: 0.88rem; color: var(--blaze); font-weight: 600; margin-bottom: 20px; }
+  .founder-bio p { font-size: 0.95rem; line-height: 1.85; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+
+  .credentials { list-style: none; margin-top: 24px; }
+  .credentials li {
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.88rem; color: rgba(255,255,255,0.5);
+  }
+  .credentials li strong { color: var(--white); font-weight: 600; }
+
+  .positioning {
+    background: rgba(255,107,43,0.04); border: 1px solid rgba(255,107,43,0.12);
+    border-radius: 12px; padding: 40px; margin-top: 48px;
+  }
+  .positioning h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; }
+  .positioning p { font-size: 0.95rem; line-height: 1.85; color: rgba(255,255,255,0.5); }
+
+  .cta-banner {
+    padding: 80px 5%; text-align: center;
+    background: linear-gradient(160deg, #162252, #0d1633);
+  }
+  .cta-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; margin-bottom: 16px; }
+  .cta-banner p { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 32px; }
+  .btn-primary {
+    display: inline-block; padding: 14px 32px; background: var(--blaze);
+    color: var(--white); font-size: 0.92rem; font-weight: 600;
+    border-radius: 8px; text-decoration: none; transition: all 0.3s;
+  }
+  .btn-primary:hover { background: #e85a1f; transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white); font-size: 0.92rem; font-weight: 500;
+    border-radius: 8px; text-decoration: none; margin-left: 16px; transition: all 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--blaze); color: var(--blaze); }
+
+  .footer {
+    padding: 48px 5% 32px; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px;
+  }
+  .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.35); text-decoration: none; margin-bottom: 10px; }
+  .footer-col a:hover { color: var(--blaze); }
+  .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.25); margin-top: 8px; }
+  .footer-col-head { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+  .footer-legal-detail { font-size: 0.72rem; color: rgba(255,255,255,0.2); margin-top: 16px; line-height: 1.6; }
+  .footer-strip { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.04); font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .founder-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dustin Lawrence",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "MissionCTRL Ltd",
+    "url": "https://missionctrl.agency"
+  },
+  "sameAs": "https://www.linkedin.com/in/dustinclawrence/",
+  "knowsAbout": ["Brand Strategy", "Stakeholder Trust", "Purpose-Led Branding", "Trust Measurement", "B2B Brand Advisory", "Multi-Stakeholder Brand Management", "Corporate Reputation Strategy"],
+  "alumniOf": ["FutureBrand", "EY"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MissionCTRL Ltd",
+  "url": "https://missionctrl.agency",
+  "description": "Brand strategy and stakeholder trust advisory for purpose-led organisations.",
+  "founder": {
+    "@type": "Person",
+    "name": "Dustin Lawrence"
+  },
+  "sameAs": ["https://www.linkedin.com/company/missionctrlagency"]
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav-logo" aria-label="MissionCTRL home">
+    <svg width="28" height="34" viewBox="0 0 120 148" fill="none" style="flex-shrink:0;">
+      <defs><linearGradient id="nav-m" x1="0" y1="148" x2="120" y2="0"><stop offset="0%" stop-color="#ff6b2b"/><stop offset="100%" stop-color="#ffad3b"/></linearGradient><clipPath id="nav-mc"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+      <rect width="120" height="148" fill="url(#nav-m)" clip-path="url(#nav-mc)"/>
+    </svg>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;margin-left:-2px;">
+      <span style="font-size:0.95rem;font-weight:700;color:var(--white);letter-spacing:-0.04em;line-height:0.85;">ission</span>
+      <div style="line-height:0.85;"><span style="font-size:0.95rem;font-weight:800;color:var(--blaze);letter-spacing:-0.04em;">C</span><span style="font-size:0.95rem;font-weight:800;color:var(--white);letter-spacing:-0.04em;">TRL</span></div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="/#brand-effect">The problem</a>
+    <a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">TrustOS</a>
+    <a href="/#solutions">Solutions</a>
+    <a href="/movement-archetype">Movement Archetype</a>
+    <a href="/#contact" class="nav-cta">Start the conversation</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="overline">About MissionCTRL</div>
+    <div class="accent-line" style="margin-bottom:24px;"></div>
+    <h1>Brand strategy for organisations that <span class="gradient-text">move the world forward.</span></h1>
+    <p>MissionCTRL is a brand strategy and stakeholder trust advisory. We work with founders and enterprise leaders in professional services, healthcare, technology, industrial manufacturing, energy, the NGO sector, and public service to build the internal coherence that makes external impact credible.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="overline">The founder</div>
+    <div class="accent-line" style="margin-bottom:32px;"></div>
+    <div class="founder-grid">
+      <div class="founder-bio">
+        <h3>Dustin Lawrence</h3>
+        <p class="title">Founder, MissionCTRL Ltd</p>
+        <p>Dustin Lawrence founded MissionCTRL to solve a problem he saw repeated across every sector: purpose-led organisations whose internal reality didn't match their external promise. The say-do gap wasn't a messaging problem — it was a measurement problem. Nobody had a reliable way to track whether stakeholder trust was holding, growing, or fracturing in real time.</p>
+        <p>Before MissionCTRL, Dustin spent over a decade in brand strategy at FutureBrand and EY, advising some of the world's most complex organisations on brand architecture, stakeholder engagement, and corporate reputation. His client portfolio spans Solmax, Compass Group, organisations across healthcare, energy, professional services, and the public sector.</p>
+        <p>That experience led to two proprietary frameworks: The Brand Effect — a compounding methodology that moves organisations from conviction to category-shaping movement — and Movement Archetypes, a strategic model that maps how an organisation drives change across four quadrants. Both are powered by TrustOS, the trust measurement platform Dustin built to give enterprise leaders a single, quantifiable view of stakeholder trust.</p>
+      </div>
+      <div>
+        <ul class="credentials">
+          <li><strong>FutureBrand</strong> — Brand strategy for global enterprise clients</li>
+          <li><strong>EY</strong> — Brand advisory within professional services</li>
+          <li><strong>Solmax</strong> — Stakeholder trust measurement engagement</li>
+          <li><strong>Compass Group</strong> — Multi-stakeholder brand strategy</li>
+          <li><strong>Healthcare, Energy, Public Sector</strong> — Cross-sector advisory</li>
+          <li><strong>MissionCTRL Ltd</strong> — Founded to close the say-do gap at enterprise scale</li>
+        </ul>
+        <p style="margin-top:24px;"><a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener" style="color:var(--blaze);text-decoration:none;font-size:0.88rem;font-weight:600;">Connect on LinkedIn &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="overline">Our positioning</div>
+    <div class="accent-line" style="margin-bottom:32px;"></div>
+    <div class="positioning">
+      <h3>Build a brand that moves people, markets, and decisions.</h3>
+      <p>MissionCTRL sits at the intersection of brand strategy, stakeholder trust, and measurement science. We don't run campaigns. We build the compounding system — The Brand Effect — that turns a brand's conviction into a force the category can't ignore. Every engagement follows a four-stage trajectory: Believe, Align, Prove, Move. Every recommendation is grounded in data from TrustOS.</p>
+      <p style="margin-top:16px;">We work with organisations where the stakes are real — where trust isn't a marketing metric but an operational imperative. If your brand is purpose-led, multi-stakeholder, and operating in complexity, MissionCTRL is built for you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <h2>Discover your <span class="gradient-text">Movement Archetype</span></h2>
+  <p>Every purpose-led brand has a movement at its core. Take the free assessment to discover yours.</p>
+  <a href="/movement-archetype" class="btn-primary">Take the assessment &rarr;</a>
+  <a href="/insights/brilliance-in-a-brittle-world" class="btn-secondary">Read our latest insight</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="/" class="nav-logo" aria-label="MissionCTRL home" style="margin-bottom:4px;">
+        <svg width="28" height="34" viewBox="0 0 120 148" fill="none" style="flex-shrink:0;">
+          <defs><linearGradient id="ft-m" x1="0" y1="148" x2="120" y2="0"><stop offset="0%" stop-color="#ff6b2b"/><stop offset="100%" stop-color="#ffad3b"/></linearGradient><clipPath id="ft-mc"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+          <rect width="120" height="148" fill="url(#ft-m)" clip-path="url(#ft-mc)"/>
+        </svg>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;margin-left:-2px;">
+          <span style="font-size:0.95rem;font-weight:700;color:var(--white);letter-spacing:-0.04em;line-height:0.85;">ission</span>
+          <div style="line-height:0.85;"><span style="font-size:0.95rem;font-weight:800;color:var(--blaze);letter-spacing:-0.04em;">C</span><span style="font-size:0.95rem;font-weight:800;color:var(--white);letter-spacing:-0.04em;">TRL</span></div>
+        </div>
+      </a>
+      <p class="footer-tagline">Brand. Made to move.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-head">Navigate</p>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/trustos">TrustOS</a>
+      <a href="/movement-archetype">Movement Archetype</a>
+      <a href="/insights/brilliance-in-a-brittle-world">Insights</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-head">Legal</p>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/cookie-policy">Cookie Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+      <p class="footer-legal-detail">MissionCTRL Ltd<br/>Company No. 17018199<br/>Registered in England &amp; Wales</p>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <p>&copy; 2026 MissionCTRL Ltd. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
