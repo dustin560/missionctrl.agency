@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrustOS | Stakeholder Trust Measurement Platform | MissionCTRL</title>
+<meta name="description" content="TrustOS is MissionCTRL's stakeholder trust measurement platform. Track trust in real time across Clarity, Connection, and Confidence — on a foundation of Integrity." />
+<meta property="og:title" content="TrustOS | Stakeholder Trust Measurement Platform | MissionCTRL" />
+<meta property="og:description" content="Real-time stakeholder trust measurement across Clarity, Connection, and Confidence. The measurement intelligence layer of The Brand Effect." />
+<meta property="og:url" content="https://missionctrl.agency/trustos" />
+<meta property="og:image" content="https://missionctrl.agency/og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MissionCTRL" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TrustOS | Stakeholder Trust Measurement Platform" />
+<meta name="twitter:description" content="Real-time stakeholder trust measurement across Clarity, Connection, and Confidence. Built by MissionCTRL." />
+<meta name="twitter:image" content="https://missionctrl.agency/og-image.png" />
+<link rel="canonical" href="https://missionctrl.agency/trustos" />
+<link rel="icon" type="image/png" sizes="64x64" href="/MC-Favicon-64x64.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blaze: #ff6b2b; --amber: #ffad3b; --coral: #ff4d6a;
+    --midnight: #162252; --electric: #3d7cc9;
+    --ice: #f0f0f4; --deep: #0a0f1a; --charcoal: #111827; --white: #ffffff;
+    --trust-slate: #2d3a4a; --trust-cool: #5a8a9a; --trust-mid: #8fb5c0; --trust-deep: #0a1d2e;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Sora', sans-serif; color: var(--white); background: var(--deep); -webkit-font-smoothing: antialiased; }
+  .gradient-text {
+    background: linear-gradient(90deg, var(--electric), var(--trust-mid));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 5%; background: rgba(10,15,26,0.92);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { display: inline-flex; align-items: flex-start; text-decoration: none; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    font-size: 0.82rem; font-weight: 600; color: var(--white);
+    background: var(--electric); padding: 10px 22px; border-radius: 6px;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .nav-cta:hover { background: #2d6ab5; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+  .overline {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--electric); margin-bottom: 20px;
+  }
+  .accent-line { width: 48px; height: 3px; background: var(--electric); border-radius: 2px; }
+
+  .hero {
+    padding: 160px 5% 80px;
+    background: linear-gradient(160deg, var(--trust-deep) 0%, #0d1633 40%, #162252 100%);
+  }
+  .hero-inner { max-width: 800px; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800;
+    line-height: 1.08; letter-spacing: -0.04em; margin-bottom: 24px;
+  }
+  .hero p { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,0.5); max-width: 640px; }
+
+  .section { padding: 80px 5%; }
+  .section--alt { background: var(--charcoal); }
+  .section h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800;
+    line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 20px;
+  }
+  .section p { font-size: 0.95rem; line-height: 1.85; color: rgba(255,255,255,0.5); margin-bottom: 16px; max-width: 720px; }
+
+  .drivers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .driver-card {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; padding: 32px 28px; text-align: center;
+    transition: border-color 0.3s;
+  }
+  .driver-card:hover { border-color: rgba(61,124,201,0.3); }
+  .driver-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(61,124,201,0.1); display: flex; align-items: center;
+    justify-content: center; margin: 0 auto 20px; font-size: 1.4rem; font-weight: 800;
+    color: var(--electric);
+  }
+  .driver-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+  .driver-card p { font-size: 0.88rem; line-height: 1.75; color: rgba(255,255,255,0.42); }
+
+  .integrity-bar {
+    margin-top: 32px; padding: 24px 32px; border-radius: 12px;
+    background: rgba(61,124,201,0.06); border: 1px solid rgba(61,124,201,0.15);
+    text-align: center;
+  }
+  .integrity-bar h3 { font-size: 1rem; font-weight: 700; color: var(--electric); margin-bottom: 8px; }
+  .integrity-bar p { font-size: 0.88rem; color: rgba(255,255,255,0.42); line-height: 1.75; }
+
+  .how-it-works { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 48px; }
+  .how-step { margin-bottom: 32px; }
+  .how-step .step-num { font-size: 0.72rem; font-weight: 700; color: var(--electric); letter-spacing: 0.15em; margin-bottom: 8px; }
+  .how-step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .how-step p { font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.45); }
+
+  .for-who ul { list-style: none; margin-top: 24px; }
+  .for-who li {
+    padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.92rem; color: rgba(255,255,255,0.5); padding-left: 24px;
+    position: relative;
+  }
+  .for-who li::before {
+    content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 8px; height: 8px; border-radius: 50%; background: var(--electric);
+  }
+
+  .cta-banner {
+    padding: 80px 5%; text-align: center;
+    background: linear-gradient(160deg, #162252, #0d1633);
+  }
+  .cta-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; margin-bottom: 16px; }
+  .cta-banner p { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 32px; }
+  .btn-primary {
+    display: inline-block; padding: 14px 32px; background: var(--electric);
+    color: var(--white); font-size: 0.92rem; font-weight: 600;
+    border-radius: 8px; text-decoration: none; transition: all 0.3s;
+  }
+  .btn-primary:hover { background: #2d6ab5; transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white); font-size: 0.92rem; font-weight: 500;
+    border-radius: 8px; text-decoration: none; margin-left: 16px; transition: all 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--electric); color: var(--electric); }
+  .btn-blaze {
+    display: inline-block; padding: 14px 32px; background: var(--blaze);
+    color: var(--white); font-size: 0.92rem; font-weight: 600;
+    border-radius: 8px; text-decoration: none; margin-left: 16px; transition: all 0.3s;
+  }
+  .btn-blaze:hover { background: #e85a1f; }
+
+  .footer {
+    padding: 48px 5% 32px; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px;
+  }
+  .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.35); text-decoration: none; margin-bottom: 10px; }
+  .footer-col a:hover { color: var(--blaze); }
+  .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.25); margin-top: 8px; }
+  .footer-col-head { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+  .footer-legal-detail { font-size: 0.72rem; color: rgba(255,255,255,0.2); margin-top: 16px; line-height: 1.6; }
+  .footer-strip { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.04); font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .drivers-grid { grid-template-columns: 1fr; }
+    .how-it-works { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TrustOS",
+  "description": "A stakeholder trust measurement and intelligence platform that tracks trust in real time across Clarity, Connection, and Confidence — on a foundation of Integrity.",
+  "url": "https://missionctrl.agency/trustos",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "provider": {
+    "@type": "Organization",
+    "name": "MissionCTRL Ltd",
+    "url": "https://missionctrl.agency"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dustin Lawrence",
+    "sameAs": "https://www.linkedin.com/in/dustinclawrence/"
+  }
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav-logo" aria-label="MissionCTRL home">
+    <svg width="28" height="34" viewBox="0 0 120 148" fill="none" style="flex-shrink:0;">
+      <defs><linearGradient id="nav-m" x1="0" y1="148" x2="120" y2="0"><stop offset="0%" stop-color="#ff6b2b"/><stop offset="100%" stop-color="#ffad3b"/></linearGradient><clipPath id="nav-mc"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+      <rect width="120" height="148" fill="url(#nav-m)" clip-path="url(#nav-mc)"/>
+    </svg>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;margin-left:-2px;">
+      <span style="font-size:0.95rem;font-weight:700;color:var(--white);letter-spacing:-0.04em;line-height:0.85;">ission</span>
+      <div style="line-height:0.85;"><span style="font-size:0.95rem;font-weight:800;color:var(--blaze);letter-spacing:-0.04em;">C</span><span style="font-size:0.95rem;font-weight:800;color:var(--white);letter-spacing:-0.04em;">TRL</span></div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="/">MissionCTRL</a>
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/movement-archetype">Movement Archetype</a>
+    <a href="/#contact" class="nav-cta">Start the conversation</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="overline">The measurement layer</div>
+    <div class="accent-line" style="margin-bottom:24px;"></div>
+    <h1>TrustOS. <span class="gradient-text">Stakeholder trust, measured.</span></h1>
+    <p>TrustOS is MissionCTRL's trust measurement and intelligence platform. It reads stakeholder trust in real time — tracking Clarity, Connection, and Confidence across your entire stakeholder ecosystem — so enterprise leaders can see where trust is holding, where it's fracturing, and what to do about it.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="overline">The three drivers of trust</div>
+    <div class="accent-line" style="margin-bottom:24px;"></div>
+    <h2>Clarity. Connection. Confidence.</h2>
+    <p>TrustOS measures trust through three diagnostic drivers, each mapped to a specific dimension of how stakeholders experience your brand. Together, they give you a complete, quantifiable picture of trust performance.</p>
+    <div class="drivers-grid">
+      <div class="driver-card">
+        <div class="driver-icon">C</div>
+        <h3>Clarity</h3>
+        <p>Do your stakeholders understand what you stand for? Clarity measures whether your purpose, positioning, and promises cut through noise and land with precision across every audience segment.</p>
+      </div>
+      <div class="driver-card">
+        <div class="driver-icon">C</div>
+        <h3>Connection</h3>
+        <p>Do your stakeholders feel aligned with your purpose? Connection tracks emotional and rational resonance — whether stakeholders see themselves in your mission and feel compelled to engage.</p>
+      </div>
+      <div class="driver-card">
+        <div class="driver-icon">C</div>
+        <h3>Confidence</h3>
+        <p>Do your stakeholders act on that alignment? Confidence measures the gap between intent and action — whether trust translates into decisions, advocacy, and sustained engagement.</p>
+      </div>
+    </div>
+    <div class="integrity-bar">
+      <h3>On a foundation of Integrity</h3>
+      <p>Underneath the three drivers sits Integrity — the baseline expectation that your organisation does what it says. Without Integrity, the drivers collapse. TrustOS monitors this foundation continuously.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="overline">How TrustOS works</div>
+    <div class="accent-line" style="margin-bottom:24px;"></div>
+    <h2>From data to decisions.</h2>
+    <p>TrustOS isn't a survey tool. It's a measurement intelligence engine that synthesises signals from across your stakeholder ecosystem into actionable trust intelligence.</p>
+    <div class="how-it-works">
+      <div>
+        <div class="how-step">
+          <div class="step-num">01 — SENSE</div>
+          <h3>Map your stakeholder ecosystem</h3>
+          <p>TrustOS maps every stakeholder group that matters to your brand — employees, customers, investors, regulators, partners, and communities — and establishes baseline trust scores across all three drivers.</p>
+        </div>
+        <div class="how-step">
+          <div class="step-num">02 — MEASURE</div>
+          <h3>Track trust in real time</h3>
+          <p>Continuous measurement across Clarity, Connection, and Confidence gives you a live view of trust performance. No more annual surveys that arrive six months too late. See where trust is building, where it's eroding, and why.</p>
+        </div>
+      </div>
+      <div>
+        <div class="how-step">
+          <div class="step-num">03 — ACT</div>
+          <h3>Convert insight into intervention</h3>
+          <p>TrustOS doesn't just report — it recommends. When a trust driver drops below threshold, TrustOS surfaces the specific interventions needed to restore alignment. Every recommendation maps back to The Brand Effect methodology.</p>
+        </div>
+        <div class="how-step">
+          <div class="step-num">04 — COMPOUND</div>
+          <h3>Build trust that scales</h3>
+          <p>Over time, TrustOS reveals the compounding patterns: which actions build trust fastest, which stakeholder groups are most responsive, and where your brand has the greatest opportunity to drive market movement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section for-who">
+  <div class="container">
+    <div class="overline">Who TrustOS is for</div>
+    <div class="accent-line" style="margin-bottom:24px;"></div>
+    <h2>Built for enterprise complexity.</h2>
+    <p>TrustOS is designed for organisations where trust isn't a marketing metric — it's an operational imperative.</p>
+    <ul>
+      <li>Enterprise organisations with multiple stakeholder groups and complex reputational landscapes</li>
+      <li>Purpose-led brands that need to prove their impact is real, not performative</li>
+      <li>Leadership teams that want a single, measurable view of how their brand is experienced</li>
+      <li>Organisations navigating transformation, M&A, or reputational recovery</li>
+      <li>B Corps and impact-driven organisations that need quantifiable trust evidence</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <h2>See TrustOS in action</h2>
+  <p>Book a conversation to explore how TrustOS can give your leadership a real-time view of stakeholder trust.</p>
+  <a href="/#contact" class="btn-primary">Start the conversation &rarr;</a>
+  <a href="/movement-archetype" class="btn-blaze">Take the Movement Archetype Assessment</a>
+</section>
+
+<section class="section" style="padding:48px 5%;text-align:center;">
+  <p style="font-size:0.92rem;color:rgba(255,255,255,0.35);">Read our latest field report: <a href="/insights/brilliance-in-a-brittle-world" style="color:var(--electric);text-decoration:none;font-weight:500;">Brilliance in a Brittle World &rarr;</a></p>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="/" class="nav-logo" aria-label="MissionCTRL home" style="margin-bottom:4px;">
+        <svg width="28" height="34" viewBox="0 0 120 148" fill="none" style="flex-shrink:0;">
+          <defs><linearGradient id="ft-m" x1="0" y1="148" x2="120" y2="0"><stop offset="0%" stop-color="#ff6b2b"/><stop offset="100%" stop-color="#ffad3b"/></linearGradient><clipPath id="ft-mc"><path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/></clipPath></defs>
+          <rect width="120" height="148" fill="url(#ft-m)" clip-path="url(#ft-mc)"/>
+        </svg>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;margin-left:-2px;">
+          <span style="font-size:0.95rem;font-weight:700;color:var(--white);letter-spacing:-0.04em;line-height:0.85;">ission</span>
+          <div style="line-height:0.85;"><span style="font-size:0.95rem;font-weight:800;color:var(--blaze);letter-spacing:-0.04em;">C</span><span style="font-size:0.95rem;font-weight:800;color:var(--white);letter-spacing:-0.04em;">TRL</span></div>
+        </div>
+      </a>
+      <p class="footer-tagline">Brand. Made to move.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-head">Navigate</p>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/trustos">TrustOS</a>
+      <a href="/movement-archetype">Movement Archetype</a>
+      <a href="/insights/brilliance-in-a-brittle-world">Insights</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-head">Legal</p>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/cookie-policy">Cookie Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+      <p class="footer-legal-detail">MissionCTRL Ltd<br/>Company No. 17018199<br/>Registered in England &amp; Wales</p>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <p>&copy; 2026 MissionCTRL Ltd. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
