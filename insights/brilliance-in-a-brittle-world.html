@@ -829,6 +829,35 @@
   .lw-svg-wrap { overflow-x: auto; }
   .lw-svg-wrap svg { min-width: 620px; width: 100%; height: auto; display: block; }
   @media (max-width: 720px) { .lens-worked { padding: 28px 20px; } }
+
+  /* Stat → source links */
+  .stat-link { display: block; text-decoration: none; color: inherit; }
+  .stat-link .force-stat-lbl::after { content: " · source"; color: var(--trust-mid); opacity: 0; transition: opacity 0.18s; }
+  .stat-link:hover .force-stat-lbl::after { opacity: 0.85; }
+  .sources li:target { border-left: 2px solid var(--blaze); padding-left: 10px; color: var(--ink-2); }
+  .sources li:target a { color: var(--ink); }
+
+  /* Cautionary fracture triangles */
+  .ctri-wrap { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--rule-2); }
+  .ctri { width: 132px; height: auto; display: block; }
+  .ctri-ghost { fill: none; stroke: rgba(255,255,255,0.13); stroke-width: 1; stroke-dasharray: 4 4; }
+  .ctri-shape { fill: rgba(255,77,106,0.06); stroke: var(--coral); stroke-width: 1.5; opacity: 0.85; }
+  .ctri-cap { font-size: 0.78rem; color: var(--ink-3); margin-top: 10px; line-height: 1.55; max-width: 360px; }
+  .ctri-cap span { display: block; font-family: 'Sora', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin-bottom: 4px; }
+
+  /* Self-diagnostic */
+  .self-diag { margin-top: 56px; border: 1px solid var(--rule); border-radius: 12px; padding: 42px 44px; background: rgba(255,255,255,0.015); }
+  .self-diag h4 { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); margin: 0 0 8px; }
+  .sd-grid { display: grid; grid-template-columns: 1fr 320px; gap: 44px; align-items: center; margin-top: 26px; }
+  .sd-q { margin-bottom: 26px; }
+  .sd-q label { display: block; font-size: 0.9rem; color: var(--ink-2); line-height: 1.55; margin-bottom: 12px; font-weight: 300; }
+  .sd-q label strong { color: var(--trust-mid); font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .sd-q input[type="range"] { width: 100%; accent-color: var(--trust-cool); cursor: pointer; }
+  .sd-scale { display: flex; justify-content: space-between; font-size: 0.66rem; color: var(--ink-4); margin-top: 4px; font-family: 'Sora', sans-serif; letter-spacing: 0.04em; }
+  .sd-read { font-size: 0.95rem; color: var(--ink-2); margin: 4px 0 18px; min-height: 2.6em; }
+  .sd-read strong { color: var(--coral); }
+  .sd-tri svg { width: 100%; height: auto; display: block; }
+  @media (max-width: 860px) { .sd-grid { grid-template-columns: 1fr; } .sd-tri { max-width: 300px; margin: 0 auto; } .self-diag { padding: 28px 20px; } }
 </style>
 </head>
 <body>
@@ -966,8 +995,8 @@
         <div class="force-title">The Epistemic Rupture</div>
         <p class="force-body">The cost of producing plausible-looking truth has fallen to almost zero. Forrester has called it a "trust recession." For impact-driven brands — whose claims live primarily in narrative form — only verification carries meaning now.</p>
         <div class="force-stats">
-          <div><div class="force-stat-num">4×</div><div class="force-stat-lbl">growth in detected deepfake fraud, 2023 → 2024</div></div>
-          <div><div class="force-stat-num">20%</div><div class="force-stat-lbl">of consumers believe brand sustainability claims</div></div>
+          <div><a class="stat-link" href="#src-deepfake" title="View source"><div class="force-stat-num">4×</div><div class="force-stat-lbl">growth in detected deepfake fraud, 2023 → 2024</div></a></div>
+          <div><a class="stat-link" href="#src-claims" title="View source"><div class="force-stat-num">20%</div><div class="force-stat-lbl">of consumers believe brand sustainability claims</div></a></div>
         </div>
       </div>
 
@@ -976,8 +1005,8 @@
         <div class="force-title">The ESG Counter-Reformation</div>
         <p class="force-body">The public language of impact has become a strategic liability in some markets. "Doing good quietly" is a live option for the first time in nearly a decade. The split is now structural: European sustainable funds returned to net inflows in early 2026 while US investors withdrew for a fourteenth consecutive quarter. There is no longer a middle lane — brands trying to hold one are being read, by both sides, as cowards.</p>
         <div class="force-stats">
-          <div><div class="force-stat-num">$84B</div><div class="force-stat-lbl">Net outflows from sustainable funds, 2025</div></div>
-          <div><div class="force-stat-num">14</div><div class="force-stat-lbl">consecutive quarters of US redemptions</div></div>
+          <div><a class="stat-link" href="#src-esg" title="View source"><div class="force-stat-num">$84B</div><div class="force-stat-lbl">Net outflows from sustainable funds, 2025</div></a></div>
+          <div><a class="stat-link" href="#src-esg" title="View source"><div class="force-stat-num">14</div><div class="force-stat-lbl">consecutive quarters of US redemptions</div></a></div>
         </div>
       </div>
 
@@ -986,8 +1015,8 @@
         <div class="force-title">The Polycrisis Tax</div>
         <p class="force-body">The Iran war closed the Strait of Hormuz — suspending ~20% of the world's oil trade — and sent Brent through $120/bbl before the ceasefire pulled it back to the mid-$90s. The World Bank projects energy prices up 24% this year. Every input for a brand that refuses to externalise its impact is more expensive — at exactly the moment the political weather has turned against premium pricing.</p>
         <div class="force-stats">
-          <div><div class="force-stat-num">1.55°C</div><div class="force-stat-lbl">2024 above pre-industrial — capping the three warmest years on record</div></div>
-          <div><div class="force-stat-num">22 / 34</div><div class="force-stat-lbl">planetary vital signs at record levels</div></div>
+          <div><a class="stat-link" href="#src-wmo" title="View source"><div class="force-stat-num">1.55°C</div><div class="force-stat-lbl">2024 above pre-industrial — capping the three warmest years on record</div></a></div>
+          <div><a class="stat-link" href="#src-vitals" title="View source"><div class="force-stat-num">22 / 34</div><div class="force-stat-lbl">planetary vital signs at record levels</div></a></div>
         </div>
       </div>
 
@@ -996,8 +1025,8 @@
         <div class="force-title">The Affinity Vacuum</div>
         <p class="force-body">"My Employer" again outranks government, NGOs, and business in the Edelman Barometer — and the 2026 edition goes further: in a society sliding from grievance into insularity, employers are now the actors expected to broker trust between groups that no longer trust each other. The transfer is conditional. It collapses the moment a brand stops being legible. And legibility, in 2026, means measurable.</p>
         <div class="force-stats">
-          <div><div class="force-stat-num">78%</div><div class="force-stat-lbl">trust "My Employer" — most trusted institution</div></div>
-          <div><div class="force-stat-num">7×</div><div class="force-stat-lbl">UK B Corp SME growth vs. UK SME average</div></div>
+          <div><a class="stat-link" href="#src-edelman" title="View source"><div class="force-stat-num">78%</div><div class="force-stat-lbl">trust "My Employer" — most trusted institution</div></a></div>
+          <div><a class="stat-link" href="#src-bcorp" title="View source"><div class="force-stat-num">7×</div><div class="force-stat-lbl">UK B Corp SME growth vs. UK SME average</div></a></div>
         </div>
       </div>
 
@@ -1215,6 +1244,10 @@
           <div class="case-body">
             <p>The cleanest healthtech Pioneer of the last decade. Peak $6B valuation. 15 million customers had handed over their saliva — and with it, their most personally identifying biological data. In March 2025 it filed Chapter 11; the assets were bought out of bankruptcy for $305M by the founder's new nonprofit.</p>
             <p>The technical reason was financial distress. The actual reason was that the trust architecture had quietly collapsed years earlier — and the debt is still being collected: in May 2026, California's Attorney General sued the successor over its safeguarding of the same genetic data. <strong>Pioneers don't die from being wrong about the frontier. They die when the story they've built around it outpaces the trust infrastructure underneath.</strong></p>
+            <div class="ctri-wrap">
+              <svg class="ctri" viewBox="0 0 200 180" aria-hidden="true"><polygon class="ctri-ghost" points="30,40 170,40 100,160"/><polygon class="ctri-shape" points="30,40 170,40 100,160" data-target="47.5,50 138.5,58 100,160"/></svg>
+              <div class="ctri-cap"><span>The fracture · Clarity</span>The story and the reality pulled apart years before Chapter 11.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1262,6 +1295,10 @@
           <div class="case-body">
             <p>Until 2018 it would have appeared in a list of Champions. The Haiti scandal broke the legitimacy in a single news cycle: ~7,000 regular donors lost, a Charity Commission warning, tripled safeguarding investment, long-term reform. The reform has been credible. The trust has not fully returned.</p>
             <p><strong>The Protector's most dangerous failure is the one that comes from inside the institution.</strong> Internal trust failure travels faster than external trust failure — and Protectors who don't measure their own internal coherence are flying blind.</p>
+            <div class="ctri-wrap">
+              <svg class="ctri" viewBox="0 0 200 180" aria-hidden="true"><polygon class="ctri-ghost" points="30,40 170,40 100,160"/><polygon class="ctri-shape" points="30,40 170,40 100,160" data-target="30,40 142,56 100,132"/></svg>
+              <div class="ctri-cap"><span>The fracture · Connection</span>The bond broke with the very people the institution existed for.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1309,6 +1346,10 @@
           <div class="case-body">
             <p>The most ambitious healthtech Equaliser of the 2010s. Valued at ~$4.2B at its 2021 listing. Operating in the UK, US, and Rwanda — where Babyl served ~2.8 million people. 2022: $221M net loss on $1B revenue. Founder: <em>"We lose money on every member that comes in."</em> US Chapter 7 in August 2023. UK administration in September. The Rwanda service began winding down.</p>
             <p>The mission wasn't the problem. <strong>What failed was the measurement infrastructure.</strong> In 2026, an Equaliser cannot survive on the mission alone — it has to be paired with a measurement layer that can prove the access is real and the unit economics sustain it.</p>
+            <div class="ctri-wrap">
+              <svg class="ctri" viewBox="0 0 200 180" aria-hidden="true"><polygon class="ctri-ghost" points="30,40 170,40 100,160"/><polygon class="ctri-shape" points="30,40 170,40 100,160" data-target="47.5,50 138.5,58 100,160"/></svg>
+              <div class="ctri-cap"><span>The fracture · Clarity</span>The access story and the unit economics were never the same shape.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1356,6 +1397,10 @@
           <div class="case-body">
             <p>The shadow risk of the Catalyst archetype is <em>starting fires you can't control</em>. McKinsey has now lit two of the most damaging of the century. Advised Purdue Pharma on how to "turbocharge" OxyContin. $573M state AG settlement (2021). $650M federal DOJ settlement (2024). A former senior partner charged with destroying documents. In South Africa: ~$123M settlement linked to Eskom and Transnet.</p>
             <p><strong>Catalysts who move industries without auditing the direction of the movement become the case study everyone else uses to discredit the whole category.</strong> A Catalyst without conviction is a vector for harm at scale.</p>
+            <div class="ctri-wrap">
+              <svg class="ctri" viewBox="0 0 200 180" aria-hidden="true"><polygon class="ctri-ghost" points="30,40 170,40 100,160"/><polygon class="ctri-shape" points="30,40 170,40 100,160" data-target="68.5,62 131.5,62 100,116"/></svg>
+              <div class="ctri-cap"><span>The fracture · Integrity</span>When the centre gives way, all three edges follow.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1403,6 +1448,10 @@
           <div class="case-body">
             <p>For most of the 20th century, Boeing was the model of a Builder. Then the engineering culture was eroded by financial culture. The 2018–2019 MAX crashes killed 346 people. The 2024 crisis confirmed the rot was structural: the Alaska Airlines door plug, the Starliner astronauts stranded in orbit, the FAA's damning report, 32 OSHA whistleblower complaints since 2020, a federal judge rejecting the DOJ plea deal — before the case was finally resolved without a criminal conviction.</p>
             <p><strong>The collapse of generational stewardship is slow, until it is sudden.</strong> For two decades the culture was being chipped away. Then, in eighteen months, it collapsed in public. The brittleness had been there the whole time. It just wasn't measured. The 2026 postscript sharpens the question rather than closing it: the FAA lifted its production cap in March, and output is climbing again. Production recovery is measurable. Culture recovery is the test Boeing has no instrument for.</p>
+            <div class="ctri-wrap">
+              <svg class="ctri" viewBox="0 0 200 180" aria-hidden="true"><polygon class="ctri-ghost" points="30,40 170,40 100,160"/><polygon class="ctri-shape" points="30,40 170,40 100,160" data-target="44,48 135,60 100,136"/></svg>
+              <div class="ctri-cap"><span>The fracture · Clarity + Connection</span>Confidence held until 2019 — then followed.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1450,6 +1499,10 @@
           <div class="case-body">
             <p>The original argument was perfect — perhaps too perfect. IBM spent ~$4B building Watson Health. Rometty called it a "moon shot." The collapse was clinical, in both senses. Watson Health could not bring its diagnostic vision to the standards regulators required. M.D. Anderson abandoned the project. In 2022, IBM sold the assets to Francisco Partners for $1B+.</p>
             <p><strong>Being right about what's broken does not create the conditions to fix it.</strong> Conviction without strategy is noise. A Challenger who cannot pair the argument with year-over-year proof becomes the case study every defender of the old way uses to discredit the next attempt.</p>
+            <div class="ctri-wrap">
+              <svg class="ctri" viewBox="0 0 200 180" aria-hidden="true"><polygon class="ctri-ghost" points="30,40 170,40 100,160"/><polygon class="ctri-shape" points="30,40 170,40 100,160" data-target="58,56 170,40 100,132"/></svg>
+              <div class="ctri-cap"><span>The fracture · Confidence</span>The clinical proof never arrived to hold up the claim.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1583,6 +1636,42 @@
       </div>
       <p class="lw-note">An illustrative reconstruction from the public record — not live TrustOS data. The numbered events are documented fact; the curves show how the three diagnostics would have registered them. Every one of these signals was public before the crisis was.</p>
     </div>
+
+    <div class="self-diag" id="self-diagnostic">
+      <h4>Now read your own.</h4>
+      <p class="lw-sub">Three gut-check questions — one per diagnostic. Slide honestly. This is a thirty-second read, not the instrument; nothing you set here is recorded or sent anywhere.</p>
+      <div class="sd-grid">
+        <div>
+          <div class="sd-q">
+            <label for="sdClarity"><strong>Clarity</strong>Could ten people across your organisation describe what your brand is for — in the same direction?</label>
+            <input type="range" id="sdClarity" min="0" max="10" value="7" aria-label="Clarity score 0 to 10">
+            <div class="sd-scale"><span>Not today</span><span>Word for word</span></div>
+          </div>
+          <div class="sd-q">
+            <label for="sdConnection"><strong>Connection</strong>Do your stakeholders feel the brand belongs to them the way you claim it does?</label>
+            <input type="range" id="sdConnection" min="0" max="10" value="6" aria-label="Connection score 0 to 10">
+            <div class="sd-scale"><span>They've stopped feeling it</span><span>They defend it for us</span></div>
+          </div>
+          <div class="sd-q">
+            <label for="sdConfidence"><strong>Confidence</strong>Could a buyer, funder, or partner read your proof in real time — without asking you for it?</label>
+            <input type="range" id="sdConfidence" min="0" max="10" value="5" aria-label="Confidence score 0 to 10">
+            <div class="sd-scale"><span>They'd have to take our word</span><span>The proof is public</span></div>
+          </div>
+          <p class="sd-read" id="sdRead"></p>
+          <a class="cta-primary" href="https://trustos.missionctrl.agency" style="display: inline-block;">Run the full TrustOS Health Check →</a>
+        </div>
+        <div class="sd-tri" aria-hidden="true">
+          <svg viewBox="40 60 340 290" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+            <polygon points="97,115 323,115 210,310" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+            <polygon id="sdShape" points="97,115 323,115 210,310" fill="rgba(90,138,154,0.16)" stroke="#8fb5c0" stroke-width="1.5" style="transition: all 0.25s ease;"/>
+            <text class="tri-vertex" x="85" y="105" text-anchor="end">Intent</text>
+            <text class="tri-vertex" x="335" y="105" text-anchor="start">Reality</text>
+            <text class="tri-vertex" x="210" y="330" text-anchor="middle">Expectation</text>
+            <text class="tri-center" x="210" y="184" text-anchor="middle" dominant-baseline="middle">Integrity</text>
+          </svg>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1662,12 +1751,12 @@
     <h2 class="sec-title" style="margin-bottom: 18px;">Sources &amp; verification.</h2>
     <p style="color: var(--ink-2); margin-bottom: 34px; max-width: 620px;">A field report about measurement should show its working. The key claims above, with their primary sources. Last verified 10 June 2026.</p>
     <ul style="list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 44px; font-size: 0.86rem; line-height: 1.55; color: var(--ink-3);">
-      <li style="margin-bottom: 12px; break-inside: avoid;">Sustainable fund flows ($84B 2025 outflows; US redemption streak; Europe's Q1 2026 return to inflows) — <a href="https://www.morningstar.com/business/insights/research/global-esg-flows" target="_blank" rel="noopener" style="color: var(--trust-mid);">Morningstar Global Sustainable Fund Flows</a></li>
-      <li style="margin-bottom: 12px; break-inside: avoid;">"My Employer" trust (78%) and the insularity findings — <a href="https://www.edelman.com/trust/2026/trust-barometer" target="_blank" rel="noopener" style="color: var(--trust-mid);">2026 Edelman Trust Barometer</a></li>
-      <li style="margin-bottom: 12px; break-inside: avoid;">UK B Corp SME growth vs. UK SME average — <a href="https://bcorporation.uk/news-stories-and-events/news/purpose-led-businesses-thriving-and-outperforming-uk-peers-new-data-shows/" target="_blank" rel="noopener" style="color: var(--trust-mid);">B Lab UK performance data</a></li>
-      <li style="margin-bottom: 12px; break-inside: avoid;">Deepfake fraud growth — <a href="https://sumsub.com/fraud-report-2024/" target="_blank" rel="noopener" style="color: var(--trust-mid);">Sumsub Identity Fraud Report</a></li>
-      <li style="margin-bottom: 12px; break-inside: avoid;">2024 at 1.55°C; 2023–2025 the three warmest years on record — <a href="https://wmo.int/news/media-centre/wmo-confirms-2025-was-one-of-warmest-years-record" target="_blank" rel="noopener" style="color: var(--trust-mid);">World Meteorological Organization</a></li>
-      <li style="margin-bottom: 12px; break-inside: avoid;">22 of 34 planetary vital signs at record levels — <a href="https://academic.oup.com/bioscience/article/75/12/1016/8303627" target="_blank" rel="noopener" style="color: var(--trust-mid);">Ripple et al., 2025 State of the Climate, BioScience</a></li>
+      <li id="src-esg" style="margin-bottom: 12px; break-inside: avoid;">Sustainable fund flows ($84B 2025 outflows; US redemption streak; Europe's Q1 2026 return to inflows) — <a href="https://www.morningstar.com/business/insights/research/global-esg-flows" target="_blank" rel="noopener" style="color: var(--trust-mid);">Morningstar Global Sustainable Fund Flows</a></li>
+      <li id="src-edelman" style="margin-bottom: 12px; break-inside: avoid;">"My Employer" trust (78%) and the insularity findings — <a href="https://www.edelman.com/trust/2026/trust-barometer" target="_blank" rel="noopener" style="color: var(--trust-mid);">2026 Edelman Trust Barometer</a></li>
+      <li id="src-bcorp" style="margin-bottom: 12px; break-inside: avoid;">UK B Corp SME growth vs. UK SME average — <a href="https://bcorporation.uk/news-stories-and-events/news/purpose-led-businesses-thriving-and-outperforming-uk-peers-new-data-shows/" target="_blank" rel="noopener" style="color: var(--trust-mid);">B Lab UK performance data</a></li>
+      <li id="src-deepfake" style="margin-bottom: 12px; break-inside: avoid;">Deepfake fraud growth — <a href="https://sumsub.com/fraud-report-2024/" target="_blank" rel="noopener" style="color: var(--trust-mid);">Sumsub Identity Fraud Report</a></li>
+      <li id="src-wmo" style="margin-bottom: 12px; break-inside: avoid;">2024 at 1.55°C; 2023–2025 the three warmest years on record — <a href="https://wmo.int/news/media-centre/wmo-confirms-2025-was-one-of-warmest-years-record" target="_blank" rel="noopener" style="color: var(--trust-mid);">World Meteorological Organization</a></li>
+      <li id="src-vitals" style="margin-bottom: 12px; break-inside: avoid;">22 of 34 planetary vital signs at record levels — <a href="https://academic.oup.com/bioscience/article/75/12/1016/8303627" target="_blank" rel="noopener" style="color: var(--trust-mid);">Ripple et al., 2025 State of the Climate, BioScience</a></li>
       <li style="margin-bottom: 12px; break-inside: avoid;">Iran war energy impacts and price projections — <a href="https://www.worldbank.org/en/news/press-release/2026/04/28/commodity-markets-outlook-april-2026-press-release" target="_blank" rel="noopener" style="color: var(--trust-mid);">World Bank Commodity Markets Outlook, April 2026</a> · <a href="https://www.iea.org/reports/oil-market-report-april-2026" target="_blank" rel="noopener" style="color: var(--trust-mid);">IEA Oil Market Report</a></li>
       <li style="margin-bottom: 12px; break-inside: avoid;">Ørsted rights issue, FY2025 results, dividend target — <a href="https://orsted.com/en/company-announcement-list/2026/02/a-stronger-and-morecompetitiveorstedafter-a-defini-147853101" target="_blank" rel="noopener" style="color: var(--trust-mid);">Ørsted company announcements</a></li>
       <li style="margin-bottom: 12px; break-inside: avoid;">23andMe Chapter 11, nonprofit acquisition, May 2026 California AG suit — <a href="https://investors.23andme.com/news-releases/news-release-details/23andme-reaches-agreement-sale-business-ttam-research-institute/" target="_blank" rel="noopener" style="color: var(--trust-mid);">23andMe investor releases</a></li>
@@ -1677,7 +1766,7 @@
       <li style="margin-bottom: 12px; break-inside: avoid;">McKinsey settlements ($573M states, $650M DOJ, ~$123M South Africa) — <a href="https://www.justice.gov/archives/opa/pr/justice-department-announces-resolution-criminal-and-civil-investigations-mckinsey-companys" target="_blank" rel="noopener" style="color: var(--trust-mid);">US Department of Justice</a></li>
       <li style="margin-bottom: 12px; break-inside: avoid;">Boeing FAA production cap lifted, output recovery — <a href="https://www.flightglobal.com/airframers/boeings-recovery-gains-momentum-as-faa-approves-737-max-production-increase/164967.article" target="_blank" rel="noopener" style="color: var(--trust-mid);">FlightGlobal</a></li>
       <li style="margin-bottom: 12px; break-inside: avoid;">Signal exit threats over compelled decryption — <a href="https://www.theregister.com/2025/02/26/signal_will_withdraw_from_sweden/" target="_blank" rel="noopener" style="color: var(--trust-mid);">The Register</a> · <a href="https://www.computerworld.com/article/3850597/signal-threatens-to-leave-france-if-encryption-backdoor-required.html" target="_blank" rel="noopener" style="color: var(--trust-mid);">Computerworld</a></li>
-      <li style="margin-bottom: 12px; break-inside: avoid;">Consumer belief in sustainability claims (~1 in 5) — <a href="https://news.commonshare.com/blog/why-only-1-in-5-consumers-trust-sustainability-claims-and-how-brands-must-respond" target="_blank" rel="noopener" style="color: var(--trust-mid);">CommonShare</a></li>
+      <li id="src-claims" style="margin-bottom: 12px; break-inside: avoid;">Consumer belief in sustainability claims (~1 in 5) — <a href="https://news.commonshare.com/blog/why-only-1-in-5-consumers-trust-sustainability-claims-and-how-brands-must-respond" target="_blank" rel="noopener" style="color: var(--trust-mid);">CommonShare</a></li>
     </ul>
   </div>
 </section>
@@ -1758,6 +1847,91 @@
       var el = document.getElementById(id);
       if (el) spy.observe(el);
     });
+  })();
+
+  // Animated stat counters
+  (function(){
+    var els = document.querySelectorAll('.force-stat-num');
+    if (!els.length || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var el = e.target, orig = el.textContent;
+        var m = orig.match(/^([^0-9]*)([\d.]+)([\s\S]*)$/);
+        if (!m) return;
+        var pre = m[1], num = parseFloat(m[2]), suf = m[3];
+        var dec = (m[2].split('.')[1] || '').length;
+        var t0 = null, dur = 1300;
+        function step(ts){
+          if (!t0) t0 = ts;
+          var k = Math.min(1, (ts - t0) / dur);
+          k = 1 - Math.pow(1 - k, 3);
+          el.textContent = pre + (num * k).toFixed(dec) + suf;
+          if (k < 1) requestAnimationFrame(step); else el.textContent = orig;
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // Cautionary fracture triangles
+  (function(){
+    var shapes = document.querySelectorAll('.ctri-shape');
+    if (!shapes.length) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function parse(s){ return s.trim().split(/\s+/).map(function(p){ return p.split(',').map(Number); }); }
+    function set(el, pts){ el.setAttribute('points', pts.map(function(p){ return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ')); }
+    shapes.forEach(function(el){
+      var from = parse(el.getAttribute('points'));
+      var to = parse(el.dataset.target);
+      if (reduce || !('IntersectionObserver' in window)) { set(el, to); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (!e.isIntersecting) return;
+          io.unobserve(el);
+          var t0 = null, dur = 1100;
+          function step(ts){
+            if (!t0) t0 = ts;
+            var k = Math.min(1, (ts - t0) / dur);
+            k = 1 - Math.pow(1 - k, 3);
+            set(el, from.map(function(p, i){ return [p[0] + (to[i][0] - p[0]) * k, p[1] + (to[i][1] - p[1]) * k]; }));
+            if (k < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.5 });
+      io.observe(el);
+    });
+  })();
+
+  // Self-diagnostic triangle
+  (function(){
+    var c = document.getElementById('sdClarity'),
+        n = document.getElementById('sdConnection'),
+        f = document.getElementById('sdConfidence'),
+        shape = document.getElementById('sdShape'),
+        read = document.getElementById('sdRead');
+    if (!c || !shape) return;
+    var CTR = { x: 210, y: 180 };
+    var V = { I: { x: 97, y: 115 }, R: { x: 323, y: 115 }, E: { x: 210, y: 310 } };
+    function fac(a, b){ return 0.3 + 0.7 * ((a + b) / 20); }
+    function pt(v, k){ return (CTR.x + (v.x - CTR.x) * k).toFixed(1) + ',' + (CTR.y + (v.y - CTR.y) * k).toFixed(1); }
+    function upd(){
+      var cl = +c.value, co = +n.value, cf = +f.value;
+      shape.setAttribute('points', pt(V.I, fac(cl, cf)) + ' ' + pt(V.R, fac(cl, co)) + ' ' + pt(V.E, fac(co, cf)));
+      var min = Math.min(cl, co, cf), names = [];
+      if (cl === min) names.push('Clarity');
+      if (co === min) names.push('Connection');
+      if (cf === min) names.push('Confidence');
+      read.innerHTML = (names.length === 3)
+        ? 'All three edges are carrying equal load. The question the instrument answers is whether you can prove it.'
+        : 'Your weakest edge right now: <strong>' + names.join(' and ') + '</strong>. That is where the leak starts.';
+    }
+    [c, n, f].forEach(function(s){ s.addEventListener('input', upd); });
+    upd();
   })();
 </script>
 
