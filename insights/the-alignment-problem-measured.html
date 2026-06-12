@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Alignment Problem, Measured — MissionCTRL</title>
+<meta name="description" content="Across ten sectors read by TrustOS, Connection — what stakeholders actually experience — is the weakest trust layer in nine. The alignment problem, quantified." />
+<link rel="canonical" href="https://missionctrl.agency/insights/the-alignment-problem-measured" />
+<meta property="og:title" content="The Alignment Problem, Measured — MissionCTRL" />
+<meta property="og:description" content="Nine of ten sectors share the same weakest trust layer: Connection. The say-do gap, quantified at ~18 points — and closeable." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://missionctrl.agency/insights/the-alignment-problem-measured" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blaze:#FF6B2B; --amber:#FFAD3B; --coral:#FF4D6A;
+    --deep:#0a0f1a; --night:#0a0f1a; --night-2:#0d1633; --night-3:#162252;
+    --ink:#ffffff; --ink-2:rgba(255,255,255,0.78); --ink-3:rgba(255,255,255,0.55); --ink-4:rgba(255,255,255,0.32);
+    --rule:rgba(255,255,255,0.08); --rule-2:rgba(255,255,255,0.04);
+    /* TrustOS palette — matches trustos.missionctrl.agency */
+    --trust-slate:#2d3a4a;
+    --trust-cool:#5a8a9a;
+    --trust-mid:#8fb5c0;
+    --trust-deep:#0a1d2e;
+    --edge-clarity:#5a8a9a;
+    --edge-connection:#7cc4a8;
+    --edge-confidence:#a78bdb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Sora', system-ui, sans-serif;
+    background: var(--night);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--blaze); color: #fff; }
+  a { color: inherit; }
+
+  /* ============ MISSIONCTRL LOGO — matches missionctrl.agency ============ */
+  .mc-logo { display: inline-flex; align-items: flex-start; text-decoration: none; color: inherit; }
+  .mc-logo .mc-m { flex-shrink: 0; width: 28px; height: 34px; }
+  .mc-logo .mc-text { display: flex; flex-direction: column; align-items: flex-end; margin-left: -2px; }
+  .mc-logo .logo-line1 { font-size: 0.95rem; font-weight: 700; color: var(--ink); letter-spacing: -0.04em; line-height: 0.85; }
+  .mc-logo .logo-line2 { line-height: 0.85; font-size: 0.95rem; letter-spacing: -0.04em; }
+  .mc-logo .logo-line2 .c { font-weight: 800; color: var(--blaze); }
+  .mc-logo .logo-line2 .trl { font-weight: 800; color: var(--ink); }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 36px;
+    background: rgba(13,16,32,0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--blaze); }
+  .nav-cta {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+    padding: 10px 18px; border-radius: 999px;
+    background: linear-gradient(90deg, var(--blaze), var(--coral));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -10px var(--blaze); }
+  @media (max-width: 900px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+  }
+
+  /* ============ LAYOUT ============ */
+  .narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+  .overline {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--blaze); margin-bottom: 18px;
+  }
+  .overline.trust { color: var(--trust-mid); }
+  .sec-title {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.15; margin-bottom: 24px;
+  }
+  .sec-title em { font-style: italic; color: var(--blaze); }
+  p.lede { font-size: 1.05rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 20px; }
+  p.body { font-size: 0.95rem; color: var(--ink-3); line-height: 1.8; margin-bottom: 18px; }
+  p.body strong { color: var(--ink); font-weight: 700; }
+  p.body em { color: var(--ink-2); }
+  .accent-line { width: 48px; height: 3px; background: var(--blaze); border-radius: 2px; margin-bottom: 24px; }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 78vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 140px 24px 64px; position: relative;
+    background:
+      radial-gradient(ellipse 70% 50% at 75% 20%, rgba(90,138,154,0.10), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 20% 85%, rgba(255,107,43,0.07), transparent 60%),
+      var(--night);
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; width: 100%; }
+  .hero-title {
+    font-size: clamp(2.4rem, 6.5vw, 4.4rem); font-weight: 800; letter-spacing: -0.04em;
+    line-height: 1.05; margin-bottom: 26px;
+  }
+  .hero-title .gradient {
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-sub { font-size: 1.05rem; color: var(--ink-3); max-width: 620px; line-height: 1.75; margin-bottom: 40px; }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 32px;
+    font-size: 0.78rem; color: var(--ink-3);
+    border-top: 1px solid var(--rule); padding-top: 24px;
+  }
+  .hero-meta strong { display: block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 5px; }
+
+  /* ============ DRIVER CARDS ============ */
+  .drivers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 36px 0 10px; }
+  .driver {
+    background: rgba(255,255,255,0.025); border: 1px solid var(--rule); border-radius: 14px;
+    padding: 24px 22px;
+  }
+  .driver .d-name { font-size: 0.95rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 4px; }
+  .driver .d-pair { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 12px; }
+  .driver .d-desc { font-size: 0.82rem; color: var(--ink-3); line-height: 1.7; }
+  .driver.clarity { border-top: 3px solid var(--edge-clarity); }
+  .driver.connection { border-top: 3px solid var(--edge-connection); }
+  .driver.confidence { border-top: 3px solid var(--edge-confidence); }
+  .driver.clarity .d-name { color: var(--edge-clarity); }
+  .driver.connection .d-name { color: var(--edge-connection); }
+  .driver.confidence .d-name { color: var(--edge-confidence); }
+  @media (max-width: 760px) { .drivers { grid-template-columns: 1fr; } }
+
+  /* ============ FINDING NUMBERS ============ */
+  .finding-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--rule-2); border-radius: 16px; overflow: hidden;
+    margin: 40px 0 14px;
+  }
+  .finding-cell { background: rgba(10,15,26,0.95); padding: 34px 28px; text-align: center; }
+  .finding-num { font-size: clamp(2.4rem, 4.5vw, 3.4rem); font-weight: 900; line-height: 1; margin-bottom: 8px; }
+  .finding-cell.clarity .finding-num { color: var(--edge-clarity); }
+  .finding-cell.confidence .finding-num { color: var(--edge-confidence); }
+  .finding-cell.connection .finding-num { color: var(--edge-connection); }
+  .finding-label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; color: var(--ink-2); }
+  .finding-text { font-size: 0.78rem; color: var(--ink-4); line-height: 1.6; }
+  .finding-gap {
+    margin: 14px 0 0; padding: 26px 28px;
+    background: rgba(124,196,168,0.05); border: 1px solid rgba(124,196,168,0.2); border-radius: 16px;
+    display: flex; align-items: center; gap: 24px;
+  }
+  .finding-gap .gap-num { font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 900; color: var(--edge-connection); line-height: 1; white-space: nowrap; }
+  .finding-gap .gap-text { font-size: 0.9rem; color: var(--ink-2); line-height: 1.7; }
+  .finding-gap .gap-text strong { color: var(--ink); }
+  .finding-foot { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-4); margin-top: 16px; line-height: 1.8; }
+  @media (max-width: 760px) { .finding-strip { grid-template-columns: 1fr; } .finding-gap { flex-direction: column; align-items: flex-start; gap: 12px; } }
+
+  /* ============ SECTOR GRID (small multiples) ============ */
+  .sector-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin: 40px 0 14px;
+  }
+  .sector-cell {
+    background: rgba(255,255,255,0.02); border: 1px solid var(--rule); border-radius: 14px;
+    padding: 18px 14px 16px; text-align: center;
+    text-decoration: none; display: block;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  }
+  .sector-cell:hover { border-color: rgba(124,196,168,0.4); background: rgba(124,196,168,0.04); transform: translateY(-2px); }
+  .sector-cell svg { width: 100%; max-width: 150px; height: auto; overflow: visible; margin-bottom: 8px; }
+  .sector-name { font-size: 0.72rem; font-weight: 700; color: var(--ink-2); line-height: 1.35; margin-bottom: 5px; min-height: 2.7em; display: flex; align-items: center; justify-content: center; }
+  .sector-scores { font-size: 0.62rem; font-weight: 600; color: var(--ink-4); letter-spacing: 0.04em; margin-bottom: 7px; }
+  .sector-scores .sc { color: var(--edge-clarity); }
+  .sector-scores .sn { color: var(--edge-connection); }
+  .sector-scores .sf { color: var(--edge-confidence); }
+  .sector-weak {
+    display: inline-block; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 999px;
+  }
+  .sector-weak.connection { color: var(--edge-connection); background: rgba(124,196,168,0.09); }
+  .sector-weak.confidence { color: var(--edge-confidence); background: rgba(167,139,219,0.1); }
+  .grid-tri-poly { fill: rgba(90,138,154,0.14); }
+  .grid-tri-e-c { stroke: var(--edge-clarity); stroke-width: 3; fill: none; stroke-linecap: round; }
+  .grid-tri-e-n { stroke: var(--edge-connection); stroke-width: 3; fill: none; stroke-linecap: round; }
+  .grid-tri-e-f { stroke: var(--edge-confidence); stroke-width: 3; fill: none; stroke-linecap: round; }
+  .grid-tri-div { stroke: rgba(90,138,154,0.12); stroke-width: 1.2; fill: none; stroke-dasharray: 3 3; }
+  .grid-tri-comp { font-family: 'Sora', sans-serif; font-size: 30px; font-weight: 800; fill: rgba(255,255,255,0.85); }
+  .grid-foot { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-4); line-height: 1.8; }
+  @media (max-width: 1000px) { .sector-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 640px) { .sector-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ============ PULL QUOTE ============ */
+  .pull {
+    border-left: 3px solid var(--blaze);
+    padding: 8px 0 8px 28px; margin: 36px 0;
+  }
+  .pull p { font-size: clamp(1.2rem, 2.4vw, 1.55rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.4; color: var(--ink); }
+  .pull p em { font-style: italic; color: var(--blaze); }
+
+  /* ============ DIVISION OF LABOUR ============ */
+  .division { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 36px 0 10px; }
+  .division-card { border-radius: 14px; padding: 28px 26px; }
+  .division-card.sense { background: rgba(90,138,154,0.06); border: 1px solid rgba(90,138,154,0.25); }
+  .division-card.close { background: rgba(255,107,43,0.05); border: 1px solid rgba(255,107,43,0.25); }
+  .division-card .dv-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+  .division-card.sense .dv-label { color: var(--trust-mid); }
+  .division-card.close .dv-label { color: var(--blaze); }
+  .division-card .dv-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .division-card .dv-body { font-size: 0.85rem; color: var(--ink-3); line-height: 1.7; }
+  .division-card .dv-link { display: inline-block; margin-top: 14px; font-size: 0.75rem; font-weight: 700; text-decoration: none; }
+  .division-card.sense .dv-link { color: var(--trust-mid); }
+  .division-card.close .dv-link { color: var(--blaze); }
+  .division-foot { text-align: center; font-size: 0.95rem; font-weight: 600; color: var(--ink-2); margin-top: 22px; }
+  .division-foot .t { color: var(--trust-mid); }
+  .division-foot .m { color: var(--blaze); }
+  @media (max-width: 760px) { .division { grid-template-columns: 1fr; } }
+
+  /* ============ HONEST BOX ============ */
+  .honest {
+    background: rgba(255,255,255,0.025); border: 1px solid var(--rule); border-radius: 16px;
+    padding: 36px 36px 32px; margin-top: 8px;
+  }
+  .honest .h-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--trust-mid); margin-bottom: 16px; }
+  .honest p { font-size: 0.9rem; color: var(--ink-3); line-height: 1.8; margin-bottom: 14px; }
+  .honest p strong { color: var(--ink-2); }
+  .honest p:last-child { margin-bottom: 0; }
+  .honest a { color: var(--trust-mid); text-decoration: none; border-bottom: 1px solid rgba(143,181,192,0.4); }
+
+  /* ============ CTA ============ */
+  .cta { text-align: center; padding-bottom: 110px; }
+  .cta .sec-title { margin-bottom: 16px; }
+  .cta p.body { max-width: 540px; margin: 0 auto 36px; }
+  .btn-primary {
+    display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--ink); text-decoration: none; padding: 16px 32px; border-radius: 999px;
+    background: linear-gradient(90deg, var(--blaze), var(--coral));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -12px var(--blaze); }
+  .btn-ghost {
+    display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--trust-mid); text-decoration: none; padding: 16px 32px; border-radius: 999px;
+    border: 1px solid rgba(143,181,192,0.35); margin-left: 12px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-ghost:hover { border-color: var(--trust-mid); color: var(--ink); }
+  @media (max-width: 640px) { .btn-ghost { margin-left: 0; margin-top: 12px; } }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--rule-2); padding: 44px 24px 56px; text-align: center;
+    font-size: 0.7rem; color: var(--ink-4);
+  }
+  footer .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 26px; margin-bottom: 20px; }
+  footer .links a { color: var(--ink-3); text-decoration: none; transition: color 0.2s; }
+  footer .links a:hover { color: var(--blaze); }
+
+  /* ============ REVEAL ============ */
+  .fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared SVG defs: MissionCTRL M-mark -->
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <defs>
+    <linearGradient id="mc-m-grad" x1="0" y1="148" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff6b2b"/>
+      <stop offset="100%" stop-color="#ffad3b"/>
+    </linearGradient>
+    <clipPath id="mc-m-clip" clipPathUnits="userSpaceOnUse">
+      <path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <a class="mc-logo" href="https://missionctrl.agency" aria-label="MissionCTRL">
+    <svg class="mc-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+      <rect width="120" height="148" fill="url(#mc-m-grad)" clip-path="url(#mc-m-clip)"/>
+    </svg>
+    <span class="mc-text">
+      <span class="logo-line1">ission</span>
+      <span class="logo-line2"><span class="c">C</span><span class="trl">TRL</span></span>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://missionctrl.agency/#brand-effect">The Problem</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="https://missionctrl.agency/#contact">Start the conversation</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="overline">A MissionCTRL Finding · TrustOS Cross-Sector Reads · 2026</div>
+    <h1 class="hero-title">The alignment problem,<br/><span class="gradient">measured.</span></h1>
+    <p class="hero-sub">Most organisations are told they have a purpose problem. Across ten sectors, the data says otherwise — and it points to exactly where trust breaks.</p>
+    <div class="hero-meta">
+      <div><strong>Author</strong><a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.55);">Dustin Lawrence</a></div>
+      <div><strong>Published</strong>June 2026</div>
+      <div><strong>Measurement</strong><a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(143,181,192,0.55);">TrustOS</a> · Public-signal reads</div>
+      <div><strong>Read time</strong>~6 min</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ I. THE WRONG DIAGNOSIS ============ -->
+<section id="diagnosis">
+  <div class="narrow">
+    <div class="overline fade-up">I · The wrong diagnosis</div>
+    <div class="accent-line fade-up"></div>
+    <p class="lede fade-up">For twenty years, the diagnosis handed to most boards has been some version of <em>"you need a stronger purpose."</em> A sharper why. A bolder statement. A better story.</p>
+    <p class="body fade-up">It's almost always the wrong diagnosis.</p>
+    <p class="body fade-up">Leaders overwhelmingly say purpose matters — conviction is rarely the thing that's missing. What's missing is coherence: the gap between what an organisation intends and says, and what its stakeholders actually experience. We call that the <strong>alignment problem</strong>, and it's where trust breaks, talent leaves, and growth stalls.</p>
+    <p class="body fade-up">That has been MissionCTRL's argument from the start. The obvious challenge to it has always been the same: <em>prove it.</em></p>
+    <p class="body fade-up"><strong>So we did.</strong></p>
+  </div>
+</section>
+
+<!-- ============ II. WHAT WE MEASURED ============ -->
+<section id="measured" style="background: var(--night-2); padding: 80px 0;">
+  <div class="narrow">
+    <div class="overline trust fade-up">II · What we measured</div>
+    <div class="accent-line fade-up" style="background: var(--trust-cool);"></div>
+    <h2 class="sec-title fade-up">Three drivers. Ten sectors. Public signal only.</h2>
+    <p class="body fade-up"><a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" style="color: var(--trust-mid); text-decoration: none; border-bottom: 1px solid rgba(143,181,192,0.4);">TrustOS</a> — our trust measurement engine — reads trust as alignment between what an organisation <em>intends</em>, what its stakeholders <em>expect</em>, and what they actually <em>experience</em>. The gaps between them are the three drivers:</p>
+
+    <div class="drivers fade-up">
+      <div class="driver clarity">
+        <div class="d-name">Clarity</div>
+        <div class="d-pair">What you say</div>
+        <div class="d-desc">Is the promise understood, consistent, decision-ready — the same thing to everyone who hears it?</div>
+      </div>
+      <div class="driver connection">
+        <div class="d-name">Connection</div>
+        <div class="d-pair">What they experience</div>
+        <div class="d-desc">Does the promise land the same way for every stakeholder? This is where it has to land in the world.</div>
+      </div>
+      <div class="driver confidence">
+        <div class="d-name">Confidence</div>
+        <div class="d-pair">What you prove</div>
+        <div class="d-desc">Are you delivering what you said, with evidence people can verify for themselves?</div>
+      </div>
+    </div>
+
+    <p class="body fade-up" style="margin-top: 24px;">We ran the methodology across ten sectors — energy, mining, local government, education, social care, healthcare, technology, professional services, international NGOs, and private capital — reading each one from public signal alone: annual reports, regulation, disclosure, the public record.</p>
+    <p class="body fade-up"><strong>One pattern showed up almost everywhere.</strong></p>
+  </div>
+</section>
+
+<!-- ============ III. THE FINDING ============ -->
+<section id="finding">
+  <div class="narrow">
+    <div class="overline fade-up">III · The finding</div>
+    <div class="accent-line fade-up"></div>
+    <h2 class="sec-title fade-up">It's <em>Connection.</em></h2>
+    <p class="body fade-up">In <strong>nine of the ten sectors</strong>, Connection was the weakest trust layer. Average the published reads and the shape is unmistakable:</p>
+  </div>
+  <div class="wide">
+    <div class="finding-strip fade-up">
+      <div class="finding-cell clarity">
+        <div class="finding-num" data-target="65">0</div>
+        <div class="finding-label">Clarity</div>
+        <div class="finding-text">Organisations know what they stand for. Conviction is intact.</div>
+      </div>
+      <div class="finding-cell confidence">
+        <div class="finding-num" data-target="51">0</div>
+        <div class="finding-label">Confidence</div>
+        <div class="finding-text">Proof is patchy, but present.</div>
+      </div>
+      <div class="finding-cell connection">
+        <div class="finding-num" data-target="47">0</div>
+        <div class="finding-label">Connection</div>
+        <div class="finding-text">The lowest, almost everywhere.</div>
+      </div>
+    </div>
+    <div class="finding-gap fade-up">
+      <div class="gap-num">~18 pts</div>
+      <div class="gap-text">Connection trails Clarity by around eighteen points, sector after sector. That gap is the <strong>say-do gap, quantified</strong>. Not a gap in conviction. Not, mostly, a gap in delivery. A gap in <strong>alignment</strong> — between what the organisation intends and what its stakeholders actually live.</div>
+    </div>
+    <div class="finding-foot fade-up">Averages of the ten published TrustOS sector reads · Public signal only · Composite scores 0–100</div>
+  </div>
+
+  <div class="wide" style="margin-top: 56px;">
+    <div class="narrow" style="padding: 0;">
+      <h3 class="sec-title fade-up" style="font-size: clamp(1.2rem, 2.4vw, 1.6rem);">Ten sectors. Look at the short edge.</h3>
+      <p class="body fade-up">Each triangle below is a real published TrustOS read, drawn to its scores — the same triangle you'll find on every TrustOS dashboard. A balanced organisation fills the shape. A weak layer pulls its edge in. Nine times out of ten, the short edge is the green one: Connection.</p>
+    </div>
+    <div class="sector-grid fade-up" id="sectorGrid" aria-label="Ten sector trust triangles drawn to their published TrustOS scores"></div>
+    <div class="grid-foot fade-up">Scores: Clarity · Connection · Confidence — from the published TrustOS sector POVs · The exception: Education, where Confidence is weakest · Each links to its full sector read</div>
+  </div>
+</section>
+
+<!-- ============ IV. WHY IT'S ALWAYS CONNECTION ============ -->
+<section id="why" style="background: var(--night-2); padding: 80px 0;">
+  <div class="narrow">
+    <div class="overline fade-up">IV · Why it's always Connection</div>
+    <div class="accent-line fade-up"></div>
+    <p class="body fade-up">The reason is structural, and once you see it you can't unsee it.</p>
+    <p class="body fade-up">Clarity is owned by communications — you can <em>write</em> it. Confidence is owned by delivery and operations — you can <em>ship</em> it. But Connection isn't owned by anyone. It's the coherence <em>between</em> what's promised and what's experienced, across every stakeholder at once — and it falls into the gap between functions. No single team is accountable for it, so no single team measures it, so it quietly erodes while everyone reports green on their own slice.</p>
+    <div class="pull fade-up">
+      <p>That is the alignment problem in one line: the layer that matters most is the layer <em>no one owns.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ V. WHAT THIS CHANGES ============ -->
+<section id="changes">
+  <div class="narrow">
+    <div class="overline fade-up">V · What this changes</div>
+    <div class="accent-line fade-up"></div>
+    <h2 class="sec-title fade-up">From assertion to evidence.</h2>
+    <p class="body fade-up">The instinct, when trust slips, is to go back to the purpose — to restate, rebrand, re-launch. The data says that's treating the strongest layer while the weakest one leaks. The work that moves the needle isn't a better statement of intent; it's closing the distance between that intent and the experience every stakeholder has of it. <strong>Conviction you already have. Coherence is the build.</strong></p>
+    <p class="body fade-up">That's the whole of the Brand Effect: <strong>sense the gap, close it, and let it compound.</strong></p>
+
+    <div class="division fade-up">
+      <div class="division-card sense">
+        <div class="dv-label">Sense — TrustOS</div>
+        <div class="dv-title">Locates where trust is leaking.</div>
+        <div class="dv-body">Reads Clarity, Connection and Confidence across your stakeholder ecosystem — and shows you the short edge, with the working shown.</div>
+        <a class="dv-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Explore TrustOS &rarr;</a>
+      </div>
+      <div class="division-card close">
+        <div class="dv-label">Close — MissionCTRL</div>
+        <div class="dv-title">Closes the gap.</div>
+        <div class="dv-body">Alignment work that closes the distance between intent and experience — so purpose stops being a statement on a wall and starts being an operating system.</div>
+        <a class="dv-link" href="https://missionctrl.agency/#solutions">See how we close it &rarr;</a>
+      </div>
+    </div>
+    <p class="division-foot fade-up"><span class="t">Sense the gap.</span> <span class="m">Close it.</span> Let it compound.</p>
+    <p class="body fade-up" style="margin-top: 22px;">Do that, and the gap stops being a leak and starts being the most addressable opportunity on the balance sheet — real value for your people, your customers, your investors, and the communities you serve.</p>
+  </div>
+</section>
+
+<!-- ============ VI. THE HONEST PART ============ -->
+<section id="honest" style="padding-top: 0;">
+  <div class="narrow">
+    <div class="overline trust fade-up">VI · The honest part</div>
+    <div class="accent-line fade-up" style="background: var(--trust-cool);"></div>
+    <div class="honest fade-up">
+      <div class="h-label">How to read these numbers</div>
+      <p>This is a public-signal read, and we're deliberate about saying so. It's a <strong>directional estimate</strong> of where each sector's trust sits — and a <strong>hypothesis</strong> about where the bar is heading, not a survey of anyone's stakeholders. The number on your own organisation is confirmed by primary research, not inferred from the outside.</p>
+      <p>But the pattern is structural, and it held in nine of the ten sectors we read. The alignment problem isn't a thesis we needed to assert. It's a result we keep measuring.</p>
+      <p>The full method — what a public-signal read can and cannot know, and what turns an estimate into evidence — is published at <a href="https://trustos.missionctrl.agency/methodology/" target="_blank" rel="noopener">How We Score</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contact">
+  <div class="narrow">
+    <h2 class="sec-title fade-up">If your brand says one thing and your organisation delivers another — <em>that's not a purpose problem.</em></h2>
+    <p class="body fade-up">It's the gap. And the gap is closeable. See where your trust is building, and where it's leaking — start with a conversation. Not a pitch. Not an audit.</p>
+    <div class="fade-up">
+      <a class="btn-primary" href="https://missionctrl.agency/#contact">Start the conversation &rarr;</a>
+      <a class="btn-ghost" href="https://trustos.missionctrl.agency/health-check/" target="_blank" rel="noopener">Take the 2-min Trust Health Check</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://missionctrl.agency/movement-archetype">Movement Archetype Quiz</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="https://trustos.missionctrl.agency/methodology/">How We Score</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <div>© 2026 MissionCTRL · Measurement powered by TrustOS — MissionCTRL's trust intelligence engine · Cross-sector reads, 2026</div>
+</footer>
+
+<script>
+(function() {
+  // ── Reveal on scroll ──
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  // ── Count-up for the finding numbers ──
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(el, target, duration) {
+    if (reduce) { el.textContent = target; return; }
+    var start = performance.now();
+    function update(now) {
+      var k = Math.min((now - start) / duration, 1);
+      var ev = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(ev * target);
+      if (k < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  var numObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      numObserver.unobserve(entry.target);
+      countUp(entry.target, parseInt(entry.target.dataset.target, 10), 1400);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.finding-num').forEach(function(el) { numObserver.observe(el); });
+
+  // ── Sector grid: small multiples, geometry identical to the TrustOS Health Check / sector triangle ──
+  // Published TrustOS sector reads (Clarity / Connection / Confidence / Composite)
+  var SECTORS = [
+    { name: 'Energy', cl: 74, cn: 53, cf: 54, comp: 60, url: 'https://trustos.missionctrl.agency/energy-integrity-test/' },
+    { name: 'Mining', cl: 81, cn: 58, cf: 62, comp: 67, url: 'https://trustos.missionctrl.agency/mining-trust-window/' },
+    { name: 'Local Government', cl: 50, cn: 40, cf: 45, comp: 45, url: 'https://trustos.missionctrl.agency/council-trust-test/' },
+    { name: 'Education', cl: 68, cn: 52, cf: 50, comp: 57, url: 'https://trustos.missionctrl.agency/education-public-purpose-test/', exception: true },
+    { name: 'Social Care', cl: 62, cn: 48, cf: 52, comp: 54, url: 'https://trustos.missionctrl.agency/social-care-workforce-test/' },
+    { name: 'Technology & AI', cl: 60, cn: 45, cf: 50, comp: 52, url: 'https://trustos.missionctrl.agency/regtech-brand-trust/' },
+    { name: 'NGO & Charity', cl: 55, cn: 42, cf: 48, comp: 48, url: 'https://trustos.missionctrl.agency/ingo-brand-trust/' },
+    { name: 'Professional Services', cl: 70, cn: 44, cf: 50, comp: 55, url: 'https://trustos.missionctrl.agency/professional-services-trust-test/' },
+    { name: 'Healthcare', cl: 67, cn: 45, cf: 50, comp: 54, url: 'https://trustos.missionctrl.agency/healthcare-trust-test/' },
+    { name: 'Private Capital', cl: 64, cn: 46, cf: 50, comp: 53, url: 'https://trustos.missionctrl.agency/private-capital-trust-test/' }
+  ];
+
+  var FC = { x: 145, y: 118 }, FR = 98, a30 = Math.PI / 6;
+  var FEQ = {
+    i: { x: FC.x + FR * Math.cos(Math.PI + a30), y: FC.y + FR * Math.sin(Math.PI + a30) },
+    e: { x: FC.x, y: FC.y + FR },
+    r: { x: FC.x + FR * Math.cos(-a30), y: FC.y + FR * Math.sin(-a30) }
+  };
+  function verts(cl, cn, cf) {
+    var fi = (cl + cf) / 200, fe = (cl + cn) / 200, fr = (cn + cf) / 200;
+    return {
+      i: { x: FC.x + (FEQ.i.x - FC.x) * fi, y: FC.y + (FEQ.i.y - FC.y) * fi },
+      e: { x: FC.x + (FEQ.e.x - FC.x) * fe, y: FC.y + (FEQ.e.y - FC.y) * fe },
+      r: { x: FC.x + (FEQ.r.x - FC.x) * fr, y: FC.y + (FEQ.r.y - FC.y) * fr }
+    };
+  }
+  function f1(n) { return n.toFixed(1); }
+  function ln(cls, a, b) {
+    return '<line class="' + cls + '" x1="' + f1(a.x) + '" y1="' + f1(a.y) + '" x2="' + f1(b.x) + '" y2="' + f1(b.y) + '"/>';
+  }
+  var grid = document.getElementById('sectorGrid');
+  if (grid) {
+    SECTORS.forEach(function(s) {
+      var v = verts(s.cl, s.cn, s.cf);
+      var cen = { x: (v.i.x + v.e.x + v.r.x) / 3, y: (v.i.y + v.e.y + v.r.y) / 3 };
+      var svg =
+        '<svg viewBox="0 0 290 260" role="img" aria-label="' + s.name + ': Clarity ' + s.cl + ', Connection ' + s.cn + ', Confidence ' + s.cf + '">' +
+        '<polygon class="grid-tri-poly" points="' + f1(v.i.x) + ',' + f1(v.i.y) + ' ' + f1(v.e.x) + ',' + f1(v.e.y) + ' ' + f1(v.r.x) + ',' + f1(v.r.y) + '"/>' +
+        ln('grid-tri-div', cen, v.i) + ln('grid-tri-div', cen, v.e) + ln('grid-tri-div', cen, v.r) +
+        ln('grid-tri-e-c', v.i, v.e) + ln('grid-tri-e-n', v.e, v.r) + ln('grid-tri-e-f', v.r, v.i) +
+        '<text class="grid-tri-comp" x="' + f1(cen.x) + '" y="' + f1(cen.y + 10) + '" text-anchor="middle">' + s.comp + '</text>' +
+        '</svg>';
+      var weak = s.exception
+        ? '<span class="sector-weak confidence">Confidence weakest — the exception</span>'
+        : '<span class="sector-weak connection">Connection weakest</span>';
+      var cell = document.createElement('a');
+      cell.className = 'sector-cell';
+      cell.href = s.url;
+      cell.target = '_blank';
+      cell.rel = 'noopener';
+      cell.innerHTML = svg +
+        '<div class="sector-name">' + s.name + '</div>' +
+        '<div class="sector-scores"><span class="sc">' + s.cl + '</span> · <span class="sn">' + s.cn + '</span> · <span class="sf">' + s.cf + '</span></div>' +
+        weak;
+      grid.appendChild(cell);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
