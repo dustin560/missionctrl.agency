@@ -494,6 +494,75 @@
     height: 80px;
   }
 
+  /* Measured proof beat — the alignment problem, quantified */
+  .wtm-measured {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+    margin-top: 64px;
+    padding: 56px 48px;
+    background: rgba(10,15,26,0.95);
+    border: 1px solid rgba(90,138,154,0.18);
+    border-radius: 16px;
+  }
+  .wtm-measured-overline {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: rgba(109,160,184,0.9);
+    margin-bottom: 16px;
+  }
+  .wtm-measured-title {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-weight: 800; letter-spacing: -0.02em; line-height: 1.2;
+    color: var(--white); margin-bottom: 18px;
+  }
+  .wtm-measured-title em { font-style: italic; color: var(--blaze); }
+  .wtm-measured-body {
+    font-size: 0.95rem; line-height: 1.75;
+    color: rgba(255,255,255,0.45); margin-bottom: 22px;
+  }
+  .wtm-measured-body strong { color: var(--white); font-weight: 700; }
+  .wtm-measured-handoff {
+    font-size: 1rem; font-weight: 600; line-height: 1.6; color: var(--white);
+    padding-left: 16px; border-left: 2px solid rgba(90,138,154,0.5);
+    margin-bottom: 26px;
+  }
+  .wtm-measured-handoff .t { color: rgba(109,160,184,0.95); }
+  .wtm-measured-link {
+    display: inline-block; font-size: 0.85rem; font-weight: 700;
+    color: var(--blaze); text-decoration: none; transition: color 0.2s;
+  }
+  .wtm-measured-link:hover { color: var(--amber); }
+  .wtm-measured-fig { text-align: center; }
+  .wtm-measured-fig svg { max-width: 300px; width: 100%; height: auto; overflow: visible; }
+  .apm-tri-fill { fill: url(#apm-tri-grad); }
+  .apm-tri-div { stroke: rgba(90,138,154,0.12); stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+  .apm-e-c { stroke: #5a8a9a; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .apm-e-n { stroke: #7cc4a8; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .apm-e-f { stroke: #a78bdb; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .apm-lbl { font-family: 'Sora', sans-serif; font-size: 7px; font-weight: 800; letter-spacing: 0.11em; }
+  .apm-lbl.lc { fill: #5a8a9a; }
+  .apm-lbl.ln { fill: #7cc4a8; }
+  .apm-lbl.lf { fill: #a78bdb; }
+  .apm-vtx { font-family: 'Sora', sans-serif; font-size: 9px; font-weight: 700; fill: rgba(255,255,255,0.5); }
+  .apm-comp { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; fill: var(--white); }
+  .apm-cen { font-family: 'Sora', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; fill: rgba(255,255,255,0.35); }
+  .wtm-measured-chips {
+    display: flex; justify-content: center; gap: 18px; margin-top: 6px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em;
+  }
+  .wtm-measured-chips span b { font-weight: 800; }
+  .wtm-measured-chip-c { color: #5a8a9a; }
+  .wtm-measured-chip-n { color: #7cc4a8; }
+  .wtm-measured-chip-f { color: #a78bdb; }
+  .wtm-measured-note {
+    margin-top: 14px; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.18); line-height: 1.7;
+  }
+  @media (max-width: 900px) {
+    .wtm-measured { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
+  }
+
   @media (max-width: 768px) {
     .why-section { padding: 60px 5% 0; }
     .wtm-stat-strip { grid-template-columns: 1fr; }
@@ -1413,6 +1482,46 @@
       </div>
     </div>
 
+    <!-- Measured proof beat: assertion → evidence -->
+    <div class="wtm-measured fade-up" id="wtmMeasured">
+      <div class="wtm-measured-copy">
+        <div class="wtm-measured-overline">Measured, not asserted</div>
+        <h3 class="wtm-measured-title">We stopped asserting it.<br/><em>We measured it.</em></h3>
+        <p class="wtm-measured-body">
+          TrustOS &mdash; our trust measurement engine &mdash; has read ten sectors from public signal alone. In <strong>nine of the ten</strong>, the weakest trust layer is Connection: what stakeholders actually experience. On average it trails Clarity &mdash; what organisations say &mdash; by <strong>18 points</strong>. That gap is the alignment problem, quantified. Not a claim we make. A pattern we keep&nbsp;measuring.
+        </p>
+        <p class="wtm-measured-handoff"><span class="t">TrustOS senses where trust is leaking.</span> MissionCTRL closes the gap. Then it&nbsp;compounds.</p>
+        <a class="wtm-measured-link" href="/insights/the-alignment-problem-measured">Read the full finding: The Alignment Problem, Measured &rarr;</a>
+      </div>
+      <div class="wtm-measured-fig">
+        <svg id="apm-svg" viewBox="0 0 290 260" role="img" aria-label="Average trust shape across ten sectors: Clarity 65, Connection 47, Confidence 51 — Connection is the shortest edge">
+          <defs>
+            <linearGradient id="apm-tri-grad" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="rgba(90,138,154,0.08)"/>
+              <stop offset="100%" stop-color="rgba(90,138,154,0.22)"/>
+            </linearGradient>
+          </defs>
+          <polygon id="apm-poly" class="apm-tri-fill"/>
+          <line id="apm-div1" class="apm-tri-div"/><line id="apm-div2" class="apm-tri-div"/><line id="apm-div3" class="apm-tri-div"/>
+          <line id="apm-ec" class="apm-e-c"/><line id="apm-en" class="apm-e-n"/><line id="apm-ef" class="apm-e-f"/>
+          <text id="apm-lc" class="apm-lbl lc"></text>
+          <text id="apm-ln" class="apm-lbl ln"></text>
+          <text id="apm-lf" class="apm-lbl lf"></text>
+          <text id="apm-vi" class="apm-vtx"></text>
+          <text id="apm-ve" class="apm-vtx"></text>
+          <text id="apm-vr" class="apm-vtx"></text>
+          <text id="apm-comp" class="apm-comp"></text>
+          <text id="apm-cenl" class="apm-cen">COMPOSITE</text>
+        </svg>
+        <div class="wtm-measured-chips">
+          <span class="wtm-measured-chip-c">CLARITY <b>65</b></span>
+          <span class="wtm-measured-chip-n">CONNECTION <b>47</b></span>
+          <span class="wtm-measured-chip-f">CONFIDENCE <b>51</b></span>
+        </div>
+        <div class="wtm-measured-note">Ten sectors, averaged &middot; Public-signal read &middot; Directional &mdash; validated by primary research</div>
+      </div>
+    </div>
+
     <!-- Brand Effect reframe -->
     <div class="wtm-reframe" id="wtmReframe">
       <div class="wtm-reframe-label" id="wtmReframeLabel">
@@ -2197,6 +2306,75 @@
       });
     }, { threshold: 0.3 });
     reframeObserver.observe(reframe);
+  })();
+
+  // ── Measured proof beat: trust triangle (geometry identical to TrustOS Health Check / sector triangle) ──
+  (function() {
+    var svg = document.getElementById('apm-svg');
+    if (!svg) return;
+    // Live TrustOS cross-sector averages: Clarity 65 · Connection 47 · Confidence 51 · Composite 54
+    var T = { cl: 65, cn: 47, cf: 51, comp: 54 };
+    var FC = { x: 145, y: 118 }, FR = 98, a30 = Math.PI / 6;
+    var FEQ = {
+      i: { x: FC.x + FR * Math.cos(Math.PI + a30), y: FC.y + FR * Math.sin(Math.PI + a30) },
+      e: { x: FC.x, y: FC.y + FR },
+      r: { x: FC.x + FR * Math.cos(-a30), y: FC.y + FR * Math.sin(-a30) }
+    };
+    function verts(cl, cn, cf) {
+      var fi = (cl + cf) / 200, fe = (cl + cn) / 200, fr = (cn + cf) / 200;
+      return {
+        i: { x: FC.x + (FEQ.i.x - FC.x) * fi, y: FC.y + (FEQ.i.y - FC.y) * fi },
+        e: { x: FC.x + (FEQ.e.x - FC.x) * fe, y: FC.y + (FEQ.e.y - FC.y) * fe },
+        r: { x: FC.x + (FEQ.r.x - FC.x) * fr, y: FC.y + (FEQ.r.y - FC.y) * fr }
+      };
+    }
+    function f1(n) { return n.toFixed(1); }
+    function setLn(id, a, b) { var el = document.getElementById(id); if (!el) return; el.setAttribute('x1', f1(a.x)); el.setAttribute('y1', f1(a.y)); el.setAttribute('x2', f1(b.x)); el.setAttribute('y2', f1(b.y)); }
+    function setTx(id, x, y, anchor, txt) { var el = document.getElementById(id); if (!el) return; el.setAttribute('x', f1(x)); el.setAttribute('y', f1(y)); el.setAttribute('text-anchor', anchor); if (txt != null) el.textContent = txt; }
+    function placeLbl(id, a, b, cen, txt) {
+      var el = document.getElementById(id); if (!el) return;
+      var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y, len = Math.sqrt(dx * dx + dy * dy);
+      if (len < 4) return;
+      var ang = Math.atan2(dy, dx) * 180 / Math.PI; if (ang > 90) ang -= 180; if (ang < -90) ang += 180;
+      var px = -dy / len, py = dx / len; if (px * (cen.x - mx) + py * (cen.y - my) > 0) { px = -px; py = -py; }
+      var lx = mx + px * 13, ly = my + py * 13;
+      el.setAttribute('x', f1(lx)); el.setAttribute('y', f1(ly)); el.setAttribute('text-anchor', 'middle'); el.setAttribute('dominant-baseline', 'middle');
+      el.setAttribute('transform', 'rotate(' + ang.toFixed(1) + ',' + f1(lx) + ',' + f1(ly) + ')'); el.textContent = txt;
+    }
+    function draw(cl, cn, cf, comp) {
+      var v = verts(cl, cn, cf);
+      var cen = { x: (v.i.x + v.e.x + v.r.x) / 3, y: (v.i.y + v.e.y + v.r.y) / 3 };
+      document.getElementById('apm-poly').setAttribute('points', f1(v.i.x) + ',' + f1(v.i.y) + ' ' + f1(v.e.x) + ',' + f1(v.e.y) + ' ' + f1(v.r.x) + ',' + f1(v.r.y));
+      setLn('apm-div1', cen, v.i); setLn('apm-div2', cen, v.e); setLn('apm-div3', cen, v.r);
+      setLn('apm-ec', v.i, v.e); setLn('apm-en', v.e, v.r); setLn('apm-ef', v.r, v.i);
+      placeLbl('apm-lc', v.i, v.e, cen, 'CLARITY'); placeLbl('apm-ln', v.e, v.r, cen, 'CONNECTION'); placeLbl('apm-lf', v.r, v.i, cen, 'CONFIDENCE');
+      setTx('apm-vi', v.i.x - 6, v.i.y - 10, 'end', 'Intent');
+      setTx('apm-ve', v.e.x, v.e.y + 16, 'middle', 'Expectation');
+      setTx('apm-vr', v.r.x + 6, v.r.y - 10, 'start', 'Reality');
+      setTx('apm-comp', cen.x, cen.y - 4, 'middle', comp == null ? '' : String(Math.round(comp)));
+      setTx('apm-cenl', cen.x, cen.y + 8, 'middle', null);
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    draw(100, 100, 100, null);
+    var fired = false;
+    var apmObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting || fired) return;
+        fired = true;
+        apmObserver.unobserve(entry.target);
+        if (reduce) { draw(T.cl, T.cn, T.cf, T.comp); return; }
+        var start = null, dur = 1100;
+        function step(ts) {
+          if (!start) start = ts;
+          var k = Math.min(1, (ts - start) / dur);
+          var ev = 1 - Math.pow(1 - k, 3);
+          draw(100 + (T.cl - 100) * ev, 100 + (T.cn - 100) * ev, 100 + (T.cf - 100) * ev, T.comp * ev);
+          if (k < 1) requestAnimationFrame(step);
+        }
+        setTimeout(function() { requestAnimationFrame(step); }, 350);
+      });
+    }, { threshold: 0.5 });
+    apmObserver.observe(svg);
   })();
 
   // Accordion functionality
