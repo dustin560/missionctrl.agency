@@ -1,0 +1,15 @@
+# robots.txt — MissionCTRL (missionctrl.agency)
+# Policy: allow all search and AI-retrieval crawlers (they can cite us);
+# keep gated / client proposal pages out of the index.
+
+User-agent: *
+Allow: /
+Disallow: /proposals/
+
+# AI search & retrieval crawlers are intentionally permitted via the rule above
+# (OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User, Claude-SearchBot,
+#  Claude-User, Googlebot, Google-Extended). To opt out of AI model *training*
+# without affecting search, add an explicit Disallow group for GPTBot / ClaudeBot /
+# CCBot / Google-Extended here.
+
+Sitemap: https://missionctrl.agency/sitemap.xml
