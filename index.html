@@ -2182,17 +2182,42 @@
   <div class="closing-cta-content">
     <h2 class="section-title fade-up">Lead as One. Move the Many.</h2>
     <p class="body-copy fade-up" style="max-width: 540px; margin: 0 auto 40px;">The Brand Effect starts with a conversation. Not a pitch. Not an audit. A conversation about where trust is building, where it's leaking, and what to do about it.</p>
-    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="cta-form fade-up">
+    <form name="contact" id="mc-contact" method="POST" netlify netlify-honeypot="bot-field" class="cta-form fade-up" onsubmit="return mcContactSubmit(event)">
       <input type="hidden" name="form-name" value="contact" />
       <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
       <div class="form-row">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="text" name="company" placeholder="Company" required />
       </div>
+      <input type="email" name="email" placeholder="Your email" required />
       <input type="text" name="role" placeholder="Your role" />
       <textarea name="challenge" placeholder="What's your biggest trust challenge?" rows="4" required></textarea>
-      <button type="submit" class="btn-primary">Start the conversation</button>
+      <div id="mc-error" style="display:none;color:#e05050;font-size:0.85rem;margin-bottom:8px;"></div>
+      <button type="submit" class="btn-primary" id="mc-submit">Start the conversation</button>
+      <div id="mc-success" style="display:none;color:var(--blaze);font-size:0.95rem;padding-top:12px;">Thanks &mdash; we&rsquo;ve got it. We&rsquo;ll be in touch shortly.</div>
     </form>
+    <script>
+    window.mcContactSubmit=function(e){
+      e.preventDefault();
+      var f=document.getElementById('mc-contact');
+      var g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';};
+      var name=g('name'),email=g('email'),company=g('company'),role=g('role'),challenge=g('challenge');
+      var err=document.getElementById('mc-error'); err.style.display='none';
+      if(!name||!email||!company||!challenge){err.textContent='Please add your name, email, company and challenge.';err.style.display='block';return false;}
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent='Please enter a valid email.';err.style.display='block';return false;}
+      var btn=document.getElementById('mc-submit'); btn.textContent='Sending…'; btn.disabled=true;
+      try{
+        var parts=name.split(/\s+/), first=parts.shift()||'', last=parts.join(' ');
+        var msg=[company?('Company: '+company):'', role?('Role: '+role):'', challenge?('Challenge: '+challenge):'', 'Enquiry: MissionCTRL contact'].filter(Boolean).join(' · ');
+        fetch('https://api-eu1.hsforms.com/submissions/v3/integration/submit/148702411/512d69a9-063a-4b9a-970d-53c6ad5924a0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{name:'email',value:email},{name:'firstname',value:first},{name:'lastname',value:last},{name:'message',value:msg}],context:{pageUri:location.href,pageName:document.title}})}).catch(function(){});
+      }catch(_){}
+      var data=new FormData(f);
+      fetch('/',{method:'POST',headers:{'Accept':'application/x-www-form-urlencoded'},body:new URLSearchParams(data)})
+        .then(function(){btn.style.display='none';document.getElementById('mc-success').style.display='block';})
+        .catch(function(){btn.textContent='Start the conversation';btn.disabled=false;err.textContent='Something went wrong. Please email hello@missionctrl.agency directly.';err.style.display='block';});
+      return false;
+    };
+    </script>
   </div>
 </section>
 
