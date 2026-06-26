@@ -87,8 +87,9 @@ function renderHtml(firstName) {
         <p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Hi ${escapeHtml(firstName)},</p>
         <p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Thanks for reaching out — your message has landed with me, and I&rsquo;ll come back to you personally within one business day.</p>
         <p style="margin:0 0 16px;font-size:16px;line-height:1.6;">What happens next isn&rsquo;t a pitch or an audit. It&rsquo;s a conversation about <strong>trust</strong> — the gap between what you believe, what you say, and what your stakeholders actually experience.</p>
-        <p style="margin:0 0 24px;font-size:16px;line-height:1.6;">In the meantime, this is where we wrote up the pattern we keep measuring:</p>
-        <p style="margin:0 0 28px;"><a href="https://missionctrl.agency/insights/the-alignment-problem-measured" style="display:inline-block;background:#ff6b2b;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 22px;border-radius:8px;">The Alignment Problem, Measured →</a></p>
+        <p style="margin:0 0 12px;font-size:16px;line-height:1.6;">If it's useful, grab a 15-minute slot and we'll talk it through — no pitch:</p>
+        <p style="margin:0 0 22px;"><a href="https://meetings-eu1.hubspot.com/dustin-lawrence" style="display:inline-block;background:#ff6b2b;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:13px 24px;border-radius:8px;">Book a 15-minute call &rarr;</a></p>
+        <p style="margin:0 0 26px;font-size:14px;line-height:1.6;color:#6b7a8d;">Or read the pattern we keep measuring across sectors: <a href="https://missionctrl.agency/insights/the-alignment-problem-measured" style="color:#e85a1f;text-decoration:none;font-weight:600;">The Alignment Problem, Measured &rarr;</a></p>
         <p style="margin:0;font-size:16px;line-height:1.6;">Talk soon,<br><strong>Dustin Lawrence</strong><br>Founder, MissionCTRL</p>
       </td></tr>
       <tr><td style="padding:20px 32px;border-top:1px solid #eceef1;font-size:12px;color:#8a93a3;line-height:1.5;">
