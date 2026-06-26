@@ -68,6 +68,24 @@ exports.handler = async (event) => {
       return { statusCode: 502, body: 'brevo error ' + res.status + ': ' + txt };
     }
     console.log('Thank-you sent to', email);
+
+    // Optional: enrol the enquirer into a Brevo list so the nurture automation can run.
+    // No-op unless BREVO_NURTURE_LIST_ID is set, so it's safe to deploy before the list exists.
+    if (process.env.BREVO_NURTURE_LIST_ID) {
+      try {
+        await fetch('https://api.brevo.com/v3/contacts', {
+          method: 'POST',
+          headers: { 'api-key': apiKey, 'Content-Type': 'application/json', accept: 'application/json' },
+          body: JSON.stringify({
+            email,
+            attributes: { FIRSTNAME: firstName },
+            listIds: [Number(process.env.BREVO_NURTURE_LIST_ID)],
+            updateEnabled: true,
+          }),
+        });
+      } catch (e) { console.error('nurture enrol failed', e && e.message); }
+    }
+
     return { statusCode: 200, body: 'sent' };
   } catch (e) {
     console.error('submission-created error', e && e.message);
