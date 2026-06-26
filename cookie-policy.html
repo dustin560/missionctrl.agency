@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cookie Policy — MissionCTRL</title>
+<meta name="description" content="How MissionCTRL Ltd uses cookies and similar technologies across missionctrl.agency and trustos.missionctrl.agency. We use privacy-first, cookieless analytics." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://missionctrl.agency/cookie-policy" />
+<meta property="og:title" content="Cookie Policy — MissionCTRL" />
+<meta property="og:description" content="How MissionCTRL Ltd uses cookies. We use privacy-first, cookieless analytics." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://missionctrl.agency/cookie-policy" />
+<meta property="og:image" content="https://missionctrl.agency/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blaze:#FF6B2B; --amber:#FFAD3B; --coral:#FF4D6A;
+    --night:#0a0f1a; --night-2:#0d1633;
+    --ink:#ffffff; --ink-2:rgba(255,255,255,0.78); --ink-3:rgba(255,255,255,0.55); --ink-4:rgba(255,255,255,0.32);
+    --rule:rgba(255,255,255,0.08); --rule-2:rgba(255,255,255,0.04);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Sora', system-ui, sans-serif; background: var(--night); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.7; font-weight: 300; overflow-x: hidden; }
+  ::selection { background: var(--blaze); color: #fff; }
+  a { color: inherit; }
+
+  .mc-logo { display: inline-flex; align-items: flex-start; text-decoration: none; color: inherit; }
+  .mc-logo .mc-m { flex-shrink: 0; width: 28px; height: 34px; }
+  .mc-logo .mc-text { display: flex; flex-direction: column; align-items: flex-end; margin-left: -2px; }
+  .mc-logo .logo-line1 { font-size: 0.95rem; font-weight: 700; color: var(--ink); letter-spacing: -0.04em; line-height: 0.85; }
+  .mc-logo .logo-line2 { line-height: 0.85; font-size: 0.95rem; letter-spacing: -0.04em; }
+  .mc-logo .logo-line2 .c { font-weight: 800; color: var(--blaze); }
+  .mc-logo .logo-line2 .trl { font-weight: 800; color: var(--ink); }
+
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px 36px; background: rgba(13,16,32,0.78); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule-2); }
+  .nav-links { display: flex; gap: 28px; align-items: center; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--blaze); }
+  .nav-cta { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 10px 18px; border-radius: 999px; background: linear-gradient(90deg, var(--blaze), var(--coral)); transition: transform 0.2s ease, box-shadow 0.2s ease; white-space: nowrap; }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -10px var(--blaze); }
+  @media (max-width: 900px) { .nav { padding: 14px 20px; } .nav-links { display: none; } }
+
+  .doc-hero { padding: 150px 24px 40px; max-width: 820px; margin: 0 auto; }
+  .overline { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blaze); margin-bottom: 16px; }
+  .doc-hero h1 { font-size: clamp(2.1rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.08; margin-bottom: 18px; }
+  .doc-meta { font-size: 0.8rem; color: var(--ink-3); }
+  .doc-meta strong { color: var(--ink-2); font-weight: 600; }
+
+  .doc { max-width: 820px; margin: 0 auto; padding: 20px 24px 90px; }
+  .doc h2 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); margin: 48px 0 16px; padding-top: 28px; border-top: 1px solid var(--rule); }
+  .doc h2 .num { color: var(--blaze); font-weight: 800; margin-right: 10px; }
+  .doc p { font-size: 0.95rem; color: var(--ink-2); margin-bottom: 16px; }
+  .doc ul { margin: 0 0 18px 0; padding-left: 0; list-style: none; }
+  .doc li { font-size: 0.95rem; color: var(--ink-2); margin-bottom: 12px; padding-left: 22px; position: relative; }
+  .doc li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(90deg, var(--blaze), var(--amber)); }
+  .doc strong { color: var(--ink); font-weight: 600; }
+  .doc a.inline { color: var(--blaze); text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.4); }
+  .doc a.inline:hover { border-bottom-color: var(--blaze); }
+
+  .callout { background: linear-gradient(180deg, rgba(255,107,43,0.06), rgba(255,107,43,0.02)); border: 1px solid rgba(255,107,43,0.18); border-radius: 14px; padding: 20px 24px; margin: 24px 0; font-size: 0.9rem; color: var(--ink-2); }
+  .callout strong { color: var(--blaze); }
+
+  table.data { width: 100%; border-collapse: collapse; margin: 18px 0 24px; font-size: 0.86rem; }
+  table.data th, table.data td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-2); }
+  table.data th { color: var(--ink); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  table.data td:first-child { color: var(--ink); font-weight: 500; }
+  @media (max-width: 640px) { table.data, table.data tbody, table.data tr, table.data td, table.data th { display: block; } table.data th { display: none; } table.data td { border: none; padding: 4px 0; } table.data tr { border-bottom: 1px solid var(--rule); padding: 14px 0; } table.data td:first-child { font-weight: 700; color: var(--ink); margin-bottom: 6px; } }
+
+  footer { border-top: 1px solid var(--rule-2); padding: 44px 24px 56px; text-align: center; font-size: 0.7rem; color: var(--ink-4); }
+  footer .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 26px; margin-bottom: 20px; }
+  footer .links a { color: var(--ink-3); text-decoration: none; transition: color 0.2s; }
+  footer .links a:hover { color: var(--blaze); }
+</style>
+<script async src="https://plausible.io/js/pa-UXpjlDD40pcmENizIZKZH.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <defs>
+    <linearGradient id="mc-m-grad" x1="0" y1="148" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff6b2b"/>
+      <stop offset="100%" stop-color="#ffad3b"/>
+    </linearGradient>
+    <clipPath id="mc-m-clip" clipPathUnits="userSpaceOnUse">
+      <path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <a class="mc-logo" href="https://missionctrl.agency" aria-label="MissionCTRL">
+    <svg class="mc-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+      <rect width="120" height="148" fill="url(#mc-m-grad)" clip-path="url(#mc-m-clip)"/>
+    </svg>
+    <span class="mc-text">
+      <span class="logo-line1">ission</span>
+      <span class="logo-line2"><span class="c">C</span><span class="trl">TRL</span></span>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://missionctrl.agency/#brand-effect">The Problem</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="https://missionctrl.agency/#contact">Start the conversation</a>
+</nav>
+
+<header class="doc-hero">
+  <div class="overline">Legal</div>
+  <h1>Cookie Policy</h1>
+  <p class="doc-meta"><strong>Last updated:</strong> 26 June 2026 &nbsp;·&nbsp; <strong>Applies to:</strong> missionctrl.agency and trustos.missionctrl.agency</p>
+</header>
+
+<main class="doc">
+
+  <p>This Cookie Policy explains how <strong>MissionCTRL Ltd</strong> ("we", "us" or "our") uses cookies and similar technologies on our websites <strong>missionctrl.agency</strong> and <strong>trustos.missionctrl.agency</strong> (together, "the sites"). It should be read alongside our <a class="inline" href="https://missionctrl.agency/privacy-policy">Privacy Policy</a>.</p>
+
+  <div class="callout">
+    <strong>The short version.</strong> We care about privacy, so we deliberately keep cookies to a minimum. Our website analytics are <strong>cookieless</strong> and collect no personal data. The sites do not use advertising or cross-site tracking cookies. A small number of cookies may only be set if you choose to interact with an embedded tool such as a booking calendar or video.
+  </div>
+
+  <h2><span class="num">1.</span>What are cookies?</h2>
+  <p>Cookies are small text files placed on your device when you visit a website. They are widely used to make sites work, to remember your preferences, and to provide information to site owners. "Similar technologies" include things like pixels, local storage and software development kits that perform comparable functions. The rules on cookies in the UK come from the Privacy and Electronic Communications Regulations (PECR), alongside the UK GDPR.</p>
+
+  <h2><span class="num">2.</span>How we use cookies</h2>
+  <p>Our use falls into the following categories:</p>
+
+  <h2><span class="num">3.</span>Strictly necessary cookies</h2>
+  <p>These are essential for the sites to function and for security. They are always active and do not require consent. They may include cookies set by our hosting and content-delivery provider (Netlify) to load pages securely and reliably, and any cookie required to remember a cookie choice you have made.</p>
+
+  <h2><span class="num">4.</span>Analytics — cookieless</h2>
+  <p>We use <strong>Plausible Analytics</strong> to understand, in aggregate, how the sites are used. Plausible is a privacy-first, EU-based service that is deliberately <strong>cookieless</strong>: it sets no cookies, stores no IP addresses, collects no personal data, and does not track visitors across other websites or over time. Because no personal data or cookies are involved, this does not require your consent.</p>
+
+  <h2><span class="num">5.</span>Functional and third-party cookies</h2>
+  <p>Some features rely on third-party services that may set their own cookies <strong>only when you actively use them</strong> — for example, booking a meeting through an embedded scheduling tool, submitting a form, or playing an embedded video. Where any such non-essential cookie requires consent, we will ask for it before it is set. These third parties operate under their own cookie and privacy policies.</p>
+
+  <table class="data">
+    <thead><tr><th>Category</th><th>Purpose</th><th>Consent needed?</th></tr></thead>
+    <tbody>
+      <tr><td>Strictly necessary</td><td>Security, hosting and core site delivery; remembering your cookie choice</td><td>No</td></tr>
+      <tr><td>Analytics (Plausible)</td><td>Aggregated, anonymous usage statistics — cookieless</td><td>No (no cookies / no personal data)</td></tr>
+      <tr><td>Functional / third-party embeds</td><td>Calendar booking, forms, video — only if you interact with them</td><td>Yes, where applicable</td></tr>
+      <tr><td>Advertising / cross-site tracking</td><td>Not used on the sites</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="num">6.</span>Managing your cookies</h2>
+  <p>Because we do not use non-essential cookies by default, there is usually nothing you need to switch off. If you wish to control cookies more broadly, you can manage or delete them through your browser settings, and set most browsers to block cookies or alert you when one is being set. Restricting cookies may affect how some embedded features work.</p>
+  <p>Useful browser guides are available for <a class="inline" href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Chrome</a>, <a class="inline" href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a>, <a class="inline" href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener">Firefox</a> and <a class="inline" href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Edge</a>.</p>
+
+  <h2><span class="num">7.</span>Changes to this policy</h2>
+  <p>We may update this Cookie Policy from time to time to reflect changes in the technologies we use or in the law. The latest version will always be published on this page, with the "Last updated" date revised accordingly.</p>
+
+  <h2><span class="num">8.</span>Contact us</h2>
+  <p>For any questions about our use of cookies, please contact:</p>
+  <ul>
+    <li><strong>MissionCTRL Ltd</strong> — Company No. 17018199</li>
+    <li>1 Empire Mews, London, England, SW16 2BF</li>
+    <li>Email: <a class="inline" href="mailto:hello@missionctrl.agency">hello@missionctrl.agency</a></li>
+  </ul>
+
+</main>
+
+<footer>
+  <div class="links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/cookie-policy">Cookie Policy</a>
+    <a href="/terms">Terms &amp; Conditions</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <div>© 2026 MissionCTRL Ltd · Company No. 17018199 · Registered in England &amp; Wales</div>
+</footer>
+
+</body>
+</html>
