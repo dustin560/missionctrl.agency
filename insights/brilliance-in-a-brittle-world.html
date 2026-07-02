@@ -585,11 +585,9 @@
   @media (max-width: 920px) { .trust-tri-block { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px; } }
   .trust-tri-svg { width: 100%; height: auto; max-width: 440px; display: block; margin: 0 auto; }
   .trust-tri-svg .tri-fill { fill: url(#tri-gradient); }
-  .trust-tri-svg .tri-edge { stroke: var(--trust-cool); stroke-width: 2.2; stroke-linecap: round; }
-  .trust-tri-svg .tri-div { stroke: rgba(143,181,192,0.22); stroke-width: 1; stroke-dasharray: 3 4; }
-  .trust-tri-svg .tri-edge-label { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; fill: var(--trust-cool); text-transform: uppercase; }
-  .trust-tri-svg .tri-vertex { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; fill: rgba(255,255,255,0.42); letter-spacing: 0.05em; }
-  .trust-tri-svg .tri-center { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; fill: var(--trust-mid); letter-spacing: 0.02em; }
+  .trust-tri-svg .tri-edge-label { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; fill: #8fb5c0; text-transform: uppercase; }
+  .tri-center { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; letter-spacing: 0.02em; }
+  .trust-tri-svg .tri-center { fill: #ffffff; }
   .trust-tri-block .tri-copy h3 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 18px; line-height: 1.2; color: var(--ink); }
   .trust-tri-block .tri-copy p { font-size: 0.95rem; line-height: 1.68; color: var(--ink-2); font-weight: 300; margin-bottom: 16px; }
   .trust-tri-block .tri-copy p strong { color: var(--ink); font-weight: 500; }
@@ -1583,8 +1581,9 @@
         <svg class="trust-tri-svg" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" overflow="visible" aria-label="Trust Triangle — Clarity, Connection, Confidence">
           <defs>
             <linearGradient id="tri-gradient" x1="0.5" y1="0" x2="0.5" y2="1">
-              <stop offset="0%" stop-color="rgba(143,181,192,0.08)"/>
-              <stop offset="100%" stop-color="rgba(90,138,154,0.24)"/>
+              <stop offset="0%" stop-color="#7fb4cc"/>
+              <stop offset="55%" stop-color="#6da0b8"/>
+              <stop offset="100%" stop-color="#4d7a8a"/>
             </linearGradient>
             <filter id="tri-glow" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
@@ -1595,19 +1594,6 @@
 
           <!-- Main equilateral triangle: Intent (top-left), Reality (top-right), Expectation (bottom) — matches TrustOS downward mark -->
           <polygon class="tri-fill" points="97,115 323,115 210,310" filter="url(#tri-glow)"/>
-          <line class="tri-edge" x1="97" y1="115" x2="323" y2="115"/>
-          <line class="tri-edge" x1="323" y1="115" x2="210" y2="310"/>
-          <line class="tri-edge" x1="210" y1="310" x2="97" y2="115"/>
-
-          <!-- Dividers from centroid to each vertex -->
-          <line class="tri-div" x1="210" y1="180" x2="97" y2="115"/>
-          <line class="tri-div" x1="210" y1="180" x2="323" y2="115"/>
-          <line class="tri-div" x1="210" y1="180" x2="210" y2="310"/>
-
-          <!-- Vertex labels -->
-          <text class="tri-vertex" x="85" y="105" text-anchor="end">Intent</text>
-          <text class="tri-vertex" x="335" y="105" text-anchor="start">Reality</text>
-          <text class="tri-vertex" x="210" y="330" text-anchor="middle">Expectation</text>
 
           <!-- Edge labels — Clarity top, Connection right, Confidence left -->
           <text class="tri-edge-label" x="210" y="102" text-anchor="middle">CLARITY</text>
@@ -1704,10 +1690,7 @@
         <div class="sd-tri" aria-hidden="true">
           <svg viewBox="40 60 340 290" xmlns="http://www.w3.org/2000/svg" overflow="visible">
             <polygon points="97,115 323,115 210,310" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
-            <polygon id="sdShape" points="97,115 323,115 210,310" fill="rgba(90,138,154,0.16)" stroke="#8fb5c0" stroke-width="1.5" style="transition: all 0.25s ease;"/>
-            <text class="tri-vertex" x="85" y="105" text-anchor="end">Intent</text>
-            <text class="tri-vertex" x="335" y="105" text-anchor="start">Reality</text>
-            <text class="tri-vertex" x="210" y="330" text-anchor="middle">Expectation</text>
+            <polygon id="sdShape" points="97,115 323,115 210,310" fill="url(#tri-gradient)" filter="url(#tri-glow)" style="transition: all 0.25s ease;"/>
             <text class="tri-center" x="210" y="184" text-anchor="middle" dominant-baseline="middle">Integrity</text>
           </svg>
         </div>

@@ -578,17 +578,13 @@
   .wtm-measured-fig { text-align: center; }
   .wtm-measured-fig svg { max-width: 300px; width: 100%; height: auto; overflow: visible; }
   .apm-tri-fill { fill: url(#apm-tri-grad); }
-  .apm-tri-div { stroke: rgba(90,138,154,0.12); stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
-  .apm-e-c { stroke: #5a8a9a; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-  .apm-e-n { stroke: #7cc4a8; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-  .apm-e-f { stroke: #a78bdb; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .apm-e-c, .apm-e-n, .apm-e-f { stroke: transparent; stroke-width: 1.5; fill: none; }
   .apm-lbl { font-family: 'Sora', sans-serif; font-size: 7px; font-weight: 800; letter-spacing: 0.11em; }
-  .apm-lbl.lc { fill: #5a8a9a; }
+  .apm-lbl.lc { fill: #8fb5c0; }
   .apm-lbl.ln { fill: #7cc4a8; }
   .apm-lbl.lf { fill: #a78bdb; }
-  .apm-vtx { font-family: 'Sora', sans-serif; font-size: 9px; font-weight: 700; fill: rgba(255,255,255,0.5); }
-  .apm-comp { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; fill: var(--white); }
-  .apm-cen { font-family: 'Sora', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; fill: rgba(255,255,255,0.35); }
+    .apm-comp { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; fill: var(--white); }
+  .apm-cen { font-family: 'Sora', sans-serif; font-size: 6px; font-weight: 700; letter-spacing: 0.16em; fill: rgba(255,255,255,0.75); }
   .wtm-measured-chips {
     display: flex; justify-content: center; gap: 18px; margin-top: 6px;
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em;
@@ -1545,21 +1541,23 @@
         <svg id="apm-svg" viewBox="0 0 290 260" role="img" aria-label="Average trust shape across the sectors read: Clarity 65, Connection 47, Confidence 51 — Connection is the shortest edge">
           <defs>
             <linearGradient id="apm-tri-grad" x1="0.5" y1="0" x2="0.5" y2="1">
-              <stop offset="0%" stop-color="rgba(90,138,154,0.08)"/>
-              <stop offset="100%" stop-color="rgba(90,138,154,0.22)"/>
+              <stop offset="0%" stop-color="#7fb4cc"/>
+              <stop offset="55%" stop-color="#6da0b8"/>
+              <stop offset="100%" stop-color="#4d7a8a"/>
             </linearGradient>
+            <filter id="apm-glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+              <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.43  0 0 0 0 0.63  0 0 0 0 0.72  0 0 0 0.45 0" result="tealBlur"/>
+              <feMerge><feMergeNode in="tealBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
           </defs>
-          <polygon id="apm-poly" class="apm-tri-fill"/>
-          <line id="apm-div1" class="apm-tri-div"/><line id="apm-div2" class="apm-tri-div"/><line id="apm-div3" class="apm-tri-div"/>
           <line id="apm-ec" class="apm-e-c"/><line id="apm-en" class="apm-e-n"/><line id="apm-ef" class="apm-e-f"/>
+          <polygon id="apm-poly" class="apm-tri-fill" filter="url(#apm-glow)"/>
           <text id="apm-lc" class="apm-lbl lc"></text>
           <text id="apm-ln" class="apm-lbl ln"></text>
           <text id="apm-lf" class="apm-lbl lf"></text>
-          <text id="apm-vi" class="apm-vtx"></text>
-          <text id="apm-ve" class="apm-vtx"></text>
-          <text id="apm-vr" class="apm-vtx"></text>
           <text id="apm-comp" class="apm-comp"></text>
-          <text id="apm-cenl" class="apm-cen">COMPOSITE</text>
+          <text id="apm-cenl" class="apm-cen">TRUST INDEX</text>
         </svg>
         <div class="wtm-measured-chips">
           <span class="wtm-measured-chip-c">CLARITY <b>65</b></span>
@@ -2280,12 +2278,8 @@
       var v = verts(cl, cn, cf);
       var cen = { x: (v.i.x + v.e.x + v.r.x) / 3, y: (v.i.y + v.e.y + v.r.y) / 3 };
       document.getElementById('apm-poly').setAttribute('points', f1(v.i.x) + ',' + f1(v.i.y) + ' ' + f1(v.e.x) + ',' + f1(v.e.y) + ' ' + f1(v.r.x) + ',' + f1(v.r.y));
-      setLn('apm-div1', cen, v.i); setLn('apm-div2', cen, v.e); setLn('apm-div3', cen, v.r);
       setLn('apm-ec', v.i, v.e); setLn('apm-en', v.e, v.r); setLn('apm-ef', v.r, v.i);
       placeLbl('apm-lc', v.i, v.e, cen, 'CLARITY'); placeLbl('apm-ln', v.e, v.r, cen, 'CONNECTION'); placeLbl('apm-lf', v.r, v.i, cen, 'CONFIDENCE');
-      setTx('apm-vi', v.i.x - 6, v.i.y - 10, 'end', 'Intent');
-      setTx('apm-ve', v.e.x, v.e.y + 16, 'middle', 'Expectation');
-      setTx('apm-vr', v.r.x + 6, v.r.y - 10, 'start', 'Reality');
       setTx('apm-comp', cen.x, cen.y - 4, 'middle', comp == null ? '' : String(Math.round(comp)));
       setTx('apm-cenl', cen.x, cen.y + 8, 'middle', null);
     }
