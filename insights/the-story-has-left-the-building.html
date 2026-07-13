@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Story Has Left the Building — MissionCTRL</title>
+<meta name="description" content="Starbucks pays baristas to make TikToks. But it's not just employees — members, patients, residents and partners are now the channel. Nobody owns the story any more. The organisations that win align it." />
+<link rel="canonical" href="https://missionctrl.agency/insights/the-story-has-left-the-building" />
+<meta property="og:title" content="The Story Has Left the Building — MissionCTRL" />
+<meta property="og:description" content="Every stakeholder is now a storyteller. Nobody owns the story any more — the organisations that win align it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://missionctrl.agency/insights/the-story-has-left-the-building" />
+<meta property="og:image" content="https://missionctrl.agency/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Story Has Left the Building — MissionCTRL" />
+<meta name="twitter:description" content="Every stakeholder is now a storyteller. Nobody owns the story any more — the organisations that win align it." />
+<meta name="twitter:image" content="https://missionctrl.agency/og-image.png" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blaze:#FF6B2B; --amber:#FFAD3B; --coral:#FF4D6A;
+    --deep:#0a0f1a; --night:#0a0f1a; --night-2:#0d1633; --night-3:#162252;
+    --ink:#ffffff; --ink-2:rgba(255,255,255,0.78); --ink-3:rgba(255,255,255,0.55); --ink-4:rgba(255,255,255,0.32);
+    --rule:rgba(255,255,255,0.08); --rule-2:rgba(255,255,255,0.04);
+    /* TrustOS palette — matches trustos.missionctrl.agency */
+    --trust-slate:#2d3a4a;
+    --trust-cool:#5a8a9a;
+    --trust-mid:#8fb5c0;
+    --trust-deep:#0a1d2e;
+    --edge-clarity:#5a8a9a;
+    --edge-connection:#7cc4a8;
+    --edge-confidence:#a78bdb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Sora', system-ui, sans-serif;
+    background: var(--night);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--blaze); color: #fff; }
+  a { color: inherit; }
+
+  /* ============ MISSIONCTRL LOGO — matches missionctrl.agency ============ */
+  .mc-logo { display: inline-flex; align-items: flex-start; text-decoration: none; color: inherit; }
+  .mc-logo .mc-m { flex-shrink: 0; width: 28px; height: 34px; }
+  .mc-logo .mc-text { display: flex; flex-direction: column; align-items: flex-end; margin-left: -2px; }
+  .mc-logo .logo-line1 { font-size: 0.95rem; font-weight: 700; color: var(--ink); letter-spacing: -0.04em; line-height: 0.85; }
+  .mc-logo .logo-line2 { line-height: 0.85; font-size: 0.95rem; letter-spacing: -0.04em; }
+  .mc-logo .logo-line2 .c { font-weight: 800; color: var(--blaze); }
+  .mc-logo .logo-line2 .trl { font-weight: 800; color: var(--ink); }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 36px;
+    background: rgba(13,16,32,0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--blaze); }
+  .nav-cta {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+    padding: 10px 18px; border-radius: 999px;
+    background: linear-gradient(90deg, var(--blaze), var(--coral));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -10px var(--blaze); }
+  @media (max-width: 900px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+  }
+
+  /* ============ LAYOUT ============ */
+  .narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+  .overline {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--blaze); margin-bottom: 18px;
+  }
+  .overline.trust { color: var(--trust-mid); }
+  .sec-title {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.15; margin-bottom: 24px;
+  }
+  .sec-title em { font-style: italic; color: var(--blaze); }
+  p.lede { font-size: 1.05rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 20px; }
+  p.body { font-size: 0.95rem; color: var(--ink-3); line-height: 1.8; margin-bottom: 18px; }
+  p.body strong { color: var(--ink); font-weight: 700; }
+  p.body em { color: var(--ink-2); }
+  p.body a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.45); transition: color 0.2s ease; }
+  p.body a:hover { color: var(--blaze); }
+  .accent-line { width: 48px; height: 3px; background: var(--blaze); border-radius: 2px; margin-bottom: 24px; }
+
+  /* ============ STAKEHOLDER GRID ============ */
+  .stake-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 36px 0 10px; }
+  .stake {
+    background: rgba(255,255,255,0.025); border: 1px solid var(--rule); border-radius: 14px;
+    padding: 24px 22px; border-top: 3px solid var(--edge-connection);
+  }
+  .stake .s-who { font-size: 0.95rem; font-weight: 800; letter-spacing: -0.01em; color: var(--edge-connection); margin-bottom: 4px; }
+  .stake .s-org { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 12px; }
+  .stake .s-desc { font-size: 0.82rem; color: var(--ink-3); line-height: 1.7; }
+  .stake .s-desc a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid rgba(124,196,168,0.4); }
+  @media (max-width: 900px) { .stake-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .stake-grid { grid-template-columns: 1fr; } }
+
+  /* ============ FINDING NUMBERS ============ */
+  .finding-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--rule-2); border-radius: 16px; overflow: hidden;
+    margin: 40px 0 14px;
+  }
+  .finding-cell { background: rgba(10,15,26,0.95); padding: 34px 28px; text-align: center; }
+  .finding-num { font-size: clamp(2.4rem, 4.5vw, 3.4rem); font-weight: 900; line-height: 1; margin-bottom: 8px; }
+  .finding-cell.clarity .finding-num { color: var(--edge-clarity); }
+  .finding-cell.confidence .finding-num { color: var(--edge-confidence); }
+  .finding-cell.connection .finding-num { color: var(--edge-connection); }
+  .finding-label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; color: var(--ink-2); }
+  .finding-text { font-size: 0.78rem; color: var(--ink-4); line-height: 1.6; }
+  .finding-foot { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-4); margin-top: 16px; line-height: 1.8; }
+  .finding-foot a { color: var(--ink-3); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+  @media (max-width: 760px) { .finding-strip { grid-template-columns: 1fr; } }
+
+  /* ============ PULL QUOTE ============ */
+  .pull {
+    border-left: 3px solid var(--blaze);
+    padding: 8px 0 8px 28px; margin: 36px 0;
+  }
+  .pull p { font-size: clamp(1.2rem, 2.4vw, 1.55rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.4; color: var(--ink); }
+  .pull p em { font-style: italic; color: var(--blaze); }
+
+  /* ============ DIVISION OF LABOUR ============ */
+  .division { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 36px 0 10px; }
+  .division-card { border-radius: 14px; padding: 28px 26px; }
+  .division-card.sense { background: rgba(90,138,154,0.06); border: 1px solid rgba(90,138,154,0.25); }
+  .division-card.close { background: rgba(255,107,43,0.05); border: 1px solid rgba(255,107,43,0.25); }
+  .division-card .dv-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+  .division-card.sense .dv-label { color: var(--trust-mid); }
+  .division-card.close .dv-label { color: var(--blaze); }
+  .division-card .dv-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .division-card .dv-body { font-size: 0.85rem; color: var(--ink-3); line-height: 1.7; }
+  .division-card .dv-link { display: inline-block; margin-top: 14px; font-size: 0.75rem; font-weight: 700; text-decoration: none; }
+  .division-card.sense .dv-link { color: var(--trust-mid); }
+  .division-card.close .dv-link { color: var(--blaze); }
+  .division-foot { text-align: center; font-size: 0.95rem; font-weight: 600; color: var(--ink-2); margin-top: 22px; }
+  .division-foot .t { color: var(--trust-mid); }
+  .division-foot .m { color: var(--blaze); }
+  @media (max-width: 760px) { .division { grid-template-columns: 1fr; } }
+
+  /* ============ HONEST BOX ============ */
+  .honest {
+    background: rgba(255,255,255,0.025); border: 1px solid var(--rule); border-radius: 16px;
+    padding: 36px 36px 32px; margin-top: 8px;
+  }
+  .honest .h-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--trust-mid); margin-bottom: 16px; }
+  .honest p { font-size: 0.9rem; color: var(--ink-3); line-height: 1.8; margin-bottom: 14px; }
+  .honest p strong { color: var(--ink-2); }
+  .honest p:last-child { margin-bottom: 0; }
+  .honest a { color: var(--trust-mid); text-decoration: none; border-bottom: 1px solid rgba(143,181,192,0.4); }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 78vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 140px 24px 64px; position: relative;
+    background:
+      radial-gradient(ellipse 70% 50% at 75% 20%, rgba(90,138,154,0.10), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 20% 85%, rgba(255,107,43,0.07), transparent 60%),
+      var(--night);
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; width: 100%; }
+  .hero-title {
+    font-size: clamp(2.4rem, 6.5vw, 4.4rem); font-weight: 800; letter-spacing: -0.04em;
+    line-height: 1.05; margin-bottom: 26px;
+  }
+  .hero-title .gradient {
+    background: linear-gradient(90deg, var(--blaze), var(--amber));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-sub { font-size: 1.05rem; color: var(--ink-3); max-width: 620px; line-height: 1.75; margin-bottom: 40px; }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 32px;
+    font-size: 0.78rem; color: var(--ink-3);
+    border-top: 1px solid var(--rule); padding-top: 24px;
+  }
+  .hero-meta strong { display: block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 5px; }
+
+  /* ============ CTA ============ */
+  .cta { text-align: center; padding-bottom: 110px; }
+  .cta .sec-title { margin-bottom: 16px; }
+  .cta p.body { max-width: 540px; margin: 0 auto 36px; }
+  .btn-primary {
+    display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--ink); text-decoration: none; padding: 16px 32px; border-radius: 999px;
+    background: linear-gradient(90deg, var(--blaze), var(--coral));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -12px var(--blaze); }
+  .btn-ghost {
+    display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--trust-mid); text-decoration: none; padding: 16px 32px; border-radius: 999px;
+    border: 1px solid rgba(143,181,192,0.35); margin-left: 12px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-ghost:hover { border-color: var(--trust-mid); color: var(--ink); }
+  @media (max-width: 640px) { .btn-ghost { margin-left: 0; margin-top: 12px; } }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--rule-2); padding: 44px 24px 56px; text-align: center;
+    font-size: 0.7rem; color: var(--ink-4);
+  }
+  footer .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 26px; margin-bottom: 20px; }
+  footer .links a { color: var(--ink-3); text-decoration: none; transition: color 0.2s; }
+  footer .links a:hover { color: var(--blaze); }
+
+  /* ============ REVEAL ============ */
+  .fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-UXpjlDD40pcmENizIZKZH.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Story Has Left the Building",
+  "description": "Every stakeholder is now a storyteller — employees, members, patients, residents, owners and partners. Nobody owns the story any more. The organisations that win align it.",
+  "image": "https://missionctrl.agency/og-image.png",
+  "author": {"@type": "Organization", "name": "MissionCTRL", "url": "https://missionctrl.agency/"},
+  "publisher": {"@type": "Organization", "name": "MissionCTRL", "logo": {"@type": "ImageObject", "url": "https://missionctrl.agency/og-image.png"}},
+  "datePublished": "2026-07-13",
+  "mainEntityOfPage": "https://missionctrl.agency/insights/the-story-has-left-the-building"
+}
+</script>
+</head>
+<body>
+
+<!-- Shared SVG defs: MissionCTRL M-mark -->
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <defs>
+    <linearGradient id="mc-m-grad" x1="0" y1="148" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff6b2b"/>
+      <stop offset="100%" stop-color="#ffad3b"/>
+    </linearGradient>
+    <clipPath id="mc-m-clip" clipPathUnits="userSpaceOnUse">
+      <path d="M4,140 L30,12 L60,88 L90,12 L116,140 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <a class="mc-logo" href="https://missionctrl.agency" aria-label="MissionCTRL">
+    <svg class="mc-m" viewBox="0 0 120 148" fill="none" aria-hidden="true">
+      <rect width="120" height="148" fill="url(#mc-m-grad)" clip-path="url(#mc-m-clip)"/>
+    </svg>
+    <span class="mc-text">
+      <span class="logo-line1">ission</span>
+      <span class="logo-line2"><span class="c">C</span><span class="trl">TRL</span></span>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://missionctrl.agency/#brand-effect">The Problem</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="https://missionctrl.agency/#contact">Start the conversation</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="overline">A MissionCTRL Field Report · 2026</div>
+    <h1 class="hero-title">The story has<br/><span class="gradient">left the building.</span></h1>
+    <p class="hero-sub">Starbucks now pays baristas to make TikToks. But look closer and it's not just employees — members, patients, residents, owners and partners are becoming the channel. Thousands of people are telling your organisation's story today. The only question is which story.</p>
+    <div class="hero-meta">
+      <div><strong>Author</strong><a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,107,43,0.55);">Dustin Lawrence</a></div>
+      <div><strong>Published</strong>July 2026</div>
+      <div><strong>Measurement</strong><a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(143,181,192,0.55);">TrustOS</a></div>
+      <div><strong>Read time</strong>~7 min</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ I. THE CHANNEL CHANGED HANDS ============ -->
+<section id="shift">
+  <div class="narrow">
+    <div class="overline fade-up">I · The channel changed hands</div>
+    <div class="accent-line fade-up"></div>
+    <p class="lede fade-up">This summer, at Cannes Lions, Starbucks announced it will <a href="https://www.marketingdive.com/news/starbucks-pilots-tiktok-program-for-boosting-employee-generated-content/823565/" target="_blank" rel="noopener">pay its baristas to make TikToks</a> — a custom Creator Network built with TikTok, sending briefs to barista creators and sharing ad revenue when their videos are promoted.</p>
+    <p class="body fade-up">It's not an outlier. Dell has put more than <a href="https://everyonesocial.com/resources/dell-empowers-workforce-social-media/" target="_blank" rel="noopener">10,000 employees</a> through social media certification. Deloitte has <a href="https://www.socialmediatoday.com/news/the-birth-of-the-employee-ambassador-program-at-deloitte/502556/" target="_blank" rel="noopener">reported</a> that its ambassador programme — 7,000-plus employees — drives as much as half the social traffic to the content it promotes. For a century, organisations rented credible voices: celebrities, then influencers. Now the most credible creators turn out to have been on the payroll all along.</p>
+    <p class="body fade-up">This looks like a marketing story. It isn't. It's a story about <strong>where the story of an organisation now lives — and who tells it.</strong></p>
+  </div>
+</section>
+
+<!-- ============ II. IT WAS NEVER JUST EMPLOYEES ============ -->
+<section id="everyone" style="background: var(--night-2); padding: 80px 0;">
+  <div class="narrow">
+    <div class="overline fade-up">II · It was never just employees</div>
+    <div class="accent-line fade-up"></div>
+    <h2 class="sec-title fade-up">Every stakeholder is a storyteller now.</h2>
+    <p class="body fade-up">Step outside retail and the same shift is happening in every sector — quietly, and mostly without a comms plan:</p>
+  </div>
+  <div class="wide">
+    <div class="stake-grid fade-up">
+      <div class="stake">
+        <div class="s-who">Patients</div>
+        <div class="s-org">Essex Partnership NHS Trust</div>
+        <div class="s-desc">Around 300 <a href="https://www.eput.nhs.uk/news/lived-experience-ambassadors-helping-to-shape-healthcare-at-essex-trust/" target="_blank" rel="noopener">Lived Experience Ambassadors</a> train staff, record video content and sit on hiring panels — people who have used the services, telling its story from the inside.</div>
+      </div>
+      <div class="stake">
+        <div class="s-who">Members</div>
+        <div class="s-org">RICS · ACCA · ICAEW</div>
+        <div class="s-desc">Professional bodies formalising members as the profession's voice — RICS <a href="https://ww3.rics.org/uk/en/journals/property-journal/inspire-ambassador-programme-early-engagement.html" target="_blank" rel="noopener">Inspire Ambassadors</a> put working surveyors in classrooms as the institution's storytellers.</div>
+      </div>
+      <div class="stake">
+        <div class="s-who">Residents</div>
+        <div class="s-org">LB Richmond upon Thames</div>
+        <div class="s-desc">A named, branded <a href="https://www.richmond.gov.uk/myrichmond/community_engagement/community_ambassadors" target="_blank" rel="noopener">Community Ambassadors</a> scheme — tenants and leaseholders carrying the story between residents and the council, on camera.</div>
+      </div>
+      <div class="stake">
+        <div class="s-who">Owners</div>
+        <div class="s-org">Ripple Energy</div>
+        <div class="s-desc">The UK's first consumer-owned wind farms — <a href="https://www.renews.biz/remix/ripple-opens-membership-for-kirk-hill-wind-farm/" target="_blank" rel="noopener">thousands of co-owning members</a> who show up in the press, by name, as advocates. Ownership turns audience into narrator.</div>
+      </div>
+      <div class="stake">
+        <div class="s-who">Customers</div>
+        <div class="s-org">Salesforce · HubSpot</div>
+        <div class="s-desc">Structured customer-advocate programmes — <a href="https://www.salesforce.com/blog/announcing-marketing-champions/" target="_blank" rel="noopener">Marketing Champions</a>, Community Champions — where users create the content, run the events and answer the questions.</div>
+      </div>
+      <div class="stake">
+        <div class="s-who">Outsiders</div>
+        <div class="s-org">GitHub Stars</div>
+        <div class="s-desc">Not even customers: <a href="https://stars.github.com/program" target="_blank" rel="noopener">external developers</a>, formally recognised as the platform's most visible voices. The story told entirely by people the organisation doesn't employ.</div>
+      </div>
+    </div>
+  </div>
+  <div class="narrow">
+    <p class="body fade-up" style="margin-top: 24px;">None of these people report to communications. All of them are the channel. And this is before you count the unstructured versions: the pitch your partner gives with your name in it, the review your alumni write, the planning meeting where a resident describes your project to a room you'll never enter.</p>
+  </div>
+</section>
+
+<!-- ============ III. WHY THEIR VOICES WIN ============ -->
+<section id="credibility">
+  <div class="narrow">
+    <div class="overline fade-up">III · Why their voices win</div>
+    <div class="accent-line fade-up"></div>
+    <h2 class="sec-title fade-up">Trust has moved to the near voice.</h2>
+    <p class="body fade-up">This isn't a fashion. It's a measurable migration of credibility — away from institutions and official spokespeople, toward the people stakeholders can actually see and verify:</p>
+  </div>
+  <div class="wide">
+    <div class="finding-strip fade-up">
+      <div class="finding-cell clarity">
+        <div class="finding-num" data-target="78" data-suffix="%">0</div>
+        <div class="finding-label">Trust "my employer"</div>
+        <div class="finding-text">The most trusted institution of all — ahead of business (64%) and government (53%).</div>
+      </div>
+      <div class="finding-cell connection">
+        <div class="finding-num" data-target="74" data-suffix="%">0</div>
+        <div class="finding-label">Trust "someone like me"</div>
+        <div class="finding-text">Level with scientists — and far ahead of CEOs (51%) and journalists (49%).</div>
+      </div>
+      <div class="finding-cell confidence">
+        <div class="finding-num" data-target="88" data-suffix="%">0</div>
+        <div class="finding-label">Trust recommendations</div>
+        <div class="finding-text">From people they know — above every paid, owned or earned channel measured.</div>
+      </div>
+    </div>
+    <div class="finding-foot fade-up">Sources: <a href="https://www.edelman.com/news-awards/2026-edelman-trust-barometer-society-slides-into-insularity" target="_blank" rel="noopener">Edelman Trust Barometer 2026</a> · <a href="https://www.edelman.com/trust/2024/trust-barometer" target="_blank" rel="noopener">Edelman 2024</a> · <a href="https://www.nielsen.com/insights/2021/beyond-martech-building-trust-with-consumers-and-engaging-where-sentiment-is-high/" target="_blank" rel="noopener">Nielsen 2021</a></div>
+  </div>
+  <div class="narrow">
+    <p class="body fade-up" style="margin-top: 24px;">Over five years, Edelman finds trust in co-workers up eleven points while trust in government leaders fell sixteen. The barista, the member, the resident and the co-owner aren't a nice-to-have amplification layer. <strong>They are now the most credible media your organisation has.</strong></p>
+  </div>
+</section>
+
+<!-- ============ IV. WHAT SWITCHES THEM ON ============ -->
+<section id="sharedvalue" style="background: var(--night-2); padding: 80px 0;">
+  <div class="narrow">
+    <div class="overline fade-up">IV · What switches them on</div>
+    <div class="accent-line fade-up"></div>
+    <h2 class="sec-title fade-up">Shared value is the ignition.</h2>
+    <p class="body fade-up">Nobody volunteers to tell <em>your</em> story. People tell <em>their</em> story — and they include you in it when there's something of theirs inside it: their livelihood, their profession, their community, their stake. The organiser Marshall Ganz built a whole discipline on this — <a href="https://dash.harvard.edu/handle/1/30760283" target="_blank" rel="noopener">public narrative</a>: a story of self, a story of us, a story of now. Movements scale because narrative capacity is pushed outward to every participant. There is no "story of us" without shared value.</p>
+    <p class="body fade-up">The evidence is unusually clean. In Germany, a community co-owned energy project polled <a href="https://www.sciencedirect.com/science/article/abs/pii/S0301421511001972" target="_blank" rel="noopener">45% positive against 12% negative</a> — while a commercially developed equivalent nearby polled 60% negative. Same technology, same landscape. The difference was who shared the value. A 2022 <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167811622000684" target="_blank" rel="noopener">meta-analysis</a> across 58,000 people finds the same chain at brand level: visible social contribution drives identification, and identification drives loyalty and word-of-mouth. And Harvard's shared-value school reached the mirror-image conclusion from the strategy side: shared value strategies <a href="https://hbr.org/2016/10/the-ecosystem-of-shared-value" target="_blank" rel="noopener">only work when the whole stakeholder ecosystem is mobilised</a> around them.</p>
+    <div class="pull fade-up">
+      <p>People don't amplify your story. They amplify <em>their</em> story of you — and only when they hold a piece of the value.</p>
+    </div>
+    <p class="body fade-up">That's why Ripple's owner-members advocate and rented influencers don't: one holds equity in the story, the other holds a rate card. Shared value — stakeholder capitalism made real, not stated — is the foundation on which a movement of storytellers gets built.</p>
+  </div>
+</section>
+
+<!-- ============ V. THE CATCH ============ -->
+<section id="catch">
+  <div class="narrow">
+    <div class="overline fade-up">V · The catch</div>
+    <div class="accent-line fade-up"></div>
+    <h2 class="sec-title fade-up">Your storytellers publish your gaps.</h2>
+    <p class="body fade-up">Here's what the creator-programme brochures don't say: your ecosystem can only retell the story it <em>experiences</em>. Gallup finds just <a href="https://news.gallup.com/businessjournal/195491/few-employees-believe-company-values.aspx" target="_blank" rel="noopener">27% of employees strongly believe in their company's values</a>. McKinsey finds <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/help-your-employees-find-purpose-or-watch-them-leave" target="_blank" rel="noopener">85% of executives say they live their purpose at work — against 15% of the front line</a>. In a Harris Poll survey, <a href="https://cloud.google.com/blog/topics/sustainability/new-survey-reveals-executives-views-about-sustainability" target="_blank" rel="noopener">58% of executives admitted their own organisation was guilty of greenwashing</a>. And Havas finds <a href="https://www.havas.com/press_release/havas-meaningful-brands-report-2021-finds-we-are-entering-the-age-of-cynicism/" target="_blank" rel="noopener">71% of people have little faith brands will deliver on their promises</a>.</p>
+    <p class="body fade-up">Hand cameras to your stakeholders in that condition and you don't get a movement — you get evidence. Amazon learned this the hard way: its paid "FC Ambassadors", warehouse workers tweeting rebuttals to criticism of working conditions, were met with <a href="https://slate.com/technology/2022/01/amazon-fc-ambassadors-twitter-fulfillment-centers.html" target="_blank" rel="noopener">mockery, spoof accounts and national ridicule</a> before the programme was quietly shut down. Starbucks is walking the same line today: its union <a href="https://www.restaurantdive.com/news/starbucks-pilots-tiktok-program-for-boosting-employee-generated-content/823614/" target="_blank" rel="noopener">publicly asked</a> why the company can fund barista TikToks but not the contract still being bargained.</p>
+    <div class="pull fade-up">
+      <p>You can brief an influencer. <em>You can't brief lived experience.</em></p>
+    </div>
+    <p class="body fade-up">This is the alignment problem wearing a creator economy costume. Our own cross-sector measurement found the same structural gap from the outside: in <a href="/insights/the-alignment-problem-measured">eleven of twelve sectors</a>, the weakest trust layer is Connection — what stakeholders actually experience — trailing what organisations say by around eighteen points. The story stakeholders live is, measurably, not the story most organisations tell.</p>
+  </div>
+</section>
+
+<!-- ============ VI. NOBODY OWNS THE STORY ============ -->
+<section id="ownership" style="background: var(--night-2); padding: 80px 0;">
+  <div class="narrow">
+    <div class="overline fade-up">VI · So who owns the story?</div>
+    <div class="accent-line fade-up"></div>
+    <p class="body fade-up">The instinct is to answer with control: guidelines, approvals, scripts. The law has already ruled on that instinct. In the US, an employee's connection to their employer is a <a href="https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking" target="_blank" rel="noopener">material connection that must be disclosed</a>; in the UK, brand-directed employee content <a href="https://www.asa.org.uk/advice-online/recognising-ads-social-media.html" target="_blank" rel="noopener">is simply advertising</a>, with the brand carrying responsibility. And US labour law makes social media policies <a href="https://www.nlrb.gov/about-nlrb/rights-we-protect/the-law/employees/social-media-0" target="_blank" rel="noopener">presumptively unlawful</a> if they could chill workers discussing pay or conditions. In other words: you must own the advertising, and you cannot own the dissent.</p>
+    <div class="pull fade-up">
+      <p>"Who owns the story?" is the wrong question. <em>Nobody owns it. You can only align it.</em></p>
+    </div>
+    <p class="body fade-up">Over-script it and it stops being credible — the entire premium of the near voice is that it isn't a press release. Under-invest in the reality behind it and the near voice reports the reality. The only strategy that survives contact with both constraints is the unglamorous one: <strong>make the story true everywhere it's lived, and let your ecosystem do what it now does anyway.</strong></p>
+  </div>
+</section>
+
+<!-- ============ VII. THE PRIZE ============ -->
+<section id="prize">
+  <div class="narrow">
+    <div class="overline fade-up">VII · The prize</div>
+    <div class="accent-line fade-up"></div>
+    <h2 class="sec-title fade-up">An aligned ecosystem is a <em>movement.</em></h2>
+    <p class="body fade-up">Get it right and the maths is unlike anything a media budget can buy. Harvard's Douglas Holt showed a decade ago that <a href="https://hbr.org/2016/03/branding-in-the-age-of-social-media" target="_blank" rel="noopener">networked crowds out-produce brands at culture</a> — companies can't win by publishing more. But an organisation whose employees, members, communities and partners tell the same story unprompted isn't publishing at all. It's moving. Hundreds or thousands of credible voices, each with their own stake in the value, each carrying the story into rooms the brand will never enter. That's not a campaign. <strong>That's a movement — and movements compound.</strong></p>
+    <p class="body fade-up">Which reframes the work. Not "how do we get our people posting?" but three harder, better questions: Is there one story worth telling, with our stakeholders' value genuinely inside it? Does the day-to-day experience of every stakeholder match it? And can we prove it — to them, and with them?</p>
+
+    <div class="division fade-up">
+      <div class="division-card sense">
+        <div class="dv-label">Sense &amp; Measure — TrustOS</div>
+        <div class="dv-title">Know which story they're telling.</div>
+        <div class="dv-body">If thousands of people are telling your story, you'd better be able to measure which story it is. TrustOS reads the alignment between what you say, what stakeholders actually experience, and what you can prove — across the whole ecosystem, with the working shown.</div>
+        <a class="dv-link" href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">Explore TrustOS &rarr;</a>
+      </div>
+      <div class="division-card close">
+        <div class="dv-label">Act — MissionCTRL</div>
+        <div class="dv-title">Give them a story worth telling.</div>
+        <div class="dv-body">Alignment work that puts shared value into the offer, closes the distance between intent and experience, and arms your storytellers with proof — so the story your ecosystem tells is the one you meant.</div>
+        <a class="dv-link" href="https://missionctrl.agency/#solutions">See the four stages &rarr;</a>
+      </div>
+    </div>
+    <p class="division-foot fade-up"><span class="t">Sense the story.</span> <span class="m">Align it.</span> Let it move.</p>
+  </div>
+</section>
+
+<!-- ============ VIII. THE HONEST PART ============ -->
+<section id="honest" style="padding-top: 0;">
+  <div class="narrow">
+    <div class="overline trust fade-up">VIII · The honest part</div>
+    <div class="accent-line fade-up" style="background: var(--trust-cool);"></div>
+    <div class="honest fade-up">
+      <div class="h-label">How to read this piece</div>
+      <p>This is a field report built from the public record — programme announcements, peer-reviewed studies, and named surveys, linked throughout so you can check them. Where a figure comes from a company or agency's own research (Edelman's barometer, Dell's platform vendor, Deloitte's programme metrics), we've said so in the source.</p>
+      <p>We also left things out on purpose. Some of the most-quoted advocacy statistics — <strong>"561% more reach", "8× more engagement"</strong> — circulate widely but can't be traced to any primary study. We don't use numbers we can't verify, and we'd gently suggest nobody else does either.</p>
+      <p>And the same standard applies to the thesis itself: which story <em>your</em> ecosystem is telling isn't something to assert — it's something to measure. That's what <a href="https://trustos.missionctrl.agency/methodology/" target="_blank" rel="noopener">TrustOS is for</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contact">
+  <div class="narrow">
+    <h2 class="sec-title fade-up">Thousands of people are telling your story today. <em>Do you know which story?</em></h2>
+    <p class="body fade-up">See where the story your stakeholders tell diverges from the one you intend — start with a conversation. Not a pitch. Not an audit.</p>
+    <div class="fade-up">
+      <a class="btn-primary" href="https://missionctrl.agency/#contact">Start the conversation &rarr;</a>
+      <a class="btn-ghost" href="https://trustos.missionctrl.agency/explorer/" target="_blank" rel="noopener">Try the 2-min TrustOS Explorer</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="https://missionctrl.agency">MissionCTRL</a>
+    <a href="https://missionctrl.agency/movement-archetype">Movement Archetype Quiz</a>
+    <a href="https://trustos.missionctrl.agency">TrustOS</a>
+    <a href="https://trustos.missionctrl.agency/methodology/">How We Score</a>
+    <a href="https://missionctrl.agency/#contact">Contact</a>
+  </div>
+  <div>© 2026 MissionCTRL · Measurement powered by TrustOS — MissionCTRL's trust intelligence engine · Field report, 2026</div>
+</footer>
+
+<script>
+(function() {
+  // ── Reveal on scroll ──
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  // ── Count-up for the finding numbers ──
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(el, target, duration) {
+    var suffix = el.dataset.suffix || '';
+    if (reduce) { el.textContent = target + suffix; return; }
+    var start = performance.now();
+    function update(now) {
+      var k = Math.min((now - start) / duration, 1);
+      var ev = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(ev * target) + suffix;
+      if (k < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  var numObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      numObserver.unobserve(entry.target);
+      countUp(entry.target, parseInt(entry.target.dataset.target, 10), 1400);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.finding-num').forEach(function(el) { numObserver.observe(el); });
+})();
+</script>
+
+</body>
+</html>
