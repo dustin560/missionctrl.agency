@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>TrustOS Signal Atlas — Solmax</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--slate:#2d3a4a;--slate-d:#1a2636;--cool:#5b9ec9;--cool-soft:rgba(91,158,201,.16);
+--ice:#f0f0f4;--white:#fff;--mint:#7cc3a7;--amber:#e8a13b;
+--dim:rgba(240,240,244,.6);--line:rgba(240,240,244,.12);--card:rgba(255,255,255,.04)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Sora',sans-serif;background:linear-gradient(160deg,var(--slate-d) 0%,#141d29 100%);min-height:100vh;
+color:var(--ice);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+/* grid texture */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+background-size:56px 56px}
+.z{position:relative;z-index:1}
+.top{padding:24px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.wordmark{font-weight:800;font-size:17px;letter-spacing:-.02em}
+.wordmark span{color:var(--cool)}
+.conf{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+header.hero{padding:56px 0 40px}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cool);margin-bottom:14px}
+h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:16px}
+h1 em{font-style:normal;color:var(--cool)}
+.lede{font-size:15px;color:var(--dim);max-width:780px}
+.lede b{color:var(--ice);font-weight:600}
+/* how to read */
+.keyrow{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;font-size:11.5px;color:var(--dim)}
+.keyrow span{display:flex;align-items:center;gap:7px}
+.kq{width:26px;height:7px;border-radius:4px;background:var(--cool)}
+.ke{width:26px;height:7px;border-radius:4px;background:var(--amber)}
+.ai-chip,.hy-chip,.hu-chip{font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 8px;border-radius:999px;text-transform:uppercase}
+.ai-chip{background:rgba(91,158,201,.2);color:var(--cool);border:1px solid rgba(91,158,201,.45)}
+.hy-chip{background:rgba(124,195,167,.14);color:var(--mint);border:1px solid rgba(124,195,167,.4)}
+.hu-chip{background:rgba(240,240,244,.08);color:var(--dim);border:1px solid var(--line)}
+/* tabs */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 8px}
+.tab{font-family:inherit;font-size:12.5px;font-weight:600;color:var(--dim);background:var(--card);border:1px solid var(--line);
+border-radius:999px;padding:9px 18px;cursor:pointer;transition:all .18s}
+.tab:hover{color:var(--ice);border-color:rgba(91,158,201,.5)}
+.tab.on{color:#0d141d;background:var(--cool);border-color:var(--cool)}
+.tab .n{font-size:9.5px;font-weight:700;opacity:.65;margin-left:5px}
+/* panel */
+.panel{padding:26px 0 70px}
+.held{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--cool);border-radius:12px;padding:20px 24px;margin-bottom:10px}
+.held h3{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cool);margin-bottom:8px}
+.held p{font-size:13px;color:var(--dim)}
+.held b{color:var(--ice);font-weight:600}
+.assume{font-size:11px;color:var(--dim);margin:10px 0 26px;font-style:italic}
+.grid{display:grid;grid-template-columns:1fr 340px;gap:26px;align-items:start}
+@media(max-width:960px){.grid{grid-template-columns:1fr}}
+/* method cards */
+.m{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.m-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.m-rank{font-size:11px;font-weight:800;color:var(--cool)}
+.m h4{font-size:14.5px;font-weight:700}
+.m-desc{font-size:12.5px;color:var(--dim);margin:4px 0 10px}
+.m-desc b{color:var(--ice);font-weight:600}
+.bars{display:grid;grid-template-columns:64px 1fr 34px;gap:8px;align-items:center;font-size:10px;color:var(--dim);margin-bottom:4px}
+.track{height:7px;border-radius:4px;background:rgba(255,255,255,.07);overflow:hidden}
+.fill{height:100%;border-radius:4px}
+.fq{background:var(--cool)}.fe{background:var(--amber)}
+.m-ai{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:12px;color:var(--dim)}
+.m-ai b{color:var(--mint);font-weight:600}
+/* scatter */
+.scat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;position:sticky;top:20px}
+.scat h3{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cool);margin-bottom:4px}
+.scat .s{font-size:11px;color:var(--dim);margin-bottom:12px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:11.5px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="z">
+<div class="wrap top">
+  <div class="wordmark">Trust<span>OS</span> <span style="color:var(--dim);font-weight:400;font-size:13px">· Signal Atlas</span></div>
+  <div class="conf">Solmax · Working draft · Confidential</div>
+</div>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">How we listen, stakeholder by stakeholder</div>
+  <h1>The Signal Atlas: <em>every way each group can be read.</em></h1>
+  <p class="lede">Pick a stakeholder group. See the data Solmax holds today, then every viable collection method ranked by the ratio that matters: <b>signal quality against effort to run</b>. Each method carries its AI mode — where machines do the listening, where they assist humans, and where only a human will do.</p>
+  <div class="keyrow">
+    <span><i class="kq"></i> Signal quality — reliability &amp; depth of what it tells you</span>
+    <span><i class="ke"></i> Effort — cost &amp; friction to run well</span>
+    <span><span class="ai-chip">AI</span> machine-led</span>
+    <span><span class="hy-chip">Hybrid</span> AI + human</span>
+    <span><span class="hu-chip">Human</span> human-led</span>
+  </div>
+</div></header>
+
+<div class="wrap"><div class="tabs" id="tabs"></div></div>
+<div class="wrap panel">
+  <div class="held" id="held"></div>
+  <p class="assume" id="assume"></p>
+  <div class="grid">
+    <div id="methods"></div>
+    <div class="scat"><h3>The efficiency frontier</h3>
+      <div class="s">Up = better signal · Left = less effort. Top-left is where smart and efficient lives.</div>
+      <div id="scatter"></div></div>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  TrustOS is a MissionCTRL product · Rankings are a co-design starting point, confirmed at the Step 01 data assessment · hello@missionctrl.agency
+</div></footer>
+</div>
+
+<script>
+// mode: 'ai' | 'hy' | 'hu'
+var GROUPS = [
+ {id:'cust', name:'Customers & Specifiers',
+  held:'<b>Strongest position.</b> CRM records (lead flow live APAC Sept, EMEA Nov), 1,500 website leads in H1, quote and order history, project references, NPS/CSAT where run, and rich public signal — tenders, project awards, engineering forums.',
+  assume:'Data held is drawn from the marketing acceleration plan and proposal audit; exact coverage confirmed at Step 01.',
+  methods:[
+   {n:'CRM behavioural telemetry',q:4.5,e:1.5,mode:'ai',d:'Repeat-order rate, quote-to-order conversion, time-to-reorder, share of wallet. <b>Revealed trust — what customers do, not what they say.</b>',ai:'<b>AI role:</b> anomaly detection flags relationships cooling before anyone notices; each wave auto-summarises movement per account tier.'},
+   {n:'Digital & tools engagement',q:3.5,e:1,mode:'ai',d:'Vertical-page depth, calculator and design-tool usage, spec-sheet downloads. An engineer using MineDrain monthly is a trust signal no survey reaches.',ai:'<b>AI role:</b> intent modelling on tool usage patterns; clustering engaged-but-silent accounts for BD follow-up.'},
+   {n:'Embedded micro-pulses',q:3.5,e:2,mode:'ai',d:'One question after a quote, delivery or support resolution — in the moment, response rates far above standalone surveys.',ai:'<b>AI role:</b> adaptive question selection (never the same question twice in a row to the same person); open-text themed automatically.'},
+   {n:'AI-moderated interviews',q:4,e:2.5,mode:'hy',d:'10-minute adaptive chat conversations with specifiers and buyers, any language, at scale.',ai:'<b>Hybrid:</b> AI conducts and probes; humans design the guide, read the edge cases, and take the relationship-sensitive follow-ups.'},
+   {n:'Pulse surveys',q:3,e:2.5,mode:'hy',d:'Short, per-segment questionnaires — the trend backbone where behavioural signal has gaps.',ai:'<b>Hybrid:</b> AI drafts per-segment variants and themes open-text; humans own question integrity so waves stay comparable.'},
+   {n:'Win/loss debriefs',q:5,e:4,mode:'hy',d:'Structured 20-minute calls after major bids — the single most truthful customer signal that exists.',ai:'<b>Hybrid:</b> human conducts; AI transcribes, codes against the three drivers, and spots patterns across debriefs.'},
+   {n:'Depth interviews',q:5,e:5,mode:'hu',d:'Senior specifier and key-account conversations. Reserved for the relationships that move revenue.',ai:'<b>Human-led:</b> AI preps the brief from all other signal and drafts the summary — the conversation itself stays human.'}
+  ]},
+ {id:'emp', name:'Employees',
+  held:'<b>Moderate.</b> Engagement survey data where run, retention and attrition rates, Glassdoor/Indeed public signal, internal comms metrics. Fragmented across regions after five-business integration.',
+  assume:'Works-council constraints apply in Germany and parts of EMEA — all behavioural listening aggregate-only, never individual. This shapes the ranking below.',
+  methods:[
+   {n:'Existing engagement data reuse',q:4,e:1,mode:'ai',d:'Engagement surveys, attrition, internal mobility, absence trends — already collected, rarely read as trust signal.',ai:'<b>AI role:</b> re-scores historic engagement questions against the three drivers so the baseline inherits years of trend.'},
+   {n:'Employer public signal',q:3,e:1,mode:'ai',d:'Glassdoor, Indeed, Kununu (Germany), LinkedIn sentiment — the outside view of the inside.',ai:'<b>AI role:</b> continuous multilingual scraping and theming; alerts on review-velocity shifts around org changes.'},
+   {n:'Micro-pulses in the flow of work',q:4,e:2,mode:'ai',d:'One question monthly in existing channels (intranet, Teams), aggregate-anonymous by design.',ai:'<b>AI role:</b> adaptive cadence — quiet teams get asked less, moving teams get asked sooner; themes surfaced without identifying anyone.'},
+   {n:'AI-moderated listening conversations',q:4.5,e:2.5,mode:'hy',d:'Anonymous adaptive chat interviews at scale — the depth of a focus group without the room or the fear.',ai:'<b>Hybrid:</b> AI moderates and guarantees anonymity; humans set themes with works-council sign-off and read the hard findings.'},
+   {n:'Skip-level listening sessions',q:4.5,e:4,mode:'hu',d:'Facilitated small groups per region/function — where the say-do gap gets said out loud.',ai:'<b>Human-led:</b> AI clusters the anonymised notes across sessions into one picture per driver.'},
+   {n:'Exit & stay interviews',q:5,e:3.5,mode:'hy',d:'People leaving tell the truth; people staying tell you why it\'s worth it. Both usually wasted.',ai:'<b>Hybrid:</b> human conversation, AI coding across interviews — attrition themes tied to trust drivers, not HR categories.'}
+  ]},
+ {id:'dist', name:'Distributors & Channel Partners',
+  held:'<b>Thin — a priority gap.</b> One of the four groups with no readable public signal. Order history and margin data exist; sentiment is anecdote held by regional sales teams. Distributor branding is a known pain point.',
+  assume:'The proposal identifies this group as needing fielding from scratch — which is why frontline capture and WhatsApp-native methods rank high here.',
+  methods:[
+   {n:'Commercial behaviour telemetry',q:4.5,e:1.5,mode:'ai',d:'Order frequency, range breadth, co-marketing uptake, payment behaviour, competitor stocking where visible. <b>The truest distributor signal is their purchase order.</b>',ai:'<b>AI role:</b> early-warning model on de-stocking and range-narrowing patterns — churn signalled quarters ahead.'},
+   {n:'Frontline sentiment capture',q:3.5,e:1.5,mode:'hy',d:'One-click relationship temperature logged by sales teams after each visit — the anecdotes, structured at last.',ai:'<b>Hybrid:</b> reps log one tap + a voice note; AI transcribes, themes, and reconciles against the commercial telemetry.'},
+   {n:'WhatsApp micro-pulses',q:3.5,e:2,mode:'ai',d:'One question on the channel these relationships actually live on, in-region, in-language.',ai:'<b>AI role:</b> conversational delivery and follow-up probing in-thread; sentiment coded automatically.'},
+   {n:'AI-moderated partner interviews',q:4,e:2.5,mode:'hy',d:'Adaptive conversations at range — including the mid-tier distributors nobody ever interviews.',ai:'<b>Hybrid:</b> AI covers the long tail; humans take the strategic accounts face to face.'},
+   {n:'Annual partner council + depth visits',q:5,e:5,mode:'hu',d:'The top-20 relationships, in person, structured around the three drivers.',ai:'<b>Human-led:</b> AI builds each account\'s pre-read from every other signal source; the visit tests it.'}
+  ]},
+ {id:'inst', name:'Installers & Engineers (field)',
+  held:'<b>Thinnest of all.</b> No public signal, no CRM presence, no survey history — yet installers decide how the product performs in the ground, and their word carries on site.',
+  assume:'Everything here is greenfield; ranked for a group that is mobile-first, time-poor, and survey-averse.',
+  methods:[
+   {n:'Training & certification touchpoints',q:4,e:1.5,mode:'ai',d:'Commercial Excellence Academy and product training sessions — a captive, relevant audience already convened. One question per session.',ai:'<b>AI role:</b> QR-triggered micro-pulse, in-language; completion and re-certification rates read as engagement signal.'},
+   {n:'Tool & app usage signal',q:3.5,e:1,mode:'ai',d:'Design-tool and calculator usage by installer firms — who engages with the engineering, who just buys product.',ai:'<b>AI role:</b> segmentation of the installer base by engagement depth; the disengaged segment is the risk register.'},
+   {n:'WhatsApp voice pulses',q:4,e:2,mode:'hy',d:'Voice-note answers to one question — field workers talk, they don\'t type.',ai:'<b>Hybrid:</b> AI transcribes and themes across languages; humans hear the tone that transcripts flatten.'},
+   {n:'Site-visit structured capture',q:4.5,e:4,mode:'hy',d:'Technical teams already visit installations — a five-question trust module rides along free.',ai:'<b>Hybrid:</b> AI turns the field notes into comparable scores; photos and defects cross-read against sentiment.'},
+   {n:'Installer advisory panel',q:4.5,e:4.5,mode:'hu',d:'A standing panel of 15–20 across regions — trust read continuously, product intelligence as the by-product.',ai:'<b>Human-led:</b> AI runs the between-meeting pulse so the panel is always warm.'}
+  ]},
+ {id:'inv', name:'Investors & Lenders',
+  held:'<b>Concentrated but readable.</b> Board packs, lender reporting, covenant conversations — plus public signal: rating actions, analyst commentary, sector reports. Small population, high stakes.',
+  assume:'A group of dozens, not thousands — statistical methods are wrong here; structured qualitative is right.',
+  methods:[
+   {n:'Public & analyst signal',q:3.5,e:1,mode:'ai',d:'Rating actions, sector commentary, peer benchmarking, debt-market sentiment.',ai:'<b>AI role:</b> continuous monitoring and quarterly synthesis against the Confidence driver.'},
+   {n:'Board & lender pack analysis',q:3.5,e:1.5,mode:'ai',d:'The questions asked in board minutes and lender reviews are a trust signal in themselves — what they probe is what they doubt.',ai:'<b>AI role:</b> theme extraction across quarters, confidentiality-safe, run inside Solmax\'s own environment.'},
+   {n:'Structured pulse at reporting moments',q:4,e:2,mode:'hy',d:'Three questions attached to existing quarterly reporting touchpoints — zero new meetings.',ai:'<b>Hybrid:</b> AI trends the responses; the CFO conversation stays human.'},
+   {n:'Annual depth conversations',q:5,e:4,mode:'hu',d:'Every material investor and lender, once a year, one structured hour on the three drivers.',ai:'<b>Human-led:</b> AI drafts the per-institution brief and the cross-institution synthesis.'}
+  ]},
+ {id:'comm', name:'Communities & Regulators',
+  held:'<b>Public-signal rich, relationship-thin.</b> Permits, environmental filings, local media, community consultation records around 58-country operations — readable from outside, rarely read systematically.',
+  assume:'Highest-consequence group when it goes wrong; listening here is risk management as much as brand measurement.',
+  methods:[
+   {n:'Regulatory & permit signal',q:4,e:1,mode:'ai',d:'Filing outcomes, objection rates, consultation responses, inspection findings across operating geographies.',ai:'<b>AI role:</b> multilingual monitoring across 58 countries — impossible manually, routine for a machine.'},
+   {n:'Local media & community sentiment',q:3,e:1,mode:'ai',d:'Local-language press and community-group sentiment around plants and major projects.',ai:'<b>AI role:</b> geo-fenced listening per site; escalation alerts when sentiment velocity shifts.'},
+   {n:'Site-community pulse',q:4,e:3,mode:'hy',d:'Structured periodic soundings around major operating sites, run through local teams.',ai:'<b>Hybrid:</b> AI standardises and compares across sites; local relationships stay locally owned.'},
+   {n:'Regulator relationship reviews',q:4.5,e:4,mode:'hu',d:'Annual structured internal review of each material regulator relationship — evidence in, anecdote out.',ai:'<b>Human-led:</b> AI compiles each relationship\'s objective record (filings, findings, response times) as the evidence base.'}
+  ]}
+];
+
+var MODE={ai:['ai-chip','AI'],hy:['hy-chip','Hybrid'],hu:['hu-chip','Human']};
+function esc(s){return s}
+function bar(cls,v){return '<div class="track"><div class="fill '+cls+'" style="width:'+(v/5*100)+'%"></div></div>';}
+
+var cur='cust';
+function render(){
+  var g=GROUPS.find(function(x){return x.id===cur});
+  document.getElementById('tabs').innerHTML=GROUPS.map(function(x){
+    return '<button class="tab'+(x.id===cur?' on':'')+'" data-id="'+x.id+'">'+x.name+'<span class="n">'+x.methods.length+'</span></button>';
+  }).join('');
+  document.getElementById('held').innerHTML='<h3>What Solmax holds today</h3><p>'+g.held+'</p>';
+  document.getElementById('assume').textContent=g.assume;
+  // rank by quality/effort ratio, then quality
+  var ms=g.methods.slice().sort(function(a,b){return (b.q/b.e)-(a.q/a.e)||b.q-a.q});
+  document.getElementById('methods').innerHTML=ms.map(function(m,i){
+    var md=MODE[m.mode];
+    return '<div class="m"><div class="m-top"><span class="m-rank">'+String(i+1).padStart(2,'0')+'</span><h4>'+m.n+'</h4><span class="'+md[0]+'">'+md[1]+'</span></div>'+
+    '<p class="m-desc">'+m.d+'</p>'+
+    '<div class="bars"><span>Quality</span>'+bar('fq',m.q)+'<span>'+m.q.toFixed(1)+'</span></div>'+
+    '<div class="bars"><span>Effort</span>'+bar('fe',m.e)+'<span>'+m.e.toFixed(1)+'</span></div>'+
+    '<p class="m-ai">'+m.ai+'</p></div>';
+  }).join('');
+  // scatter
+  var W=300,H=260,P=34;
+  function sx(e){return P+(e-0.5)/(5-0.5)*(W-P-14)}
+  function sy(q){return H-P-(q-2)/(5-2)*(H-P-20)}
+  var sv='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%" font-family="Sora,sans-serif">';
+  sv+='<rect x="'+P+'" y="14" width="'+((W-P-14)/2)+'" height="'+((H-P-14)/2)+'" fill="rgba(91,158,201,.08)" rx="6"/>';
+  sv+='<line x1="'+P+'" y1="'+(H-P)+'" x2="'+(W-10)+'" y2="'+(H-P)+'" stroke="rgba(240,240,244,.25)"/>';
+  sv+='<line x1="'+P+'" y1="14" x2="'+P+'" y2="'+(H-P)+'" stroke="rgba(240,240,244,.25)"/>';
+  sv+='<text x="'+((W+P)/2)+'" y="'+(H-8)+'" font-size="9" fill="rgba(240,240,244,.5)" text-anchor="middle">Effort →</text>';
+  sv+='<text x="12" y="'+((H-P)/2)+'" font-size="9" fill="rgba(240,240,244,.5)" text-anchor="middle" transform="rotate(-90 12 '+((H-P)/2)+')">Signal quality →</text>';
+  ms.forEach(function(m,i){
+    var col=m.mode==='ai'?'#5b9ec9':(m.mode==='hy'?'#7cc3a7':'#f0f0f4');
+    sv+='<circle cx="'+sx(m.e)+'" cy="'+sy(m.q)+'" r="7" fill="'+col+'" fill-opacity=".85"/>';
+    sv+='<text x="'+sx(m.e)+'" y="'+(sy(m.q)+3)+'" font-size="7.5" font-weight="700" fill="#0d141d" text-anchor="middle">'+(i+1)+'</text>';
+  });
+  sv+='</svg>';
+  document.getElementById('scatter').innerHTML=sv;
+}
+document.getElementById('tabs').addEventListener('click',function(ev){
+  var b=ev.target.closest('.tab'); if(!b)return; cur=b.dataset.id; render();
+});
+render();
+</script>
+</body>
+</html>
