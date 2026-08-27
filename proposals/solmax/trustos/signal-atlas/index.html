@@ -38,6 +38,10 @@ h1 em{font-style:normal;color:var(--cool)}
 .kq{width:26px;height:7px;border-radius:4px;background:var(--cool)}
 .ke{width:26px;height:7px;border-radius:4px;background:var(--amber)}
 .ai-chip,.hy-chip,.hu-chip{font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 8px;border-radius:999px;text-transform:uppercase}
+.st-adopt,.st-pilot,.st-watch{font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 8px;border-radius:999px;text-transform:uppercase}
+.st-adopt{background:rgba(124,195,167,.16);color:var(--mint);border:1px solid rgba(124,195,167,.45)}
+.st-pilot{background:rgba(232,161,59,.14);color:var(--amber);border:1px solid rgba(232,161,59,.45)}
+.st-watch{background:rgba(240,240,244,.06);color:var(--dim);border:1px solid var(--line)}
 .ai-chip{background:rgba(91,158,201,.2);color:var(--cool);border:1px solid rgba(91,158,201,.45)}
 .hy-chip{background:rgba(124,195,167,.14);color:var(--mint);border:1px solid rgba(124,195,167,.4)}
 .hu-chip{background:rgba(240,240,244,.08);color:var(--dim);border:1px solid var(--line)}
@@ -181,17 +185,59 @@ var GROUPS = [
 ];
 
 var MODE={ai:['ai-chip','AI'],hy:['hy-chip','Hybrid'],hu:['hu-chip','Human']};
+var HORIZON={id:'hor',name:'On the horizon',
+ held:'<b>Where the field is moving.</b> Methods emerging from research and early platforms in 2026 — each graded by the strength of the evidence behind it, and by what TrustOS would do with it: adopt into waves now, pilot alongside a wave, or watch until validation matures.',
+ assume:'Evidence grades reflect published studies and platform maturity as of August 2026. Nothing here is promised into the Solmax programme until it earns its place — that is the point of grading it.',
+ items:[
+  {n:'WhatsApp-native AI interviewing',st:'adopt',mode:'ai',
+   d:'AI-moderated adaptive interviews run entirely inside WhatsApp — built for exactly the field-based, mobile-first groups where Solmax has no readable signal today: distributors and installers.',
+   ev:'<b>Evidence:</b> commercial platforms live and proven in emerging-market fieldwork. Low risk; the channel is already where these relationships live.'},
+  {n:'AI-moderated depth interviews at scale',st:'adopt',mode:'hy',
+   d:'Adaptive conversational interviews — text or voice, any language — now a mature platform category rather than an experiment. The depth of qual at the reach of quant.',
+   ev:'<b>Evidence:</b> an established 2026 vendor landscape with published comparisons. The question is guide design and governance, not whether it works.'},
+  {n:'Insight communities & digital journaling',st:'adopt',mode:'hy',
+   d:'Standing, always-on panels per stakeholder group with longitudinal journaling between waves — continuous listening instead of quarterly interrogation.',
+   ev:'<b>Evidence:</b> a named 2026 industry trend with mature tooling. Maps directly to the installer and distributor panel ideas in this Atlas.'},
+  {n:'Implicit / reaction-time testing',st:'pilot',mode:'hy',
+   d:'Millisecond association tests that measure what people feel about the Solmax name before conscious editing kicks in. Trust is precisely what people misreport in surveys — this reads underneath the report.',
+   ev:'<b>Evidence:</b> long-established in consumer brand work; thinner in B2B stakeholder use. Pilot as a wave module on one group before it earns a standing place.'},
+  {n:'Interview-grounded digital twins',st:'pilot',mode:'ai',
+   d:'Synthetic respondents built from real TrustOS interviews — used to pre-test questions and simulate movement between waves, always validated against the next real read.',
+   ev:'<b>Evidence:</b> twins grounded in a real interview reach 80%+ accuracy on survey prediction in peer-reviewed work; generic personas do far worse and compress the extremes. The wave data TrustOS already collects is exactly the grounding that makes this credible — simulate between waves, verify at them.'},
+  {n:'Passive employee-channel listening',st:'pilot',mode:'ai',
+   d:'Aggregate sentiment from existing internal channels, replacing some survey load entirely.',
+   ev:'<b>Evidence:</b> mature tooling — but works-council and privacy constraints govern the design. Aggregate-only, fully disclosed, co-designed with employee representatives, or not at all.'},
+  {n:'Generative agent simulation',st:'watch',mode:'ai',
+   d:'Whole simulated stakeholder ecosystems — stress-testing decisions (channel terms, pricing, a plant announcement) against modelled trust reactions before making them.',
+   ev:'<b>Evidence:</b> serious academic work exists, but the field\'s own reviews name validation as the central unsolved problem. R&D horizon — we track it; we do not sell it.'},
+  {n:'Predictive trust analytics',st:'watch',mode:'ai',
+   d:'Forecasting stakeholder behaviour — churn, advocacy, activism — from trust movement. The reputation-intelligence category is converging on exactly the multi-stakeholder model TrustOS was built on.',
+   ev:'<b>Evidence:</b> competitors are claiming it; robust validation is scarce. TrustOS\'s edge is per-group scoring and co-design — prediction is earned after enough measured waves, not before.'}
+ ]};
+var ST={adopt:['st-adopt','Adopt'],pilot:['st-pilot','Pilot'],watch:['st-watch','Watch']};
 function esc(s){return s}
 function bar(cls,v){return '<div class="track"><div class="fill '+cls+'" style="width:'+(v/5*100)+'%"></div></div>';}
 
 var cur='cust';
 function render(){
-  var g=GROUPS.find(function(x){return x.id===cur});
-  document.getElementById('tabs').innerHTML=GROUPS.map(function(x){
-    return '<button class="tab'+(x.id===cur?' on':'')+'" data-id="'+x.id+'">'+x.name+'<span class="n">'+x.methods.length+'</span></button>';
+  var g=cur==='hor'?HORIZON:GROUPS.find(function(x){return x.id===cur});
+  var all=GROUPS.concat([HORIZON]);
+  document.getElementById('tabs').innerHTML=all.map(function(x){
+    var count=(x.methods||x.items).length;
+    var star=x.id==='hor'?'◇ ':'';
+    return '<button class="tab'+(x.id===cur?' on':'')+'" data-id="'+x.id+'">'+star+x.name+'<span class="n">'+count+'</span></button>';
   }).join('');
-  document.getElementById('held').innerHTML='<h3>What Solmax holds today</h3><p>'+g.held+'</p>';
+  document.getElementById('held').innerHTML='<h3>'+(cur==='hor'?'Upcoming & innovative approaches':'What Solmax holds today')+'</h3><p>'+g.held+'</p>';
   document.getElementById('assume').textContent=g.assume;
+  document.querySelector('.scat').style.display=cur==='hor'?'none':'';
+  if(cur==='hor'){
+    document.getElementById('methods').innerHTML=g.items.map(function(m,i){
+      var md=MODE[m.mode], st=ST[m.st];
+      return '<div class="m"><div class="m-top"><span class="m-rank">'+String(i+1).padStart(2,'0')+'</span><h4>'+m.n+'</h4><span class="'+st[0]+'">'+st[1]+'</span><span class="'+md[0]+'">'+md[1]+'</span></div>'+
+      '<p class="m-desc">'+m.d+'</p><p class="m-ai">'+m.ev+'</p></div>';
+    }).join('');
+    return;
+  }
   // rank by quality/effort ratio, then quality
   var ms=g.methods.slice().sort(function(a,b){return (b.q/b.e)-(a.q/a.e)||b.q-a.q});
   document.getElementById('methods').innerHTML=ms.map(function(m,i){
