@@ -220,7 +220,7 @@ footer .logo{margin-bottom:10px}
       <span><i class="sw" style="background:linear-gradient(90deg,#ff6b2b,#ffad3b)"></i> Sprint (committed)</span>
       <span><i class="sw" style="background:rgba(240,240,244,.28)"></i> Growth Engine (indicative)</span>
       <span><i class="sw" style="background:#3d7cc9"></i> TrustOS (estimate)</span>
-      <span style="color:#3d7cc9">◆ Quarterly trust read</span>
+      <span style="color:#3d7cc9">◆ Trust read</span>
     </div>
   </div>
 </div></section>
@@ -275,10 +275,10 @@ footer .logo{margin-bottom:10px}
 <section id="trustos"><div class="wrap">
   <div class="eyebrow">The measurement layer</div>
   <h2>TrustOS: <em>proof the engine is working.</em></h2>
-  <p class="lede">Everything above builds the Growth Engine. TrustOS is how Solmax proves it's running — a quarterly read of stakeholder trust, scored group by group, that shows what the transformation, the brand and the marketing actually moved. <b>Live in six weeks from commissioning. Board-ready from the first read.</b></p>
+  <p class="lede">Everything above builds the Growth Engine. TrustOS is how Solmax proves it's running — a four-monthly read of stakeholder trust, scored group by group, that shows what the transformation, the brand and the marketing actually moved. <b>Live in six weeks from commissioning. Board-ready from the first read.</b></p>
   <div class="fit">
     <div class="card"><h3><span>Timing</span> — an estimate</h3>
-      <p>Signed off in early September, onboarding and stakeholder mapping run six weeks: the baseline wave reads in <b>October 2026</b>. Quarterly waves follow — <b>January, April and July 2027</b> — so year one completes next summer with a baseline plus three reads of movement, each tied to what the Growth Engine shipped that quarter.</p></div>
+      <p>Signed off in early September, onboarding and stakeholder mapping run six weeks: the baseline wave reads in <b>October 2026</b>. Three further waves follow — <b>February, June and October 2027</b> — four reads across twelve months, four months apart, so the final wave closes on the anniversary of the first and every read has real change to report.</p></div>
     <div class="card"><h3><span>Cost</span> — design-partner terms</h3>
       <p><b>£52,500 for year one</b> — four quarterly waves, platform, analysis and reporting, at the design-partner rate 30% below standard. Indicative: final scope and fieldwork are confirmed at the data assessment in onboarding, and the price moves only downward from there.</p></div>
   </div>
@@ -305,7 +305,7 @@ footer .logo{margin-bottom:10px}
     <tr class="total"><td>Consulting, year one</td><td class="muted">Sprint + full Growth Engine programme</td>
         <td class="r">82</td><td class="r amt">£41,000</td></tr>
     <tr><td><b>TrustOS · year one</b><div class="muted">Estimate · design-partner terms</div></td>
-        <td class="muted">Four quarterly waves — platform, analysis, reporting; separate from consulting</td>
+        <td class="muted">Four waves across twelve months — platform, analysis, reporting; separate from consulting</td>
         <td class="r">—</td><td class="r amt">£52,500</td></tr>
     <tr class="total"><td>The full picture</td><td class="muted">Growth Engine built, measured and proven</td>
         <td class="r">82</td><td class="r amt">£93,500</td></tr>
@@ -381,8 +381,8 @@ rows.forEach(function(r,ri){
 s+='<defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#ff6b2b"/><stop offset="1" stop-color="#ffad3b"/></linearGradient></defs></svg>';
 document.getElementById('g1').innerHTML=s;
 
-/* ---------- Programme gantt: Aug 26 – Sep 27 ---------- */
-var months=['Aug','Sep','Oct','Nov','Dec','Jan 27','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
+/* ---------- Programme gantt: Aug 26 – Oct 27 ---------- */
+var months=['Aug','Sep','Oct','Nov','Dec','Jan 27','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'];
 var W2=1040,LB2=228,RW2=W2-LB2-14,rh2=42,top2=30,N=months.length;
 function mx(m){return LB2+m*(RW2/N);}
 function mxm(m){return LB2+(m+0.5)*(RW2/N);}
@@ -392,7 +392,7 @@ var rows2=[
  {n:'B2 · Align — tools portfolio',cls:'b',s:2,e:3.8},
  {n:'B3 · Prove — 2027 integrated plan',cls:'b',s:3,e:4.6,flag:4.6,fl:'Plan delivered · mid-Dec'},
  {n:'TrustOS onboarding & mapping',cls:'t',s:1.15,e:2.6},
- {n:'TrustOS quarterly waves',cls:'t',marks:[2.75,5.5,8.5,11.5],labels:['Baseline · Oct','Wave 2 · Jan','Wave 3 · Apr','Wave 4 · Jul']}
+ {n:'TrustOS waves · four in twelve months',cls:'t',marks:[2.5,6.5,10.5,14.5],labels:['Baseline · Oct 26','Wave 2 · Feb 27','Wave 3 · Jun 27','Wave 4 · Oct 27']}
 ];
 var H2=top2+rows2.length*rh2+26;
 var g='<svg viewBox="0 0 '+W2+' '+H2+'" style="width:100%;min-width:760px;display:block" font-family="Sora,sans-serif">';
